@@ -5,7 +5,52 @@ GitHub de développement web pour la promotion P2019 H2
 
 # PROGRAMME
 
-WIP
+### Trimestre 1
+
+ - CSS3 Animations/transitions
+ - HTML5 syntaxe
+ - CSS3 Transformations
+ - JS Rappels
+ - Chrome Debug
+ - JS jQuery
+ - Canvas
+ - HTML5 Audio/video API
+ - HTML5 Local Storage API
+ - HTML5 Offline API
+ - HTML5 Websocket API
+ - Fonts
+ - Responsive
+ - Du PSD à l’intégration
+ - JS orienté objet
+ - Organiser projet / choisir hébergement / mettre en ligne
+ - Versionning avec git
+ - Task runners (grunt/gulp)
+ - Sass
+
+### Trimestre 2
+
+ - PHP les bases
+ - PHP variables
+ - PHP conditions
+ - PHP boucles
+ - PHP fonctions
+ - PHP includes
+ - PHP debug
+ - HTML/PHP formulaire
+ - PHP cookies/sessions
+ - PHP/SQL Base de données MySQL
+ - PHP/SQL Mots de passes
+ - PHP en vrac
+ - PHP regex
+ - PHP routing
+ - PHP APIs
+ - PHP orienté objet
+
+### Trimestre 3
+
+ - PHP frameworks
+ - Silex/Slim/Cake (?)
+
 
 # LIENS
 
