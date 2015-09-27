@@ -1,0 +1,87 @@
+body {background:#eee;font-size:14px;font-family:Helvetica,Arial;}
+
+.container {
+	transform-style:preserve-3d;
+}
+
+.block {
+	width:200px;
+	height:200px;
+	margin:100px auto;
+	background:#ff007c;
+}
+
+.block-1 {
+	transform:scale(3,1.3);
+}
+
+.block-2 {
+	transform:translate(200px,50px);
+}
+
+.block-3 {
+	transform:rotate(70deg);
+}
+
+.block-4 {
+	background:url(https://unsplash.it/200/200/?random=1&test=1);
+	transform:perspective(800px) rotateY(100deg);
+}
+
+.block-5 {
+	transform:perspective(600px) rotateX(70deg);
+}
+
+.carousel {
+	position:relative;
+	width:800px;
+	height:200px;
+	margin-bottom:200px;
+	transform:perspective(600px);
+	transform-style:preserve-3d;
+}
+
+.carousel .images {
+	position:absolute;
+	top:0;
+	left:50%;
+	transform-style:preserve-3d;
+}
+
+.carousel .images .image {
+	position:absolute;
+	top:0;
+	left:-100px;
+}
+
+.carousel .images .image:nth-child(1) {
+	transform:rotateY(0deg) translateZ(241px);
+}
+
+.carousel .images .image:nth-child(2) {
+	transform:rotateY(45deg) translateZ(241px);
+}
+
+.carousel .images .image:nth-child(3) {
+	transform:rotateY(90deg) translateZ(241px);
+}
+
+.carousel .images .image:nth-child(4) {
+	transform:rotateY(135deg) translateZ(241px);
+}
+
+.carousel .images .image:nth-child(5) {
+	transform:rotateY(180deg) translateZ(241px);
+}
+
+.carousel .images .image:nth-child(6) {
+	transform:rotateY(225deg) translateZ(241px);
+}
+
+.carousel .images .image:nth-child(7) {
+	transform:rotateY(270deg) translateZ(241px);
+}
+
+.carousel .images .image:nth-child(8) {
+	transform:rotateY(315deg) translateZ(241px);
+}

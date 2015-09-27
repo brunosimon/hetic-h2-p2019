@@ -15,11 +15,3 @@ Reveal.initialize({
 		{ src : '../src/reveal.js/plugin/notes/notes.js',         async: true, condition: function() { return !!document.body.classList; } }
 	]
 });
-
-Reveal.addEventListener('slidechanged',function(e)
-{
-	var el_pagination = document.getElementById('pagination');
-
-	if(el_pagination)
-    	el_pagination.innerHTML = e.indexh + 1;
-});
