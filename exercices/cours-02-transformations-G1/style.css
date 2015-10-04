@@ -1,0 +1,47 @@
+body {
+    background:#eee;
+    font-family:Helvetica,Arial;
+    font-size:14px;
+}
+
+.block {
+	width:200px;
+	height:200px;
+	background:#ff7e00;
+	margin:80px auto;
+}
+
+.block-1 {
+	transform:scaleX(2);
+}
+
+.block-2 {
+	transform:translateX(100%);
+}
+
+.block-3 {
+	transform:rotate(45deg);
+}
+
+.block-4 {
+	background:url(https://unsplash.it/200/200/?random);
+	transform:skewY(45deg);
+}
+
+.block-5 {
+	transform-origin:0% 0%;
+	transform:rotate(90deg);
+}
+
+.block-6 {
+	-webkit-transform:translateX(100px) rotate(45deg) scale(0.5);
+	-moz-transform:   translateX(100px) rotate(45deg) scale(0.5);
+	-ms-transform:    translateX(100px) rotate(45deg) scale(0.5);
+	-o-transform:     translateX(100px) rotate(45deg) scale(0.5);
+	transform:        translateX(100px) rotate(45deg) scale(0.5);
+}
+
+.block-7 {
+	transform:perspective(600px) rotateX(45deg);
+}
+

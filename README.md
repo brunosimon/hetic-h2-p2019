@@ -18,6 +18,7 @@ GitHub de développement web pour la promotion P2019 H2
  - HTML5 Local Storage API
  - HTML5 Offline API
  - HTML5 Websocket API
+ - SVG
  - Fonts
  - Responsive
  - Du PSD à l’intégration

@@ -26,7 +26,7 @@
 				height:100px;
 				cursor:pointer;
 			}
-			.transition-container span{
+			.transition-container span {
 				display:block;
 				position:relative;
 				top:0;
@@ -35,33 +35,33 @@
 				height:100px;
 				background:#FF8F00;
 			}
-			.example-1 .transition-container:hover span{
+			.example-1 .transition-container:hover span {
 				left:100%;
 			}
-			.example-2 .transition-container:hover span{
+			.example-2 .transition-container:hover span {
 				left:100%;
 				width:200px;
 				background:red;
 			}
-			.example-3 .transition-container:hover span{
+			.example-3 .transition-container:hover span {
 				left:100%;
 			}
-			.example-4 .transition-container:hover span{
+			.example-4 .transition-container:hover span {
 				left:100%;
 			}
-			.example-1 .transition-container span{
+			.example-1 .transition-container span {
 			    transition:left 1s ease 0s;
 			}
-			.example-2 .transition-container span{
+			.example-2 .transition-container span {
 			    transition:all 2s ease-out 1s;
 			}
-			.example-3 .transition-container span{
+			.example-3 .transition-container span {
 			    transition:left 1s cubic-bezier(0.2,1.2,0.8,-0.2);
 			}
-			.example-4 .transition-container span{
+			.example-4 .transition-container span {
 			    transition:left 1s cubic-bezier(1,0,0,1);
 			}
-			.example-5 .transition-container span{
+			.example-5 .transition-container span {
 			    -webkit-animation:monanimation-1 3s;
 			}
 			@-webkit-keyframes monanimation-1 {
@@ -70,7 +70,7 @@
 				70%  {left:250px;}
 				100% {left:500px;}
 			}
-			.example-6 .transition-container span{
+			.example-6 .transition-container span {
 			    -webkit-animation:monanimation-2 3s;
 			}
 			@-webkit-keyframes monanimation-2 {
@@ -79,21 +79,34 @@
 				70%  {left:700px;width:300px;background:red;}
 				100% {left:0px;width:50px;}
 			}
-			.example-7 .transition-container span{
+			.example-7 .transition-container span {
 			    -webkit-animation:monanimation-1 3s ease 0s 2;
 			}
-			.example-8 .transition-container span{
+			.example-8 .transition-container span {
 			    -webkit-animation:monanimation-1 3s ease 0s 1 reverse;
 			}
-			.example-9 .transition-container span{
+			.example-9 .transition-container span {
 			    -webkit-animation:monanimation-1 3s ease 0s infinite alternate;
 			}
-			.example-10 .transition-container span{
+			.example-10 .transition-container span {
 			    -webkit-animation:monanimation-1 3s ease 0s infinite;
 				-webkit-animation-play-state : paused;
 			}
-			.example-10 .transition-container:hover span{
+			.example-10 .transition-container:hover span {
 				-webkit-animation-play-state : running;
+			}
+			.example-11 .transition-container span {
+			    transition:transform 1s;
+			    transform:translateX(0px);
+			}
+			.example-11 .transition-container:hover span {
+			    transform:translateX(800px);
+			}
+			.example-12 .transition-container span {
+			    transition:left 1s;
+			}
+			.example-12 .transition-container:hover span {
+			    left:800px;
 			}
 			
 		</style>
@@ -126,7 +139,7 @@
 				<section>
 					<h2>Différence entre transition et animation</h2>
 					<p class="fragment">La transition se fait entre un état A et un état B</p>
-					<p class="fragment">L'animation se fait le long d'une timeline et peut donc passer par plus de deux étapes</p>
+					<p class="fragment">L'animation se fait le long d'une timeline et peut donc passer par plusieurs étapes</p>
 				</section>
 
 				<section>
@@ -134,47 +147,44 @@
 				</section>
 
 				<section>
-					<small>Transitions</small>
 					<h2>Propriétés CSS</h2>
-					<p>Il existe 4 propriétés pour faire une transition.<br />Les deux suivantes sont obligatoires</p>
+					<p>Il existe 4 propriétés pour faire une transition.</p>
+				</section>
+
+				<section>
 					<ul>
 						<li>
-							<a href="#">transition-property</a>*
-							<span class="fragment"><br />Propriétés CSS qui vont subir les transitions</span>
+							<span class="u">transition-property</span>
+							<span class="fragment"><br />Propriétés CSS qui vont subir les transitions.<br>Défaut : all</span>
 						</li>
 						<li>
-							<a href="#">transition-duration</a>*
-							<span class="fragment"><br />Durée de la transition (s/ms)</span>
+							<span class="u">transition-duration</span>
+							<span class="fragment"><br />Durée de la transition (s/ms)<br>Défaut : 0s</span>
 						</li>
 					</ul>
 				</section>
 
 				<section>
-					<small>Transitions</small>
-					<h2>Propriétés CSS</h2>
 					<ul>
 						<li>
-							<a href="#">transition-timing-function</a>
+							<span class="u">transition-timing-function</span>
 							<span class="fragment"><br />Type de transition (ease,linear,ease-in,ease-out,ease-in-out) aussi appelé easing</span>
 						</li>
 						<li>
-							<a href="#">transition-delay</a>
+							<span class="u">transition-delay</span>
 							<span class="fragment"><br />Retard avant le départ (s/ms)</span>
 						</li>
 					</ul>
 				</section>
 
 				<section>
-					<small>Transitions</small>
-					<h2>Propriétés CSS</h2>
 					<p>Il est possible d'écrire ces 4 propriétés en une seule</p>
 				</section>
 
 				<section class="example-1">
-					<small>Transitions</small>
-					<h2>Exemple CSS3</h2>
+					<h2>Exemple</h2>
 					<pre><code data-trim contenteditable class="css">
-.transition{
+.transition {
     transition-property        : left;
     transition-duration        : 1s;
     transition-timing-function : ease;
@@ -182,7 +192,7 @@
 }
 					</code></pre>
 					<pre><code data-trim contenteditable class="css">
-.transition{
+.transition {
     transition:left 1s ease 0s;
 }
 					</code></pre>
@@ -190,10 +200,8 @@
 				</section>
 
 				<section class="example-2">
-					<small>Transitions</small>
-					<h2>Exemple CSS3</h2>
 					<pre><code data-trim contenteditable class="css">
-.transition{
+.transition {
 	transition-property        : all;
 	transition-duration        : 2s;
 	transition-timing-function : ease-out;
@@ -201,15 +209,14 @@
 }
 					</code></pre>
 					<pre><code data-trim contenteditable class="css">
-.transition{
+.transition {
     transition:all 2s ease-out 1s;
 }
 					</code></pre>
 					<p class="transition-container"><span></span></p>
 				</section>
 
-				<section>
-					<small>Transitions</small>
+				<section id="what-we-can-animate">
 					<h2>Ce qu'on peut modifier</h2>
 					<p class="fragment">À peu près tout ce qui est quantifiable</p>
 					<ul>
@@ -223,7 +230,6 @@
 				</section>
 
 				<section>
-					<small>Transitions</small>
 					<h2>Courbes de bézier</h2>
 					<p>Créer ses propres easing</p>
 					<p><a target="_blank" href="http://fr.wikipedia.org/wiki/Courbe_de_B%C3%A9zier">http://goo.gl/F1wlfi</a> : Wikipedia</p>
@@ -231,36 +237,53 @@
 				</section>
 
 				<section>
-					<small>Transitions</small>
 					<h2>Courbes de bézier</h2>
 					<iframe src="https://player.vimeo.com/video/106757336?title=0&amp;byline=0&amp;portrait=0&amp;color=7d90ff" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 				</section>
 
 				<section>
-					<small>Transitions</small>
 					<h2>Courbes de bézier</h2>
 					<p>Le choix de la courbe de bézier devrait se décider à l'étape de création mais se fait en général à l'étape de développement</p>
 				</section>
 
 				<section>
-					<small>Transitions</small>
 					<h2>Exemple CSS3</h2>
 					<div class="example-3">
 						<pre><code data-trim contenteditable class="css">
-.transition{transition:left 1s cubic-bezier(0.2,1.2,0.8,-0.2);}
+.transition {
+    transition-timing-function:cubic-bezier(0.2,1.2,0.8,-0.2);
+}
 						</code></pre>
 						<p class="transition-container"><span></span></p>
 					</div>
 					<div class="example-4">
 						<pre><code data-trim contenteditable class="css">
-.transition{transition:left 1s cubic-bezier(1,0,0,1);}
+.transition {
+    transition-timing-function:cubic-bezier(1,0,0,1);
+}
 						</code></pre>
 						<p class="transition-container"><span></span></p>
 					</div>
 				</section>
 
                 <section>
-                	<small>Transitions</small>
+                    <h2>Transition / transformations</h2>
+                    <p>Les transitions fonctionnent particulièrement bien avec les transformations</p>
+                    <p>Lorsque vous le pouvez, préférez les transitions aux autres propriétés comme left, width, etc.</p>
+                </section>
+
+				<section>
+					<p>Transform (translateX)</p>
+					<div class="example-11">
+						<p class="transition-container"><span></span></p>
+					</div>
+					<p>Left</p>
+					<div class="example-12">
+						<p class="transition-container"><span></span></p>
+					</div>
+				</section>
+
+                <section>
                     <h2>Compatibilité</h2>
                 </section>
 
@@ -269,10 +292,9 @@
                 </section>
 
 				<section>
-					<small>Transitions</small>
 					<p>Can I Use : <a target="_blank" href="http://caniuse.com/#feat=css-transitions">http://caniuse.com/#feat=css-transitions</a></p>
 					<pre><code data-trim contenteditable class="css">
-.transition{
+.transition {
      -webkit-transition:left 1s; /* Chrome / Safari */
         -moz-transition:left 1s; /* Firefox */
           -o-transition:left 1s; /* Opera */
@@ -288,64 +310,60 @@
 				</section>
 
 				<section>
-					<small>Animations</small>
 					<h2>Propriétés CSS</h2>
 					<p>Il existe 7 propriétés dont les 2 suivantes sont obligatoires</p>
+				</section>
+
+				<section>
 					<ul>
 						<li>
-							<a href="#">animation-name</a>*
+							<span class="u">animation-name</span>*
 							<span class="fragment"><br />Nom de l'animation, explication plus tard</span>
 						</li>
 						<li>
-							<a href="#">animation-duration</a>*
+							<span class="u">animation-duration</span>*
 							<span class="fragment"><br />Durée de l'animation<br />Similaire aux transitions</span>
 						</li>
 					</ul>
 				</section>
 
 				<section>
-					<small>Animations</small>
-					<h2>Propriétés CSS</h2>
-					<p>Les suivantes ne sont pas obligatoires</p>
 					<ul>
 						<li>
-							<a href="#">animation-timing-function</a>
+							<span class="u">animation-timing-function</span>
 							<span class="fragment"><br />Type de transition (ease, linear, ease-in, ease-out, ease-in-out, personnalisée)<br />Similaire aux transitions</span>
 						</li>
 						<li>
-							<a href="#">animation-delay</a>
+							<span class="u">animation-delay</span>
 							<span class="fragment"><br />Retard avant le départ (s/ms)<br />Similaire aux transitions</span>
 						</li>
 					</ul>
 				</section>
 
 				<section>
-					<small>Animations</small>
-					<h2>Propriétés CSS</h2>
 					<ul>
-						<li><a href="#">animation-iteration-count</a>
+						<li>
+							<span class="u">animation-iteration-count</span>
 							<span class="fragment"><br />Combien de fois jouer l'animation (1 par défaut)</span>
 						</li>
-						<li><a href="#">animation-direction</a>
+						<li>
+							<span class="u">animation-direction</span>
 							<span class="fragment"><br />Direction de l'animation (normal, reverse, alternate, alternate-reverse)</span>
 						</li>
-						<li><a href="#">animation-play-state</a>
+						<li>
+							<span class="u">animation-play-state</span>
 							<span class="fragment"><br />État par défaut de l'animation (running, paused)</span>
 						</li>
 					</ul>
 				</section>
 
 				<section>
-					<small>Animations</small>
-					<h2>Propriétés CSS</h2>
 					<p>Une fois les propriétés en place, il faut définir la timeline avec la syntaxe CSS <span class="highlight">@keyframes</span> suivie du nom de l'animation</p>
 					<p>Chaque keyframe est définie par le pourcentage de l'animation (ex: 50% = moitié de la durée) et les propriétés à appliquer</p>
 				</section>
 
 				<section>
-					<small>Animations</small>
-					<h2>Propriétés CSS</h2>
-					<p>Le nom de l'animation doit respecter les règle de nomenclature des classes CSS</p>
+					<p>Le nom de l'animation doit respecter les règles de nomenclature des classes CSS</p>
 					<ul>
 						<li>Lowercase</li>
 						<li>Tirets</li>
@@ -355,16 +373,18 @@
 				</section>
 
 				<section class="example-5">
-					<small>Animations</small>
-					<h2>Exemple CSS3</h2>
+					<h2>Exemples</h2>
+				</section>
+
+				<section class="example-5">
 					<pre><code data-trim contenteditable class="css">
-.animation{
+.animation {
     animation-name     : monanimation;
     animation-duration : 3s;
 }
 					</code></pre>
 					<pre><code data-trim contenteditable class="css">
-.animation{
+.animation {
     animation : monanimation 3s;
 }
 					</code></pre>
@@ -376,20 +396,19 @@
     100% {left:500px;}
 }
 					</code></pre>
+					<small>Actualiser pour voir l'animation</small>
 					<p class="transition-container"><span></span></p>
 				</section>
 
 				<section class="example-6">
-					<small>Animations</small>
-					<h2>Exemple CSS3</h2>
 					<pre><code data-trim contenteditable class="css">
-.animation{
+.animation {
 	animation-name     : monanimation;
 	animation-duration : 3s;
 }
 					</code></pre>
 					<pre><code data-trim contenteditable class="css">
-.animation{
+.animation {
     animation : monanimation 3s;
 }
 					</code></pre>
@@ -401,21 +420,20 @@
     100% {left:0px;width:50px;}
 }
 					</code></pre>
+					<small>Actualiser pour voir l'animation</small>
 					<p class="transition-container"><span></span></p>
 				</section>
 
 				<section class="example-7">
-					<small>Animations</small>
-					<h2>Exemple CSS3</h2>
 					<pre><code data-trim contenteditable class="css">
-.animation{
+.animation {
     animation-name            : monanimation;
     animation-duration        : 3s;
     animation-iteration-count : 2;
 }
 					</code></pre>
 					<pre><code data-trim contenteditable class="css">
-.animation{
+.animation {
     animation : monanimation 3s ease 0s 2;
 }
 					</code></pre>
@@ -427,14 +445,13 @@
     100% {left:500px;}
 }
 					</code></pre>
+					<small>Actualiser pour voir l'animation</small>
 					<p class="transition-container"><span></span></p>
 				</section>
 
 				<section class="example-8">
-					<small>Animations</small>
-					<h2>Exemple CSS3</h2>
 					<pre><code data-trim contenteditable class="css">
-.animation{
+.animation {
 	animation-name      : monanimation;
 	animation-duration  : 3s;
 	animation-direction : reverse; 
@@ -442,7 +459,7 @@
 }
 					</code></pre>
 					<pre><code data-trim contenteditable class="css">
-.animation{
+.animation {
     animation : monanimation 3s ease 0s 1 reverse;
 }
 					</code></pre>
@@ -454,14 +471,13 @@
     100% {left:500px;}
 }
 					</code></pre>
+					<small>Actualiser pour voir l'animation</small>
 					<p class="transition-container"><span></span></p>
 				</section>
 
 				<section class="example-9">
-					<small>Animations</small>
-					<h2>Exemple CSS3</h2>
 					<pre><code data-trim contenteditable class="css">
-.animation{
+.animation {
 	animation-name            : monanimation;
 	animation-duration        : 3s;
 	animation-iteration-count : infinite;
@@ -469,7 +485,7 @@
 }
 					</code></pre>
 					<pre><code data-trim contenteditable class="css">
-.animation{
+.animation {
     animation:monanimation 3s ease 0s infinite alternate;
 }
 					</code></pre>
@@ -485,19 +501,17 @@
 				</section>
 
 				<section class="example-10">
-					<small>Animations</small>
-					<h2>Exemple CSS3</h2>
 					<pre><code data-trim contenteditable class="css">
-.animation{
+.animation {
     animation : monanimation 3s ease 0s infinite;
     animation-play-state : paused;
 }
-.container:hover .animation{
+.container:hover .animation {
     animation-play-state : running;
 }
 					</code></pre>
 					<pre><code data-trim contenteditable class="css">
-@keyframes monanimation{
+@keyframes monanimation {
     0%   {left:0px;}
     50%  {left:800px;}
     70%  {left:250px;}
@@ -508,13 +522,11 @@
 				</section>
 
 				<section>
-					<small>Animations</small>
 					<h2>Ce qu'on peut modifier</h2>
-					<p>Cf. <a href="#/9">slide sur les transitions</a></p>
+					<p>Cf. <a href="#what-we-can-animate">slide sur les transitions</a></p>
 				</section>
 
 				<section>
-					<small>Animations</small>
 					<h2>Compatibilité</h2>
 				</section>
 
@@ -522,7 +534,7 @@
 					<p>Can I Use : <a target="_blank" href="http://caniuse.com/#feat=css-animation">http://caniuse.com/#feat=css-animation</a></p>
 					<pre><code data-trim contenteditable class="css">
 
-.animation{
+.animation {
     -webkit-animation:monanimation 3s;
        -moz-animation:monanimation 3s;
          -o-animation:monanimation 3s;
@@ -552,16 +564,41 @@
 				</section>
 
 				<section>
-					<small>Animations</small>
+					<p>Dans un site, vos transition/animations doivent suivre quelques règles :</p>
+					<ul>
+						<li>Subtiles (rapides, pas trop prononcées)</li>
+						<li>Agréables</li>
+						<li>Homogènes</li>
+						<li>Performantes</li>
+						<li>Ne pas gêner l'UX</li>
+					</ul>
+				</section>
+
+				<section>
+					<a href="https://www.google.com/design/spec/animation/authentic-motion.html" target="_blank">Google Material Design</a>
+				</section>
+
+				<section>
 					<h2>Démonstrations</h2>
 					<ul>
-						<li><a href="http://bennettfeely.com/csscreatures/">http://bennettfeely.com/csscreatures/</a></li>
-						<li><a href="http://tympanus.net/Tutorials/3DHoverEffects/">http://tympanus.net/Tutorials/3DHoverEffects/</a></li>
-						<li><a href="http://codepen.io/oknoblich/pen/AxdBy">http://codepen.io/oknoblich/pen/AxdBy</a></li>
-						<li><a href="http://codepen.io/jjperezaguinaga/pen/yuBdq">http://codepen.io/jjperezaguinaga/pen/yuBdq</a></li>
-						<li><a href="http://codepen.io/julien_rno/pen/xLbFp">http://codepen.io/julien_rno/pen/xLbFp</a></li>
-						<li><a href="http://codepen.io/felipedefarias/pen/yiBjr">http://codepen.io/felipedefarias/pen/yiBjr</a></li>
-						<li><a href="http://codepen.io/highborg-justin/pen/GczJn">http://codepen.io/highborg-justin/pen/GczJn</a></li>
+						<li><a href="http://bennettfeely.com/csscreatures/" target="_blank">http://bennettfeely.com/csscreatures/</a></li>
+						<li><a href="http://bruno-simon.com/lab/css3-boxes/" target="_blank">http://bruno-simon.com/lab/css3-boxes/</a></li>
+						<li><a href="http://codepen.io/julien_rno/pen/xLbFp" target="_blank">http://codepen.io/julien_rno/pen/xLbFp</a></li>
+						<li><a href="http://codepen.io/felipedefarias/pen/yiBjr" target="_blank">http://codepen.io/felipedefarias/pen/yiBjr</a></li>
+						<li><a href="http://codepen.io/kowlor/full/ZYYQoy/" target="_blank">http://codepen.io/kowlor/full/ZYYQoy/</a></li>
+						<li><a href="http://codepen.io/Michiel/full/EBtga/" target="_blank">http://codepen.io/Michiel/full/EBtga/</a></li>
+						<li><a href="http://codepen.io/balapa/full/gbQbXR" target="_blank">http://codepen.io/balapa/full/gbQbXR</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>L'année dernières</h2>
+					<ul>
+						<li><a href="demos/cabrol-margaux/index.html" target="_blank">Cabrol Margaux</a></li>
+						<li><a href="demos/aguado-nicolas/index.html" target="_blank">Aguado Nicolas</a></li>
+						<li><a href="demos/lapi-romain/index.html" target="_blank">Lapi Romain</a></li>
+						<li><a href="demos/polin-ronan/index.html" target="_blank">Polin Ronan</a></li>
+						<li><a href="demos/wetteren-remi/index.html" target="_blank">Wetteren Remi</a></li>
 					</ul>
 				</section>
 			</div>
