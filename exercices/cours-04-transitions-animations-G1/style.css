@@ -1,0 +1,32 @@
+body {
+	background:#eee;
+	font-family:Helvetica,Arial;
+	font-size:14px;
+}
+
+.container {
+	background:#DDD;
+	width:800px;
+	height:200px;
+}
+
+.block {
+	position:relative;
+	width:200px;
+	height:200px;
+	background:orange;
+}
+
+.transition-1 {
+	transition-property:all;
+	transition-duration:1s;
+	transition-timing-function:cubic-bezier(0.600, 0.230, 0.310, 1.650);
+	transition-delay:0s;
+	left:0px;
+}
+
+.container:hover .transition-1 {
+	left:600px;
+	width:50px;
+	background:#f00;
+}

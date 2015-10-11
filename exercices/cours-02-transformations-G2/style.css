@@ -42,5 +42,14 @@ body {
 }
 
 .block-7 {
-	transform:perspective(600px) rotateY(45deg);
+	transform:perspective(600px) rotateZ(75deg);
+}
+
+.block-8 {
+	transform:perspective(600px) translateZ(200px);
+}
+
+.block-9 {
+	transform:perspective(600px) rotateY(100deg);
+	backface-visibility:visible;
 }

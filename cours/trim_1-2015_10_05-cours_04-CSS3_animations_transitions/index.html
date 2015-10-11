@@ -20,8 +20,6 @@
             <script src="../src/reveal.js/lib/js/html5shiv.js"></script>
         <![endif]-->
 		<style>
-            span.highlight {display:inline-block;padding:0 6px;border:1px solid #FF8F00;}
-			li{margin-bottom:0.5em !important;}
 			.transition-container{
 				height:100px;
 				cursor:pointer;
@@ -63,6 +61,9 @@
 			}
 			.example-5 .transition-container span {
 			    -webkit-animation:monanimation-1 3s;
+			    -moz-animation:monanimation-1 3s;
+			    -o-animation:monanimation-1 3s;
+			    animation:monanimation-1 3s;
 			}
 			@-webkit-keyframes monanimation-1 {
 				0%   {left:0px;}
@@ -70,8 +71,29 @@
 				70%  {left:250px;}
 				100% {left:500px;}
 			}
+			@-moz-keyframes monanimation-1 {
+				0%   {left:0px;}
+				50%  {left:800px;}
+				70%  {left:250px;}
+				100% {left:500px;}
+			}
+			@-o-keyframes monanimation-1 {
+				0%   {left:0px;}
+				50%  {left:800px;}
+				70%  {left:250px;}
+				100% {left:500px;}
+			}
+			@keyframes monanimation-1 {
+				0%   {left:0px;}
+				50%  {left:800px;}
+				70%  {left:250px;}
+				100% {left:500px;}
+			}
 			.example-6 .transition-container span {
 			    -webkit-animation:monanimation-2 3s;
+			    -moz-animation:monanimation-2 3s;
+			    -o-animation:monanimation-2 3s;
+			    animation:monanimation-2 3s;
 			}
 			@-webkit-keyframes monanimation-2 {
 				0%   {left:0px;width:100px;}
@@ -79,21 +101,57 @@
 				70%  {left:700px;width:300px;background:red;}
 				100% {left:0px;width:50px;}
 			}
+			@-moz-keyframes monanimation-2 {
+				0%   {left:0px;width:100px;}
+				50%  {left:800px;width:50px;background:green;}
+				70%  {left:700px;width:300px;background:red;}
+				100% {left:0px;width:50px;}
+			}
+			@-o-keyframes monanimation-2 {
+				0%   {left:0px;width:100px;}
+				50%  {left:800px;width:50px;background:green;}
+				70%  {left:700px;width:300px;background:red;}
+				100% {left:0px;width:50px;}
+			}
+			@keyframes monanimation-2 {
+				0%   {left:0px;width:100px;}
+				50%  {left:800px;width:50px;background:green;}
+				70%  {left:700px;width:300px;background:red;}
+				100% {left:0px;width:50px;}
+			}
 			.example-7 .transition-container span {
 			    -webkit-animation:monanimation-1 3s ease 0s 2;
+			    -moz-animation:monanimation-1 3s ease 0s 2;
+			    -o-animation:monanimation-1 3s ease 0s 2;
+			    animation:monanimation-1 3s ease 0s 2;
 			}
 			.example-8 .transition-container span {
-			    -webkit-animation:monanimation-1 3s ease 0s 1 reverse;
+			    -webkit-animation:monanimation-1 3s ease 0s 2 reverse;
+			    -moz-animation:monanimation-1 3s ease 0s 2 reverse;
+			    -o-animation:monanimation-1 3s ease 0s 2 reverse;
+			    animation:monanimation-1 3s ease 0s 2 reverse;
 			}
 			.example-9 .transition-container span {
 			    -webkit-animation:monanimation-1 3s ease 0s infinite alternate;
+			    -moz-animation:monanimation-1 3s ease 0s infinite alternate;
+			    -o-animation:monanimation-1 3s ease 0s infinite alternate;
+			    animation:monanimation-1 3s ease 0s infinite alternate;
 			}
 			.example-10 .transition-container span {
 			    -webkit-animation:monanimation-1 3s ease 0s infinite;
+			    -moz-animation:monanimation-1 3s ease 0s infinite;
+			    -o-animation:monanimation-1 3s ease 0s infinite;
+			    animation:monanimation-1 3s ease 0s infinite;
 				-webkit-animation-play-state : paused;
+				-moz-animation-play-state : paused;
+				-o-animation-play-state : paused;
+				animation-play-state : paused;
 			}
 			.example-10 .transition-container:hover span {
 				-webkit-animation-play-state : running;
+				-moz-animation-play-state : running;
+				-o-animation-play-state : running;
+				animation-play-state : running;
 			}
 			.example-11 .transition-container span {
 			    transition:transform 1s;
@@ -168,11 +226,11 @@
 					<ul>
 						<li>
 							<span class="u">transition-timing-function</span>
-							<span class="fragment"><br />Type de transition (ease,linear,ease-in,ease-out,ease-in-out) aussi appelé easing</span>
+							<span class="fragment"><br />Vitesse de la transition (ease, linear, ease-in, ease-out, ease-in-out) aussi appelé easing<br>Défaut : ease</span>
 						</li>
 						<li>
 							<span class="u">transition-delay</span>
-							<span class="fragment"><br />Retard avant le départ (s/ms)</span>
+							<span class="fragment"><br />Délais avant le départ (s/ms)<br>Défaut : 0s</span>
 						</li>
 					</ul>
 				</section>
@@ -318,11 +376,11 @@
 					<ul>
 						<li>
 							<span class="u">animation-name</span>*
-							<span class="fragment"><br />Nom de l'animation, explication plus tard</span>
+							<span class="fragment"><br />Nom des keyframes<br>(explication plus tard)</span>
 						</li>
 						<li>
 							<span class="u">animation-duration</span>*
-							<span class="fragment"><br />Durée de l'animation<br />Similaire aux transitions</span>
+							<span class="fragment"><br />Durée de l'animation<br />(similaire aux transitions)</span>
 						</li>
 					</ul>
 				</section>
@@ -331,11 +389,11 @@
 					<ul>
 						<li>
 							<span class="u">animation-timing-function</span>
-							<span class="fragment"><br />Type de transition (ease, linear, ease-in, ease-out, ease-in-out, personnalisée)<br />Similaire aux transitions</span>
+							<span class="fragment"><br />Type de transition (ease, linear, ease-in, ease-out, ease-in-out, personnalisée)<br />(similaire aux transitions)</span>
 						</li>
 						<li>
 							<span class="u">animation-delay</span>
-							<span class="fragment"><br />Retard avant le départ (s/ms)<br />Similaire aux transitions</span>
+							<span class="fragment"><br />Retard avant le départ (s/ms)<br />(similaire aux transitions)</span>
 						</li>
 					</ul>
 				</section>
@@ -385,7 +443,7 @@
 					</code></pre>
 					<pre><code data-trim contenteditable class="css">
 .animation {
-    animation : monanimation 3s;
+    animation:monanimation 3s;
 }
 					</code></pre>
 					<pre><code data-trim contenteditable class="css">
@@ -409,7 +467,7 @@
 					</code></pre>
 					<pre><code data-trim contenteditable class="css">
 .animation {
-    animation : monanimation 3s;
+    animation:monanimation 3s;
 }
 					</code></pre>
 					<pre><code data-trim contenteditable class="css">
@@ -434,7 +492,7 @@
 					</code></pre>
 					<pre><code data-trim contenteditable class="css">
 .animation {
-    animation : monanimation 3s ease 0s 2;
+    animation:monanimation 3s ease 0s 2;
 }
 					</code></pre>
 					<pre><code data-trim contenteditable class="css">
@@ -460,7 +518,7 @@
 					</code></pre>
 					<pre><code data-trim contenteditable class="css">
 .animation {
-    animation : monanimation 3s ease 0s 1 reverse;
+    animation:monanimation 3s ease 0s 2 reverse;
 }
 					</code></pre>
 					<pre><code data-trim contenteditable class="css">
@@ -503,11 +561,11 @@
 				<section class="example-10">
 					<pre><code data-trim contenteditable class="css">
 .animation {
-    animation : monanimation 3s ease 0s infinite;
-    animation-play-state : paused;
+    animation:monanimation 3s ease 0s infinite;
+    animation-play-state:paused;
 }
 .container:hover .animation {
-    animation-play-state : running;
+    animation-play-state:running;
 }
 					</code></pre>
 					<pre><code data-trim contenteditable class="css">
@@ -566,7 +624,7 @@
 				<section>
 					<p>Dans un site, vos transition/animations doivent suivre quelques règles :</p>
 					<ul>
-						<li>Subtiles (rapides, pas trop prononcées)</li>
+						<li>Subtiles (rapides, peu prononcées)</li>
 						<li>Agréables</li>
 						<li>Homogènes</li>
 						<li>Performantes</li>
