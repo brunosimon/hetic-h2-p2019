@@ -9,7 +9,7 @@ GitHub de développement web pour la promotion P2019 H2
 
 - [x] CSS3 Transformations
 - [x] HTML5 syntaxe
-- [ ] CSS3 Animations/transitions
+- [x] CSS3 Animations/transitions
 - [ ] JS Rappels
 - [ ] Chrome Debug
 - [ ] JS jQuery
@@ -46,6 +46,7 @@ GitHub de développement web pour la promotion P2019 H2
 - [ ] PHP routing
 - [ ] PHP APIs
 - [ ] PHP orienté objet
+- [ ] VHOST
 
 ### Trimestre 3
 
