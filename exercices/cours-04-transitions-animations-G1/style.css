@@ -27,6 +27,115 @@ body {
 
 .container:hover .transition-1 {
 	left:600px;
-	width:50px;
-	background:#f00;
+	/*width:50px;*/
+	/*background:#f00;*/
+}
+
+.transition-2 {
+	-webkit-transition:transform 1s 0s ease;
+	-moz-transition:transform 1s 0s ease;
+	-o-transition:transform 1s 0s ease;
+	transition:transform 1s 0s ease;
+	transform:translateX(0px) scaleX(1) skewX(0deg);
+}
+
+.container:hover .transition-2 {
+	transform:translateX(600px) scaleX(0.5) skewX(25deg);
+}
+
+.animation-1 {
+	-webkit-animation:my-rotation 2s infinite alternate;
+	   -moz-animation:my-rotation 2s infinite alternate;
+	     -o-animation:my-rotation 2s infinite alternate;
+	        animation:my-rotation 2s infinite alternate;
+	-webkit-transform:translateZ(0);
+	   -moz-transform:translateZ(0);
+	     -o-transform:translateZ(0);
+	        transform:translateZ(0);
+}
+
+@-webkit-keyframes my-rotation {
+	0%   {-webkit-transform:scaleX(2) translateZ(0);}
+	50%  {-webkit-transform:scaleX(0.5) translateZ(0);}
+	100% {-webkit-transform:scaleX(0.1) translateZ(0);}
+}
+
+@-moz-keyframes my-rotation {
+	0%   {-moz-transform:scaleX(2) translateZ(0);}
+	50%  {-moz-transform:scaleX(0.5) translateZ(0);}
+	100% {-moz-transform:scaleX(0.1) translateZ(0);}
+}
+
+@-o-keyframes my-rotation {
+	0%   {-o-transform:scaleX(2) translateZ(0);}
+	50%  {-o-transform:scaleX(0.5) translateZ(0);}
+	100% {-o-transform:scaleX(0.1) translateZ(0);}
+}
+
+@keyframes my-rotation {
+	0%   {transform:scaleX(2) translateZ(0);}
+	50%  {transform:scaleX(0.5) translateZ(0);}
+	100% {transform:scaleX(0.1) translateZ(0);}
+}
+
+.container:hover .animation-1 {
+	animation-play-state:paused;
+}
+
+.scafolding {
+	width:640px;
+	margin:0 20px 20px 0;
+	padding:20px 0 20px 20px;
+	background:#DDD;
+}
+
+.scafolding .element {
+	display:inline-block;
+	width:160px;
+	height:160px;
+	background:orange;
+	margin:20px;
+	transform:scale(0);
+	transition:transform 0.3s;
+}
+
+.scafolding:hover .element-1 {transition-delay:0.00s;}
+.scafolding:hover .element-2 {transition-delay:0.05s;}
+.scafolding:hover .element-3 {transition-delay:0.10s;}
+.scafolding:hover .element-4 {transition-delay:0.15s;}
+.scafolding:hover .element-5 {transition-delay:0.20s;}
+.scafolding:hover .element-6 {transition-delay:0.25s;}
+.scafolding:hover .element-7 {transition-delay:0.30s;}
+.scafolding:hover .element-8 {transition-delay:0.35s;}
+.scafolding:hover .element-9 {transition-delay:0.40s;}
+
+.scafolding:hover .element {
+	transform:scale(1);
+}
+
+.underline {
+	display:inline-block;
+	position:relative;
+	color:inherit;
+	text-decoration:none;
+	margin:20px;
+}
+
+.underline::before {
+	content:'';
+	display:block;
+	position:absolute;
+	bottom:-2px;
+	left:0px;
+	width:100%;
+	height:1px;
+	background:#000;
+	transform:translateX(-15px);
+	opacity:0;
+	transition:0.15s;
+}
+
+.underline:hover::before {
+	transform:translateX(0);
+	opacity:1;
 }

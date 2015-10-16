@@ -1,0 +1,11 @@
+body {
+	background:#eee;
+	font-family:Helvetica,Arial;
+	font-size:14px;
+}
+
+.foo {
+	width:100px;
+	height:100px;
+	background:#f00;
+}

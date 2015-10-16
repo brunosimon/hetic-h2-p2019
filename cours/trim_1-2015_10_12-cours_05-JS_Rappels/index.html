@@ -39,17 +39,32 @@
                     <h1>Rappels Javascript</h1>
                 </section>
 
+                <!-- INTRO -->
+                <section>
+                    <p>À quoi sert javascript</p>
+                    <ul>
+                        <li class="fragment">Modifier la page (le DOM)</li>
+                        <li class="fragment">Créer des intéractions impossible en CSS</li>
+                        <li class="fragment">Empêcher l'utilisateur d'accomplir certaines actions</li>
+                        <li class="fragment">Animer des éléments</li>
+                        <li class="fragment">Envoyer des données analytics</li>
+                        <li class="fragment">Charger des contenus extérieurs et les rajouter dans la page</li>
+                        <li class="fragment">Intéragir avec les API HTML telles que audio, video, geolocalisation, canvas, websocket, ...</li>
+                    </ul>
+                </section>
+
                 <section>
                     <span class="u">Java</span> is to <span class="u">Javascript</span> what <span class="u">car</span> is to <span class="u">carpet</span>
                 </section>
 
+                <!-- SCRIPT -->
                 <section>
                     <h2>Importer le script</h2>
                 </section>
 
                 <section>
                     <p>Le javascript se rajoute en HTML avec la balise <span class="highlight">script</span></p>
-                    <p>Il n'est aujourd'hui plus nécessaire de préciser le type mais ça ne fait pas de mal</p>
+                    <p>Il n'est aujourd'hui plus nécessaire de préciser le type, mais ça ne fait pas de mal</p>
                     <pre><code contenteditable class="html">
 &lt;script type="text/javascript">&lt;/script&gt;
                     </code></pre>
@@ -58,6 +73,23 @@
                 <section>
                     <p>Ce code peut être placé dans l'entête, mais il est conseillé de le placer en bas de page juste avant la fermeture du <span class="highlight">body</span></p>
                     <p>De cette manière, nous sommes certain que le DOM est chargé et le chargement du script n'a pas bloqué le chargement du reste</p>
+                </section>
+
+                <section>
+                    <pre><code contenteditable class="html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Mon super site&lt;/h1&gt;
+
+    &lt;script&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
                 </section>
 
                 <section>
@@ -73,15 +105,23 @@
                     </code></pre>
                 </section>
 
+                <!-- VARIABLES -->
                 <section>
                     <h2>Variables</h2>
                 </section>
 
                 <section>
+                    <p>Dans les exemples suivant, nous allons utiliser les termes <span class="u">foo</span> et <span class="u">bar</span></p>
+                    <p>Ces termes ne designent rien.<br>On peut les comparer à <span class="u">truc</span> et <span class="u">bidule</span></p>
+                    <p><a href="https://en.wikipedia.org/wiki/Foobar" target="_blank">Wiki 1</a></p>
+                    <p><a href="https://fr.wikipedia.org/wiki/Variable_m%C3%A9tasyntaxique" target="_blank">Wiki 2</a></p>
+                </section>
+
+                <section>
                     <h2>Déclarer une variable</h2>
-                    <p>Une variable a un nom et permet de stocker une valeur (nombre, text, booléen, etc.)</p>
+                    <p>Une variable se compose d'un nom et d'une valeur (nombre, texte, booléen, etc.)</p>
                     <p>Elle se crée en utilisant le terme <span class="highlight">var</span></p>
-                    <pre><code  data-trim contenteditable class="js">
+                    <pre><code data-trim contenteditable class="js">
 // Pas bien
 foo = 'bar';
 
@@ -98,14 +138,14 @@ var foo = 'bar';
                     <p>Si une variable se compose de plusieurs mots (ex: <span class="u">foo</span> et <span class="u">bar</span>) il existe plusieurs façons de séparer ces mots</p>
                     <p>Les plus connues en JS sont :</p>
                     <ul>
-                        <li><span class="hl">camelCase</span> pour les variables</li>
-                        <li><span class="hl">PascalCase</span> pour les classes</li>
-                        <li><span class="hl">snake_case</span> (ou underscore_case) pour les variables</li>
+                        <li class="fragment"><span class="hl">camelCase</span> pour les variables</li>
+                        <li class="fragment"><span class="hl">PascalCase</span> pour les classes</li>
+                        <li class="fragment"><span class="hl">snake_case</span> (ou underscore_case) pour les variables</li>
                     </ul>
                 </section>
 
                 <section>
-                    <pre><code  data-trim contenteditable class="js">
+                    <pre><code data-trim contenteditable class="js">
 // Bien 
 var foo_bar = 'lorem ipsum'; //Underscore (underscore entre chaque mot, aucune majuscule)
 var fooBar  = 'lorem ipsum'; //CamelCase ou LowerCamelCase (tout à la suite, majuscule à chaque mot sauf premier)
@@ -124,18 +164,34 @@ var foo bar = 'lorem ipsum';
 
                 <section>
                     <ul>
-                        <li>Choisissez bien le nom de votre variable</li>
-                        <li>Il doit en dire suffisamment sans être trop long</li>
-                        <li>Préférez l'anglais</li>
-                        <li>Évitez les mots clés réservés :<br />class, default, if, do, for, function, ...</li>
-                        <li>Soyez constant</li>
+                        <li class="fragment">Choisissez bien le nom de votre variable</li>
+                        <li class="fragment">Il doit en dire suffisamment sans être trop long</li>
+                        <li class="fragment">Préférez l'anglais</li>
+                        <li class="fragment">Évitez les mots clés réservés :<br />class, default, if, do, for, function, ...</li>
+                        <li class="fragment">Soyez constant</li>
                     </ul>
                 </section>
-                
+
+                <section>
+                    <p>Ces variables vont nous permettre de stocker des données pour les utiliser ensuite (ex: score)</p>
+                    <p>Pour afficher le contenu d'une variable nous pouvons utiliser <span class="hl">console.log()</span></p>
+                    <pre><code data-trim contenteditable class="js">
+console.log(foo_bar)
+                    </code></pre>
+                    <p class="fragment">console.log() est utilisé pour aider le développeur. Il convient de les supprimer du code une fois le développement terminé.</p>
+                </section>
+
+                <section>
+                    <p>Pour afficher les résultats de la console de Chrome, il suffit d'aller dans <span class="u">Outils de développement</span></p>
+                    <p><img src="src/img/console-1.png" alt="" width="500"></p>
+                    <p>Puis dans l'onglet <span class="u">console</span></p>
+                    <p><img src="src/img/inspecteur-console.png" alt=""></p>
+                </section>
+
 
                 <!-- <section>
                     <p>Quand plusieurs variables sont associées à un même concept/élément, préférez un objet</p>
-                    <pre><code  data-trim contenteditable class="js">
+                    <pre><code data-trim contenteditable class="js">
 // Éviter
 var image_name = 'foobar';
 var image_width = 600;
@@ -153,10 +209,11 @@ console.log(image.width);
                     </code></pre>
                 </section> -->
 
+                <!-- MULTIPLE VARIABLES -->
                 <section>
                     <h2>Déclarer plusieurs variables</h2>
                     <p>Minimisez le nombre d'utilisations de <span class="highlight">var</span> en utilisant les virgules</p>
-                    <pre><code  data-trim contenteditable class="js">
+                    <pre><code data-trim contenteditable class="js">
 var foo = 'foo';
 var bar = 'bar';
 
@@ -168,16 +225,93 @@ var foo = 'foo',
     bar = 'bar';
                     </code></pre>
                     <p>
-                        Meilleures performances, plus pro, plus aéré, risque d'erreur.
+                        Meilleures performances, plus pro, plus aéré, mais risque d'erreur.
                     </p>
                 </section>
-                
 
+                <!-- VARIABLES TYPES -->
                 <section>
                     <h2>Les types de variables</h2>
+                </section>
+
+                <section>
                     <p>Il existe plusieurs types de variables</p>
+                </section>
+
+                <section>
+                    <p><span class="hl">number</span></p>
+                    <pre><code data-trim contenteditable class="js">
+var foo = 1337,
+    bar = 0.5;
+
+console.log(foo);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p><span class="hl">string</span></p>
+                    <pre><code data-trim contenteditable class="js">
+var foo = 'coucou';
+
+console.log(foo);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p><span class="hl">boolean</span></p>
+                    <pre><code data-trim contenteditable class="js">
+var foo = true,
+    bar = false;
+
+console.log(foo);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p><span class="hl">array</span></p>
+                    <pre><code data-trim contenteditable class="js">
+var foo = ['toto',1337,true];
+
+foo.push('hey');
+
+console.log(foo);
+console.log(foo[1]);
+console.log(foo.length);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p><span class="hl">object</span></p>
+                    <pre><code data-trim contenteditable class="js">
+var foo = {
+    lorem : 'ipsum',
+    toto  : 1337,
+    test  : true
+};
+
+foo.hoy = 'hey';
+
+console.log(foo);
+console.log(foo.toto);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>Il existe d'autres types de variables plus complexe que nous aborderons plus tard</p>
+                    <ul>
+                        <li>function</li>
+                        <li>null</li>
+                        <li>undefined</li>
+                        <li>date</li>
+                        <li>DOMElement</li>
+                        <li>regex</li>
+                        <li>...</li>
+                    </ul>
+                </section>
+
+                <section>
                     <p><span class="highlight">typeof</span> permet de connaître le type d'une variable</p>
-                    <pre><code  data-trim contenteditable class="js">
+                    <pre><code data-trim contenteditable class="js">
 var foo_bar = 'lorem ipsum';
 
 console.log(typeof(foo_bar)); // "string"
@@ -187,10 +321,9 @@ console.log(typeof foo_bar);  // "string"
                 
 
                 <section>
-                    <h2>Les types de variables</h2>
-                    <pre><code  data-trim contenteditable class="js">
-typeof 10;            // "number"
-typeof 10.5;          // "number"
+                    <pre><code data-trim contenteditable class="js">
+typeof 1337;          // "number"
+typeof 0.5;           // "number"
 typeof 'lorem ipsum'; // "string"
 typeof function(){};  // "function"
 typeof true;          // "boolean"
@@ -204,11 +337,9 @@ typeof document.createElement('div'); // 'object'
                     <p class="fragment">typeof ne renvoie pas toujours la valeur attendue</p>
                 </section>
                 
-
                 <section>
-                    <h2>Les types de variables</h2>
-                    <p>Une autre métode est <span class="highlight">instanceof</span></p>
-                    <pre><code  data-trim contenteditable class="js">
+                    <p>Une autre méthode est <span class="highlight">instanceof</span></p>
+                    <pre><code data-trim contenteditable class="js">
 {} instanceof Object;       // true
 [] instanceof Array;        // true
 new Date() instanceof Date; // true
@@ -216,12 +347,10 @@ new Date() instanceof Date; // true
                     </code></pre>
                     <p class="fragment">Pas mal mais pas très pratique</p>
                 </section>
-                
 
-                <section>
-                    <h2>Les types de variables</h2>
+                <!-- <section>
                     <p>La solution : Object.prototype.toString.call()</p>
-                    <pre><code  data-trim contenteditable class="js">
+                    <pre><code data-trim contenteditable class="js">
 function type(o)
 {
     var s = Object.prototype.toString.call(o);
@@ -237,13 +366,12 @@ type(/abcd/);       // "regex"
 type(new Date());   // "date"
 type(function(){}); // "function"
                     </code></pre>
-                </section>
+                </section> -->
                 
 
-                <section>
-                    <h2>Les types de variables</h2>
+                <!-- <section>
                     <p>Une version plus complète qui gère les cas particuliers</p>
-                    <pre><code  data-trim contenteditable class="js">
+                    <pre><code data-trim contenteditable class="js">
 function type(o)
 {
     if (o === null)
@@ -266,57 +394,391 @@ function type(o)
     return type;
 }
                     </code></pre>
+                </section> -->
+
+                <section>
+                    <h2>Opérations</h2>
+                </section>
+
+                <section>
+                    <p>Javascript permet de faire des opérations simples</p>
+                    <pre><code data-trim contenteditable class="js">
+var foo    = 1,
+    bar    = 2,
+    result = foo + bar;
+
+console.log(result);
+                    </code></pre>
+                    <p>qu'il est possible d'écrire plus simplement</p>
+                    <pre><code data-trim contenteditable class="js">
+console.log(1 + 2);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>Mais aussi de faire des opération plus complexe</p>
+                    <pre><code data-trim contenteditable class="js">
+console.log(1 + '1');
+console.log(1 - '1');
+console.log(1 + 'a');
+console.log('hel' + 'lo');
+console.log(1 + true);
+console.log(1 + false);
+console.log(12 % 10);
+console.log(1 * 'a');
+console.log(1 / 0);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>Il est possible d'incrémenter (+1) ou décrémenter (-1) une variable</p>
+                    <pre><code data-trim contenteditable class="js">
+var i = 0;
+i++;
+console.log(i);
+i++;
+console.log(i);
+i--;
+console.log(i);
+
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>Pour les opérations mathématiques plus complexe, javascript fourni une variable de type objet nommée <span class="hl">Math</span> contenant des méthodes (fonctions) et des propriétés (variables)</p>
+                    <pre><code data-trim contenteditable class="js">
+console.log(Math.sin(2)); // Méthode sinus
+console.log(Math.PI);     // Propriété π
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>Méthodes de l'objet Math</p>
+                    <ul>
+                        <li><span class="hl">Math.random()</span> nombre aléatoire entre 0 et 1</li>
+                        <li><span class="hl">Math.min()</span> minimum</li>
+                        <li><span class="hl">Math.max()</span> maximum</li>
+                        <li><span class="hl">Math.round()</span> arrondi</li>
+                        <li><span class="hl">Math.ceil()</span> arrondi au dessus</li>
+                        <li><span class="hl">Math.floor()</span> arrondi en dessous</li>
+                        <li><span class="hl">Math.abs()</span> valeur absolue</li>
+                        <li><span class="hl">Math.log()</span> logarithme</li>
+                        <li><span class="hl">Math.pow()</span> au carré</li>
+                        <li><span class="hl">Math.sqrt()</span> racine carré</li>
+                        <li><span class="hl">Math.sin()</span> sinus</li>
+                        <li><span class="hl">Math.asin()</span> sinus inverse</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <p>Propriétés de l'objet Math</p>
+                    <ul>
+                        <li><span class="hl">Math.PI</span> π</li>
+                        <li><span class="hl">Math.E</span> nombre d'euler</li>
+                        <li>...</li>
+                    </ul>
+                </section>
+
+                <!-- CONDITIONS -->
+                <section>
+                    <h2>Conditions</h2>
+                </section>
+
+                <section>
+                    <p>Les conditions permettent d'accomplir certaines action que si une condition spécifiée est vrai</p>
+                    <p>On utilise <span class="hl">if</span> et <span class="hl">else</span></p>
+                </section>
+
+                <section>
+                    <pre><code data-trim contenteditable class="js">
+var foo = true;
+
+if(foo == true)
+{
+    console.log('vrai !');
+}
+else
+{
+    console.log('faux !');
+}
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>S'il n'y a qu'une seule action dans le <span class="hl">if</span> ou dans le <span class="hl">else</span>, on peut retirer les accolades</p>
+                    <pre><code data-trim contenteditable class="js">
+var foo = true;
+
+if(foo == true)
+    console.log('vrai !');
+else
+    console.log('faux !');
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>Si on test qu'une valeur est vraie, il est inutile de préciser <span class="hl">== true</span></p>
+                    <pre><code data-trim contenteditable class="js">
+var foo = true;
+
+if(foo)
+    console.log('vrai !');
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>Pour tester qu'une valeur est fausse, il suffit de l'inverser en la précédent par un <span class="hl">!</span></p>
+                    <pre><code data-trim contenteditable class="js">
+var foo = true;
+
+if(!foo)
+    console.log('faux !');
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>Il est possible de tester des nombres</p>
+                    <pre><code data-trim contenteditable class="js">
+var age = 20;
+
+if(age > 18)
+    console.log('Vous êtes majeur');
+else
+    console.log('Vous êtes mineur');
+                    </code></pre>
+                    <ul>
+                        <li><span class="hl">&gt;</span> supérieur</li>
+                        <li><span class="hl">&lt;</span> inférieur</li>
+                        <li><span class="hl">&gt;=</span> supérieur ou égal</li>
+                        <li><span class="hl">&lt;=</span> inférieur ou égal</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <p>Il est possible de combiner plusieurs tests avec <span class="hl">&amp;&amp;</span>
+                    <pre><code data-trim contenteditable class="js">
+var foo = 12,
+    bar = false;
+
+if(foo >= 12 &amp;&amp; bar)
+    console.log('Yep');
+else
+    console.log('Nop');
+                    </code></pre>
+                    <p>Ici, foo doit être supérieur ou égal à 12 <span class="u">ET</span> bar doit être vrai</p>
+                </section>
+
+                <section>
+                    <p>Mais aussi avec <span class="hl">||</span> (double pipe)
+                    <pre><code data-trim contenteditable class="js">
+var foo = 12,
+    bar = false;
+
+if(foo >= 12 || bar)
+    console.log('Yep');
+else
+    console.log('Nop');
+                    </code></pre>
+                    <p>Ici, foo doit être supérieur ou égal à 12 <span class="u">OU</span> bar doit être vrai</p>
+                </section>
+
+                <!-- BOUCLES -->
+                <section>
+                    <h2>Boucles</h2>
+                </section>
+
+                <section>
+                    <p>Les boucles permettent par exemple d'accomplir une action un certain nombre de fois ou alors de parcourir un tableau en accomplissant une action pour chacun des éléments</p>
+                    <p>La plus utilisée en JS est le <span class="hl">for</span></p>
+                    <p>(<span class="hl">for in</span>, <span class="hl">while</span> et <span class="hl">do while</span> sont des boucles que nous ne verrons pas dans ce cours</p>
+                </section>
+
+                <section>
+                    <pre><code data-trim contenteditable class="js">
+for(var i = 0; i &lt; 10; i++)
+{
+    console.log(i);
+}
+                    </code></pre>
+                    <ul>
+                        <li><span class="hl">var i = 0</span> correspond à l'initialisation</li>
+                        <li><span class="hl">i &lt; 10</span> correspond à la condition</li>
+                        <li><span class="hl">i++</span> est executé à chaque boucle</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <p>Comme pour le <span class="hl">if</span> les accolades sont inutiles s'il n'y a qu'une seule action</p>
+                    <pre><code data-trim contenteditable class="js">
+for(var i = 0; i &lt; 10; i++)
+    console.log(i);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>En sens inverse</p>
+                    <pre><code data-trim contenteditable class="js">
+for(var i = 9; i &gt;= 0; i--)
+    console.log(i);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>Deux par deux</p>
+                    <pre><code data-trim contenteditable class="js">
+for(var i = 0; i &lt; 10; i += 2)
+    console.log(i);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>Pour boucler dans un tableau</p>
+                    <pre><code data-trim contenteditable class="js">
+var foo = ['toto','tata','titi','tutu'];
+
+for(var i = 0; i &lt; foo.length; i++)
+{
+    var bar = foo[i];
+    console.log(bar);
+}
+                    </code></pre>
+                </section>
+
+                <!-- FUNCTIONS -->
+                <section>
+                    <h2>Fonctions</h2>
+                </section>
+
+                <section>
+                    <p>Une fonction peut être déclarée de plusieurs façons</p>
+                    <pre><code data-trim contenteditable class="js">
+}
+// Named function
+function my_function()
+{
+}
+                    </code></pre>
+                    <pre><code data-trim contenteditable class="js">
+// Anonymous function
+var my_function = function()
+{
+};
+                    </code></pre>
+                    <p class="fragment">Pour nous, les deux reviennent au même</p>
+                </section>
+
+                <section>
+                    <p>Une fonction peut renvoyer un résultat avec <span class="hl">return</span></p>
+                    <p>Tout ce qui se trouve après <span class="hl">return</span>, dans la fonction, sera ignoré</p>
+                </section>
+
+                <section>
+                    <pre><code data-trim contenteditable class="js">
+function addition(a,b)
+{
+    return a + b;
+}
+
+var sum = addition(1,2);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>Une fonction n'est pas obligée de renvoyer un résultat. Elle peut directement modifier les variables.</p>
+                    <pre><code data-trim contenteditable class="js">
+var sum = 0;
+
+function addition(a,b)
+{
+    sum = a + b;
+}
+
+addition(1,2);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>La fonction peut être déclarée après son utilisation</p>
+                    <p>Javascript considérera les fonctions avant le reste</p>
+                </section>
+
+                <section>
+                    <pre><code data-trim contenteditable class="js">
+function addition(a,b)
+{
+    return a + b;
+}
+
+addition(1,2);
+                    </code></pre>
+                    <pre><code data-trim contenteditable class="js">
+addition(1,2);
+
+function addition(a,b)
+{
+    sum = a + b;
+}
+
+                    </code></pre>
+                    <p class="fragment">Les deux fonctions ont le même effet</p>
+                </section>
+
+                <section>
+                    <ul>
+                        <li>Une variable déclarée en dehors du fonction pourra être utilisée dans la fonction</li>
+                        <li>Une variable déclarée dans la fonction ne pourra pas être utilisée en dehors de la fonction</li>
+                    </ul>
+                    <img src="src/img/jackie-chan-meme.jpg" alt="" width="400">
+                    <p>On appelle ça le <span class="hl">scope</span></p>
                 </section>
 
                 <section>
                     <h2>Le scope</h2>
+                </section>
+
+                <section>
                     <p>Le scope correspond à la portée d'une variable</p>
-                    <pre><code  data-trim contenteditable class="js">
-var var_1 = 1;
+                    <pre><code data-trim contenteditable class="js">
+var foo = 1;
 
 function my_function()
 {
-    var var_2 = 2;
+    var bar = 2;
 
     console.log('in');
-    console.log(var_1);
-    console.log(var_2);
+    console.log(foo);
+    console.log(bar);
 }
 
 my_function();
 
 console.log('out');
-console.log(var_1);
-console.log(var_2);
+console.log(foo);
+console.log(bar);
 
                     </code></pre>
                 </section>
 
                 <section>
-                    <h2>Le scope</h2>
                     <p>Le résultat</p>
-                    <img src="src/img/screen-1.png" alt="">
+                    <img src="src/img/screen-1.png" alt="" width="400">
                     <p>Le scope est donc déterminé par l'endroit où la variable a été déclarée avec <span class="highlight">var</span></p>
                     <p>Le scope ne dépasse pas la fonction où la variable a été déclarée</p>
                 </section>
 
                 <section>
-                    <h2>Le scope</h2>
-                    <p>Les variables <span class="highlight">globales</span></p>
-                    <pre><code  data-trim contenteditable class="js">
+                    <pre><code data-trim contenteditable class="js">
 var foobar = 'coucou';
 console.log(foobar);
 console.log(window.foobar);
 
                     </code></pre>
-                    <p>Si une variable est déclarée en dehors de toute fonction, elle est qualifiée de globale.</p>
-                    <p>Elle sera ajoutée à l'objet <span class="highlight">window</span></p>
+                    <p>Si une variable est déclarée en dehors de toute fonction, elle est qualifiée de <hl>globale</hl></p>
                 </section>
 
                 <section>
-                    <h2>Le scope</h2>
-                    <p>Si une variable a le même nom qu'un des paramètres d'une fonction, le paramètre aura la priorité au sein de la fonction mais la première variable ne sera pas modifiée.</p>
-                    <pre><code  data-trim contenteditable class="js">
+                    <p>Si une variable a le même nom qu'un des paramètres d'une fonction, le paramètre aura la priorité au sein de la fonction, mais la première variable ne sera pas modifiée</p>
+                    <pre><code data-trim contenteditable class="js">
 var foobar = 1;
 
 function my_function(foobar)
@@ -325,104 +787,270 @@ function my_function(foobar)
 }
 
 my_function(2);
+
 console.log(foobar);
                     </code></pre>
                     <p class="fragment">Le résultat sera <span class="highlight">2</span> suivi de <span class="highlight">1</span></p>
-                    <p class="fragment">Dans la fonction, foobar correspond au paramètre mais en dehors de la fonction, foobar correspond à la variable globale</p>
+                </section>
+
+                <!-- DOM Element -->
+                <section>
+                    <h2>DOM Element</h2>
+                    <p>
+                        En JS, il est possible de manipuler le DOM.
+                        <br>Celui-ci se compose d'éléments appelé <span class="hl">DOM Element</span> ou <span class="hl">Node</span>
+                    </p>
                 </section>
 
                 <section>
-                    <h2>Fonctions</h2>
+                    <h2>Récupérer ces éléments</h2>
+                    <p>
+                        Nous allons voir dans un premier temps les différentes façons de récupérer ces éléments et ensuite nous verrons comment les modifier
+                    </p>
+                    <p>
+                        La page entière est considérée comme un DOM Element. On y accède en JS avec la variable <span class="hl">document</span>
+                    </p>
                 </section>
 
                 <section>
-                    <h2>Fonctions</h2>
-                    <p>Une fonction peut être déclarée de plusieurs façons</p>
-                    <pre><code  data-trim contenteditable class="js">
-function my_function()
-{
-}
+                    <h2 class="no-text-transform">getElementById</h2>
+                    <pre><code data-trim contenteditable class="js">
+var foo = document.getElementById('hey');
+
+console.log(foo);
                     </code></pre>
-                    <pre><code  data-trim contenteditable class="js">
-var my_function = function()
+                    <ul>
+                        <li>Renvoie un élément ayant l'ID <span class="u">hey</span></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="no-text-transform">getElementByClassName</h2>
+                    <pre><code data-trim contenteditable class="js">
+var foo = document.getElementByClassName('hey');
+
+console.log(foo);
+                    </code></pre>
+                    <ul>
+                        <li>Renvoie un tableau d'éléments ayant la classe <span class="u">hey</span></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="no-text-transform">getElementsByTagName</h2>
+                    <pre><code data-trim contenteditable class="js">
+var foo = document.getElementsByTagName('section');
+
+console.log(foo);
+                    </code></pre>
+                    <ul>
+                        <li>Renvoie un tableau d'éléments dont le tag <span class="u">section</span></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="no-text-transform">querySelector</h2>
+                    <pre><code data-trim contenteditable class="js">
+var foo = document.querySelector('.toto');
+
+console.log(foo);
+                    </code></pre>
+                    <ul>
+                        <li>Renvoie le premier élément ayant la classe <span class="u">toto</span></li>
+                        <li>Fonctionne avec un sélecteur comme en CSS</li>
+                        <li>IE8+</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="no-text-transform">querySelectorAll</h2>
+                    <pre><code data-trim contenteditable class="js">
+var foo = document.querySelectorAll('.toto');
+
+console.log(foo);
+                    </code></pre>
+                    <ul>
+                        <li>Similaire à <span class="hl">querySelector</span></li>
+                        <li>Renvoie un tableau de tous les éléments ayant la classe <span class="u">toto</span></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Manipuler l'élément</h2>
+                    <p>Une fois l'élément récupéré, il est possible de le modifier</p>
+                </section>
+
+                <section>
+                    <h3 class="no-text-transform">Attributs</h3>
+                    <pre><code data-trim contenteditable class="js">
+// Modifie l'attribut test (le créé s'il n'existe pas)
+foo.setAttribute('test','coucou');
+
+// Récupère l'attribut "test"
+console.log(foo.getAttribute('test'));
+
+// Supprime l'attribut "class"
+foo.removeAttribute('class');
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3 class="no-text-transform">Style</h3>
+                    <pre><code data-trim contenteditable class="js">
+// Modifie le style
+foo.style.backgroundColor    = 'green';
+foo.style.width              = '200px';
+foo.style.height             = '200px';
+foo.style.height             = '200px';
+foo.style.webkitBorderRadius = '100px';
+foo.style.mozBorderRadius    = '100px';
+foo.style.borderRadius       = '100px';
+                    </code></pre>
+                    <ul>
+                        <li>Les propriétés sont en <span class="hl">camelCase</span></li>
+                        <li>Bien préciser les unités</li>
+                        <li>Spécifier les préfixes</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3 class="no-text-transform">Classes</h3>
+                    <pre><code data-trim contenteditable class="js">
+// Rajoute une classe
+foo.classList.add('toto');
+
+// Rajoute plusieurs classes
+foo.classList.add('lorem','ipsum');
+
+// Supprime une classe
+foo.classList.remove('lorem');
+
+// Demande si contient la classe
+console.log(foo.classList.contains('ipsum'));
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3 class="no-text-transform">innerText</h3>
+                    <pre><code data-trim contenteditable class="js">
+// Remplace le contenu par "hey"
+foo.innerText = 'hey';
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3 class="no-text-transform">innerHTML</h3>
+                    <pre><code data-trim contenteditable class="js">
+// Remplace le contenu par du HTML
+foo.innerHTML = '&lt;span&gt;hey&lt;/span&gt;';
+                    </code></pre>
+                    <p>La différence avec <span class="hl">innerText</span> est la possibilité d'ajouter du HTML</p>
+                </section>
+
+                <section>
+                    <h3 class="no-text-transform">remove</h3>
+                    <pre><code data-trim contenteditable class="js">
+// Supprime du DOM
+foo.remove();
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3 class="no-text-transform">appendChild</h3>
+                    <pre><code data-trim contenteditable class="js">
+// Place bar à la fin de l'élément foo
+foo.appendChild(bar);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Créer un élément</h3>
+                    <pre><code data-trim contenteditable class="js">
+// Créé un span et stock dans la variable "toto"
+var toto = document.createElement('span');
+
+// Lui ajoute la class "toto"
+toto.classList.add('toto');
+
+// Lui ajoute du texte
+toto.innerText = 'Coucou, je suis toto';
+
+// Le rajoute au DOM dans l'élément foo
+foo.appendChild(toto);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Événements</h2>
+                </section>
+
+                <section>
+                    <p>En JS, il est possible d'accomplir des actions quand un événement survient<br>Exemple : Le visiteur clique sur un bouton et une texte apparait</p>
+                    <p>On appelle cela <span class="u">écouter un événément</span></p>
+                </section>
+
+                <section>
+                    <p>Il existe des dizaines d'événements et ceux-ci dépendent de l'élément concerné</p>
+                    <p>On peut écouter l'événement <span class="u">click</span> sur une <span class="u">div</span>, mais on ne peut pas écouter l'événement <span class="u">play</span> dessus car <span class="u">play</span> est reservé à un élément de type <span class="u">audio ou video</span></p>
+                </section>
+
+                <section>
+                    <p>Pour déclencher une action lors d'un événement, il faut utiliser une <span class="hl">fonction</span>. Dans cette situation, cette fonction est qualifié de <span class="hl">callback</span>.</p>
+                    <pre><code data-trim contenteditable class="js">
+var foo = document.querySelector('.foo');
+
+foo.onclick = function()
 {
+    console.log('click !');
 };
                     </code></pre>
                 </section>
 
                 <section>
-                    <h2>Fonctions</h2>
-                    <p>Une fonction peut être utilisée de plusieurs façons</p>
-                    <p><span class="highlight">return</span> permet de renvoyer un résultat</p>
-                    <p>Une fonction n'est pas forcée de renvoyer un résultat</p>
-                </section>
+                    <p>On peut écouter plusieurs événements différents sur un même élément</p>
+                    <pre><code data-trim contenteditable class="js">
+var foo = document.querySelector('.foo');
 
-                <section>
-                    <h2>Fonctions</h2>
-                    <pre><code  data-trim contenteditable class="js">
-var sum = 0;
-
-function addition(a,b)
+foo.onclick = function()
 {
-    return a + b;
-}
+    console.log('click !');
+};
 
-sum = addition(1,2);
-console.log(sum) // "3";
-                    </code></pre>
-                    <pre><code  data-trim contenteditable class="js">
-var sum = 0;
-
-function addition(a,b)
+foo.onmouseover = function()
 {
-    sum = a + b;
-}
-
-addition(1,2);
-console.log(sum) // "3";
+    console.log('Mouse over !');
+};
                     </code></pre>
-                    <p class="fragment">Les deux fonction ont le même effet mais l'une renvoie la valeur alors que l'autre l'assigne directement.</p>
                 </section>
 
                 <section>
-                    <h2>Fonctions</h2>
-                    <p>La fonction peut être déclarée après son utilisation</p>
-                    <p>Javascript considérera les fonctions avant le reste</p>
+                    <p>Liste d'événements de souris</p>
+                    <ul>
+                        <li>onclick</li>
+                        <li>onmousedown</li>
+                        <li>onmouseup</li>
+                        <li>onmouseenter</li>
+                        <li>onmouseleave</li>
+                        <li>onmouseover</li>
+                        <li>onmouseout</li>
+                        <li>onmousemove</li>
+                    </ul>
                 </section>
 
                 <section>
-                    <h2>Fonctions</h2>
-                    <pre><code  data-trim contenteditable class="js">
-var sum = 0;
-
-function addition(a,b)
-{
-    return a + b;
-}
-
-sum = addition(1,2);
-                    </code></pre>
-                    <pre><code  data-trim contenteditable class="js">
-var sum = 0;
-
-addition(1,2);
-
-function addition(a,b)
-{
-    sum = a + b;
-}
-
-                    </code></pre>
-                    <p class="fragment">Les deux fonctions ont le même effet.</p>
+                    <p>Liste d'événements de clavier</p>
+                    <ul>
+                        <li>onkeydown</li>
+                        <li>onkeyup</li>
+                        <li>onkeypress</li>
+                    </ul>
                 </section>
 
                 <section>
-                    <h2>Fonctions</h2>
-                    <p>Chaque fonction possède son propre scope. Une fonction déclarée dans une autre fonction ne pourra être utilisée que dans cette dernière</p>
-                    <img src="src/img/jackie-chan-meme.jpg" alt="" width="400">
+                    <p><a href="http://www.w3schools.com/jsref/dom_obj_event.asp" target="_blank">Liste exhaustive des événements</a></p>
                 </section>
 
-                <section>
+                <!-- <section>
                     <h2>Debug</h2>
                 </section>
 
@@ -441,7 +1069,7 @@ function addition(a,b)
                 <section>
                     <h2>Debug</h2>
                     <p>Il est possible d'afficher les valeurs des variables</p>
-                    <pre><code  data-trim contenteditable class="js">
+                    <pre><code data-trim contenteditable class="js">
 console.log('coucou');
 console.info('coucou');
 console.warn('coucou');
@@ -454,7 +1082,7 @@ console.error('coucou');
                 <section>
                     <h2>Debug</h2>
                     <p>Si un variable n'est pas accessible à cause de son scope, vous pouvez lui faire un log puis la rendre globale en faisant un clique droit dessus dans la console</p>
-                    <pre><code  data-trim contenteditable class="js">
+                    <pre><code data-trim contenteditable class="js">
 function my_function()
 {
     var foo = {
@@ -478,7 +1106,7 @@ my_function();
                     <h2>Debug</h2>
                     <p>Il est possible d'arrêter le code à des endroits précis avec la commande <span class="highlight">debugger</span></p>
                     <p>On appelle ces points d'arrêt <span class="highlight">breakpoints</span></p>
-                    <pre><code  data-trim contenteditable class="js">
+                    <pre><code data-trim contenteditable class="js">
 console.log('1');
 console.log('2');
 debugger;
@@ -497,7 +1125,7 @@ console.log('6');
                     <p>Il est possible de rajouter les breakpoints directement dans l'inspecteur en cliquant sur le numéro de ligne dans l'onglet <span class="highlight">Source</span></p>
                     <p><img src="src/img/inspecteur-breakpoint.png" alt=""></p>
                     <p>Actualisez pour voir l'effet</p>
-                </section>
+                </section> -->
                     
             </div>
         </div>
@@ -505,5 +1133,7 @@ console.log('6');
         <script src="../src/reveal.js/lib/js/head.min.js"></script>
         <script src="../src/reveal.js/js/reveal.js"></script>
         <script src="../src/custom/script.js"></script>
+        <script>
+        </script>
     </body>
 </html>

@@ -1,6 +1,7 @@
 ul.checked-list li {list-style-type:none;}
 .default{text-transform:none !important;}
 img.no-style {border:none !important;background:none !important;-webkit-box-shadow:none !important;-moz-box-shadow:none !important;box-shadow:none !important;}
+.no-text-transform {text-transform:none !important;}
 table.visible {border:1px solid #fff;width:100%;}
 table.visible td,table.visible th {border:1px solid #fff;margin:0;padding:10px 20px;text-align:center;color:#fff;}
 table.visible td {color:#aaa;}
