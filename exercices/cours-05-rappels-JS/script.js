@@ -3,12 +3,32 @@ var foo   = document.querySelector('.foo'),
 	lorem = document.querySelector('.lorem'),
 	ipsum = document.querySelector('.ipsum');
 
-foo.onclick = function()
-{
-	console.log('click !');
+
+foo.onclick = function(){
+	console.log('click 1');
+};
+foo.onclick = function(){
+	console.log('click 2');
 };
 
-foo.onmouseover = function()
-{
-	console.log('Mouse over !');
-};
+foo.addEventListener('click',function(){
+	console.log('click 1');
+});
+foo.addEventListener('click',function(){
+	console.log('click 2');
+});
+
+// window.onscroll = function(){
+//     console.log('scroll 1');
+// };
+// window.onscroll = function(){
+//     console.log('scroll 2');
+// };
+
+
+// window.addEventListener('scroll',function(){
+//     console.log('scroll 1');
+// });
+// window.addEventListener('scroll',function(){
+//     console.log('scroll 2');
+// });

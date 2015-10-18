@@ -39,8 +39,22 @@
                     <h1>Rappels Javascript</h1>
                 </section>
 
-                <!-- INTRO -->
                 <section>
+                    <ul>
+                        <li><a href="#intro">Intro</a></li>
+                        <li><a href="#add-javascript">Ajouter du javascript</a></li>
+                        <li><a href="#variables">Variables</a></li>
+                        <li><a href="#conditions">Conditions</a></li>
+                        <li><a href="#loops">Boucles</a></li>
+                        <li><a href="#functions">Fonctions</a></li>
+                        <li><a href="#DOM Element">DOM Element</a></li>
+                        <li><a href="#interval-timeout">Interval / Timeout</a></li>
+                        <li><a href="#wtf-js">WTF JS</a></li>
+                    </ul>
+                </section>
+
+                <!-- INTRO -->
+                <section id="intro">
                     <p>À quoi sert javascript</p>
                     <ul>
                         <li class="fragment">Modifier la page (le DOM)</li>
@@ -58,14 +72,14 @@
                 </section>
 
                 <!-- SCRIPT -->
-                <section>
-                    <h2>Importer le script</h2>
+                <section id="add-javascript">
+                    <h2>Ajouter du javascript</h2>
                 </section>
 
                 <section>
                     <p>Le javascript se rajoute en HTML avec la balise <span class="highlight">script</span></p>
                     <p>Il n'est aujourd'hui plus nécessaire de préciser le type, mais ça ne fait pas de mal</p>
-                    <pre><code contenteditable class="html">
+                    <pre><code data-trim contenteditable class="html">
 &lt;script type="text/javascript">&lt;/script&gt;
                     </code></pre>
                 </section>
@@ -76,7 +90,7 @@
                 </section>
 
                 <section>
-                    <pre><code contenteditable class="html">
+                    <pre><code data-trim contenteditable class="html">
 &lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
@@ -94,19 +108,19 @@
 
                 <section>
                     <p>La balise <span class="highlight">script</span> peut contenir du JS</p>
-                    <pre><code contenteditable class="html">
+                    <pre><code data-trim contenteditable class="html">
 &lt;script type="text/javascript"&gt;
     console.log('coucou');
 &lt;/script&gt;
                     </code></pre>
                     <p>Elle peut aussi charger un fichier <span class="highlight">.js</span><br>L'attribut <span class="hl">src</span> peut-être absolu ou relatif</p>
-                    <pre><code contenteditable class="html">
+                    <pre><code data-trim contenteditable class="html">
 &lt;script type="text/javascript" src="http://monsite.com/src/js/script.js"&gt;&lt;/script&gt;
                     </code></pre>
                 </section>
 
                 <!-- VARIABLES -->
-                <section>
+                <section id="variables">
                     <h2>Variables</h2>
                 </section>
 
@@ -225,7 +239,7 @@ var foo = 'foo',
     bar = 'bar';
                     </code></pre>
                     <p>
-                        Meilleures performances, plus pro, plus aéré, mais risque d'erreur.
+                        Meilleures performances, plus pro, plus aéré, mais risque d'erreur
                     </p>
                 </section>
 
@@ -480,12 +494,12 @@ console.log(Math.PI);     // Propriété π
                 </section>
 
                 <!-- CONDITIONS -->
-                <section>
+                <section id="conditions">
                     <h2>Conditions</h2>
                 </section>
 
                 <section>
-                    <p>Les conditions permettent d'accomplir certaines action que si une condition spécifiée est vrai</p>
+                    <p>Les conditions permettent d'accomplir une action que lorsqu'une condition spécifiée est vrai</p>
                     <p>On utilise <span class="hl">if</span> et <span class="hl">else</span></p>
                 </section>
 
@@ -583,14 +597,14 @@ else
                 </section>
 
                 <!-- BOUCLES -->
-                <section>
+                <section id="loops">
                     <h2>Boucles</h2>
                 </section>
 
                 <section>
                     <p>Les boucles permettent par exemple d'accomplir une action un certain nombre de fois ou alors de parcourir un tableau en accomplissant une action pour chacun des éléments</p>
                     <p>La plus utilisée en JS est le <span class="hl">for</span></p>
-                    <p>(<span class="hl">for in</span>, <span class="hl">while</span> et <span class="hl">do while</span> sont des boucles que nous ne verrons pas dans ce cours</p>
+                    <p>(<span class="hl">for in</span>, <span class="hl">while</span> et <span class="hl">do while</span> sont des boucles que nous ne verrons pas dans ce cours)</p>
                 </section>
 
                 <section>
@@ -645,14 +659,13 @@ for(var i = 0; i &lt; foo.length; i++)
                 </section>
 
                 <!-- FUNCTIONS -->
-                <section>
+                <section id="functions">
                     <h2>Fonctions</h2>
                 </section>
 
                 <section>
                     <p>Une fonction peut être déclarée de plusieurs façons</p>
                     <pre><code data-trim contenteditable class="js">
-}
 // Named function
 function my_function()
 {
@@ -794,8 +807,11 @@ console.log(foobar);
                 </section>
 
                 <!-- DOM Element -->
-                <section>
+                <section id="DOM Element">
                     <h2>DOM Element</h2>
+                </section>
+
+                <section id="DOM Element">
                     <p>
                         En JS, il est possible de manipuler le DOM.
                         <br>Celui-ci se compose d'éléments appelé <span class="hl">DOM Element</span> ou <span class="hl">Node</span>
@@ -844,7 +860,7 @@ var foo = document.getElementsByTagName('section');
 console.log(foo);
                     </code></pre>
                     <ul>
-                        <li>Renvoie un tableau d'éléments dont le tag <span class="u">section</span></li>
+                        <li>Renvoie un tableau d'éléments dont le tag est <span class="u">section</span></li>
                     </ul>
                 </section>
 
@@ -944,7 +960,7 @@ foo.innerText = 'hey';
 // Remplace le contenu par du HTML
 foo.innerHTML = '&lt;span&gt;hey&lt;/span&gt;';
                     </code></pre>
-                    <p>La différence avec <span class="hl">innerText</span> est la possibilité d'ajouter du HTML</p>
+                    <p>La différence avec <span class="hl">innerText</span> est la possibilité d'écrire du HTML</p>
                 </section>
 
                 <section>
@@ -985,7 +1001,7 @@ foo.appendChild(toto);
                 </section>
 
                 <section>
-                    <p>En JS, il est possible d'accomplir des actions quand un événement survient<br>Exemple : Le visiteur clique sur un bouton et une texte apparait</p>
+                    <p>En JS, il est possible d'accomplir des actions quand un événement survient<br>Exemple : Le visiteur clique sur un bouton et un texte apparait</p>
                     <p>On appelle cela <span class="u">écouter un événément</span></p>
                 </section>
 
@@ -1047,7 +1063,131 @@ foo.onmouseover = function()
                 </section>
 
                 <section>
+                    <p>Liste d'événements de formulaire</p>
+                    <ul>
+                        <li>onchange</li>
+                        <li>onfocusin</li>
+                        <li>onfocusout</li>
+                        <li>onsubmit</li>
+                    </ul>
+                </section>
+
+                <section>
                     <p><a href="http://www.w3schools.com/jsref/dom_obj_event.asp" target="_blank">Liste exhaustive des événements</a></p>
+                </section>
+
+                <section>
+                    <p>Un paramètre est envoyé au callback et permet d'obtenir des informations sur l'événement.</p>
+                    <p>Il suffit de rajouter un paramètre à la fonction dont on choisit le nom. On utilise en général <span class="hl">e</span> ou <span class="hl">event</span></p>
+                    <p>Ce paramètre est un objet possédant plusieurs propriétés et méthodes</p>
+                    <pre><code data-trim contenteditable class="js">
+var foo = document.querySelector('.foo');
+
+foo.onclick = function(e)
+{
+    console.log(e.clientX);
+};
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>L'une des ces méthodes est <span class="hl">preventDefault()</span> et permet d'annuler le comportement de base</p>
+                    <pre><code data-trim contenteditable class="js">
+var foo = document.querySelector('.foo');
+
+foo.onkeydown = function(e)
+{
+    e.preventDefault();
+    console.log('ok');
+};
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>Le problème de cette écriture et l'impossibilité d'écouter plusieurs fois un événements.</p>
+                    <pre><code data-trim contenteditable class="js">
+foo.onclick = function(){
+    console.log('click 1');
+};
+foo.onclick = function(){
+    console.log('click 2');
+};
+                    </code></pre>
+                    <p class="fragment">La solution est d'utiliser la méthode <span class="hl">addEventListener()</span></p>
+                    <pre class="fragment"><code data-trim contenteditable class="js">
+foo.addEventListener('click',function(){
+    console.log('click 1');
+});
+foo.addEventListener('click',function(){
+    console.log('click 2');
+});
+                    </code></pre>
+                </section>
+
+                <!-- INTERVAL/TIMEOUT -->
+                <section id="interval-timeout">
+                    <h2>Interval / Timeout</h2>
+                </section>
+
+                <section>
+                    <p>Il peut arriver qu'on ait besoin d'attendre un certain temps avant d'éxecuter une instruction</p>
+                    <p>La méthode <span class="highlight">window.setTimeout()</span> permet de faire cela</p>
+                </section>
+
+                <section>
+                    <ul>
+                        <li>Le premier paramètre est le callback. C'est une fonction qui sera déclenchée à la fin du temps</li>
+                        <li>Le deuxième paramètre est le temps à attendre en millisecondes</li>
+                    </ul>
+                    <pre><code data-trim contenteditable class="javascript">
+window.setTimeout(function()
+{
+    console.log('Ding !');
+},1000);
+                    </code></pre>
+                    <p class="fragment"><span class="hl">window</span> est un objet global possédant tout un tas de propriétés et méthodes</p>
+                </section>
+
+                <section>
+                    <p>Il peut arriver qu'on ait besoin de déclencher une même action plusieurs fois à intervalle régulier</p>
+                    <p>La méthode <span class="highlight">window.setInterval()</span> permet de faire cela</p>
+                </section>
+
+                <section>
+                    <p>Les paramètres sont les mêmes que pour le setTimeout</p>
+                    <pre><code data-trim contenteditable class="javascript">
+window.setInterval(function()
+{
+    console.log('Tick');
+},1000);
+                    </code></pre>
+                </section>
+
+                <!-- WTF JS -->
+                <section id="wtf-js">
+                    <h2>WTF JS</h2>
+                </section>
+
+                <section>
+                    <p>Javascript est loin d'être parfait</p>
+                    <pre><code data-trim contenteditable class="javascript">
+console.log(9999999999999999);
+                    </code></pre>
+                    <pre><code data-trim contenteditable class="javascript">
+console.log(0.1 + 0.2);
+                    </code></pre>
+                    <pre><code data-trim contenteditable class="javascript">
+console.log([2, 4, 7, 1, 3].sort());
+console.log([40, 100, 1, 5, 25].sort());
+                    </code></pre>
+                    <pre><code data-trim contenteditable class="javascript">
+console.log(10/'coucou');
+console.log(typeof NaN);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p><a href="http://wtfjs.com/" target="_blank">WtfJS.com</a></p>
                 </section>
 
                 <!-- <section>
