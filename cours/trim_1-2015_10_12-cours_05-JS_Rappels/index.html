@@ -27,7 +27,7 @@
                 <section>
                     <h3>H2 - P2018</h3>
                     <h1>Développement web</h1>
-                    <h3>Cours 04 - 2014-10-05</h3>
+                    <h3>Cours 05 - 2014-10-12</h3>
                     <ul>
                         <li>github : <a target="_blank" href="https://github.com/brunosimon/hetic-p2019">https://github.com/brunosimon/hetic-p2019</a></li>
                         <li>site : <a target="_blank" href="http://bruno-simon.com/hetic/p2019/">http://bruno-simon.com/hetic/p2019/</a></li>
@@ -44,9 +44,11 @@
                         <li><a href="#intro">Intro</a></li>
                         <li><a href="#add-javascript">Ajouter du javascript</a></li>
                         <li><a href="#variables">Variables</a></li>
+                        <li><a href="#operations">Opérations</a></li>
                         <li><a href="#conditions">Conditions</a></li>
                         <li><a href="#loops">Boucles</a></li>
                         <li><a href="#functions">Fonctions</a></li>
+                        <li><a href="#scope">Scope</a></li>
                         <li><a href="#DOM Element">DOM Element</a></li>
                         <li><a href="#interval-timeout">Interval / Timeout</a></li>
                         <li><a href="#wtf-js">WTF JS</a></li>
@@ -410,7 +412,7 @@ function type(o)
                     </code></pre>
                 </section> -->
 
-                <section>
+                <section id="operations">
                     <h2>Opérations</h2>
                 </section>
 
@@ -745,7 +747,7 @@ function addition(a,b)
                     <p>On appelle ça le <span class="hl">scope</span></p>
                 </section>
 
-                <section>
+                <section id="scope">
                     <h2>Le scope</h2>
                 </section>
 
@@ -814,14 +816,14 @@ console.log(foobar);
                 <section id="DOM Element">
                     <p>
                         En JS, il est possible de manipuler le DOM.
-                        <br>Celui-ci se compose d'éléments appelé <span class="hl">DOM Element</span> ou <span class="hl">Node</span>
+                        <br>Celui-ci se compose d'éléments appelés <span class="hl">DOM Element</span> ou <span class="hl">Node</span>
                     </p>
                 </section>
 
                 <section>
                     <h2>Récupérer ces éléments</h2>
                     <p>
-                        Nous allons voir dans un premier temps les différentes façons de récupérer ces éléments et ensuite nous verrons comment les modifier
+                        Nous allons voir dans un premier temps comment récupérer ces éléments pour les stocker dans des variables et ensuite comment les modifier
                     </p>
                     <p>
                         La page entière est considérée comme un DOM Element. On y accède en JS avec la variable <span class="hl">document</span>
@@ -1273,7 +1275,5 @@ console.log('6');
         <script src="../src/reveal.js/lib/js/head.min.js"></script>
         <script src="../src/reveal.js/js/reveal.js"></script>
         <script src="../src/custom/script.js"></script>
-        <script>
-        </script>
     </body>
 </html>
