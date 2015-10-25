@@ -80,14 +80,10 @@
                 <section>
                     <h2>Attributs</h2>
                     <ul>
-                        <li><span class="hl">autoplay</span> - pas de valeur
-                            <br>Lance la lecture dès que le fichier est chargé</li>
-                        <li><span class="hl">loop</span> - pas de valeur
-                            <br>Recommence la lecture à la fin</li>
-                        <li><span class="hl">preload</span> - none / auto / metadata
-                            <br>Choix du buffering</li>
-                        <li><span class="hl">controls</span> - pas de valeur
-                            <br>Affiche un controlleur (propre au navigateur)</li>
+                        <li><span class="hl">autoplay</span> Lance la lecture dès que le fichier est chargé</li>
+                        <li><span class="hl">loop</span> Recommence la lecture à la fin</li>
+                        <li><span class="hl">preload</span> Choix du buffering (none / auto / metadata)</li>
+                        <li><span class="hl">controls</span> Affiche un controlleur (propre au navigateur)</li>
                     </ul>
                 </section>
 
@@ -165,30 +161,24 @@
                 <section>
                     <h2>Attributs</h2>
                     <ul>
-                        <li><span class="hl">autoplay</span> - pas de valeur
-                            <br>Lance la lecture dès que le fichier est chargé</li>
-                        <li><span class="hl">loop</span> - pas de valeur
-                            <br>Recommence la lecture à la fin</li>
-                        <li><span class="hl">preload</span> - none / auto / metadata
-                            <br>Choix du buffering</li>
-                        <li><span class="hl">controls</span> - pas de valeur
-                            <br>Affiche un controlleur (propre au navigateur)</li>
+                        <li><span class="hl">autoplay</span> Lance la lecture dès que le fichier est chargé</li>
+                        <li><span class="hl">loop</span> Recommence la lecture à la fin</li>
+                        <li><span class="hl">preload</span> Choix du buffering (none / auto / metadata)</li>
+                        <li><span class="hl">controls</span> Affiche un controlleur (propre au navigateur)</li>
                     </ul>
                 </section>
 
                 <section>
                     <ul>
-                        <li><span class="hl">width</span>
-                            <br>Largeur du player</li>
-                        <li><span class="hl">height</span>
-                            <br>Hauteur du player</li>
-                        <li><span class="hl">poster</span>
-                            <br>Lien de l'image de presentation de la vidéo</li>
+                        <li><span class="hl">width</span> Largeur du player</li>
+                        <li><span class="hl">height</span> Hauteur du player</li>
+                        <li><span class="hl">poster</span> Lien de l'image de presentation de la vidéo</li>
                     </ul>
                 </section>
 
                 <section>
                     <h2>Formats</h2>
+                    <p>Il est possible d'envoyer plusieurs formats et de laisser le navigateur choisir celui qu'il préfère</p>
                     <pre><code data-trim contenteditable class="html">
 &lt;video autoplay="autoplay" loop="loop" controls="controls" width="800"&gt;
     &lt;source src="video.mp4"  type="video/mp4"  /&gt;
@@ -203,17 +193,17 @@
                     <ul>
                         <li><a target="blank" href="http://fr.wikipedia.org/wiki/Theora">OGG</a> (ogv) : Libre et gratuit (Firefox)</li>
                         <li><a target="_blank" href="http://fr.wikipedia.org/wiki/WebM" >WEBM</a> : Libre et gratuit (Chrome)</li>
-                        <li><a target="_blank" href="http://fr.wikipedia.org/wiki/H.264">MP4</a> : Non-libre et payant (tous les autres)</li>
+                        <li><a target="_blank" href="http://fr.wikipedia.org/wiki/H.264">MP4</a> : Non-libre et payant</li>
                     </ul>
                 </section>
 
                 <section>
-                    <img src="src/img/video-formats-compatibility-2.png" alt="Video formats compatibility">
+                    <img width="600" src="src/img/video-formats-compatibility-2.png" alt="Video formats compatibility">
                 </section>
 
                 <section>
                     <h2>Convertir ses vidéos</h2>
-                    <p><a target="_blank" href="http://www.mirovideoconverter.com/">Miro Video Converter</a> - Mac et windows</p>   
+                    <p><a target="_blank" href="http://www.mirovideoconverter.com/">Miro Video Converter</a> (Mac et Windows)</p>   
                 </section>
 
                 <section>
@@ -233,7 +223,7 @@ var video = document.getElementsByTagName('video')[0]; // Renvoie un tableau
 var video = document.getElementById('video'); // Suppose que l'ID a bien été rajouté en HTML
 var video = document.querySelector('.video'); // Suppose que la classe à bien été rajoutée en HTML
                     </code></pre>
-                    <p>Une fois récupéré, on va pouvoir y appliquer des méthodes et changer ses propriétés</p>
+                    <p>Une fois récupéré, on va pouvoir utiliser ses méthodes et modifier ses propriétés</p>
                 </section>
 
                 <section>
@@ -301,7 +291,7 @@ video.addEventListener('play',function(e)
 
                 <section>
                     <h2>Méthodes / Propriétés / Événements</h2>
-                    <p>Liste complète : <a target="_blank" href="http://www.w3schools.com/tags/ref_av_dom.asp">http://goo.gl/Owu3dx</a></p>
+                    <p>Liste complète : <a target="_blank" href="http://www.w3schools.com/tags/ref_av_dom.asp">http://www.w3schools.com/tags/ref_av_dom.asp</a></p>
                 </section>
 
                 <section>
