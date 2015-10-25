@@ -85,14 +85,14 @@
                         <td class="title"><?php echo $_file->title; ?></td>
                         <td class="action text-right">
 
-                            <?php if(!empty($file->resources)): ?>
+                            <?php if(!empty($_file->resources)): ?>
                                 <div class="dropdown hidden-sm hidden-md hidden-lg">
                                     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                         <i class="glyphicon glyphicon-download glyphicon-white"></i>
                                         <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-                                        <?php foreach($file->resources as $_resource): ?>
+                                        <?php foreach($_file->resources as $_resource): ?>
                                             <li><a href="<?php echo $_resource->url ?>" target="_blank"><i class="glyphicon glyphicon-download glyphicon-white hidden-xs"></i> <?= $_resource->name ?></a></li>
                                         <?php endforeach; ?>
                                     </ul>
@@ -100,7 +100,7 @@
                             <?php endif; ?>
 
                             <span class="hidden-xs">
-                                <?php foreach($file->resources as $_resource): ?>
+                                <?php foreach($_file->resources as $_resource): ?>
                                     <a class="btn btn-default" href="<?php echo $_resource->url ?>" target="_blank"><i class="glyphicon glyphicon-download glyphicon-white hidden-xs"></i> <?= $_resource->name ?></a>
                                 <?php endforeach; ?>
                             </span>
