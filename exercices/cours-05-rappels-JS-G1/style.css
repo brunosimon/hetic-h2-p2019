@@ -3,3 +3,14 @@ body {
 	font-family:Helvetica,Arial;
 	font-size:14px;
 }
+
+.foo {
+	width:200px;
+	height:200px;
+	background:orange;
+}
+.bar {
+	width:100px;
+	height:100px;
+	background:red;
+}

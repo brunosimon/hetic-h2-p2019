@@ -1,10 +1,17 @@
-var foo = 1;
+var foo = document.querySelector('.foo');
 
-function my_function(a)
+var mon_interval = window.setInterval(function(){
+	console.log('Ding !');
+},50);
+
+foo.onmouseenter = function()
 {
-	foo = 2;
-}
+	window.clearInterval(mon_interval);
+};
 
-my_function();
-
-console.log(foo);
+foo.onmouseleave = function()
+{
+	mon_interval = window.setInterval(function(){
+		console.log('Ding !');
+	},50);
+};

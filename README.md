@@ -10,20 +10,20 @@ GitHub de développement web pour la promotion P2019 H2
 - [x] CSS3 Transformations
 - [x] HTML5 syntaxe
 - [x] CSS3 Animations/transitions
-- [ ] JS Rappels
-- [ ] Chrome Debug
-- [ ] JS jQuery
-- [ ] Canvas
+- [x] JS Rappels
 - [ ] HTML5 Audio/video API
+- [ ] Chrome Debug
+- [ ] Fonts
+- [ ] Responsive
+- [ ] Canvas
 - [ ] HTML5 Local Storage API
 - [ ] HTML5 Offline API
 - [ ] HTML5 Websocket API
-- [ ] SVG
-- [ ] Fonts
-- [ ] Responsive
+- [ ] JS jQuery
 - [ ] Du PSD à l’intégration
-- [ ] JS orienté objet
+- [ ] SVG
 - [ ] Organiser projet / choisir hébergement / mettre en ligne
+- [ ] JS orienté objet
 - [ ] Versionning avec git
 - [ ] Task runners (grunt/gulp)
 - [ ] Sass
