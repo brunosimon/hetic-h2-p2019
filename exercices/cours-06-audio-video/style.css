@@ -1,0 +1,24 @@
+body {
+	background:#eee;
+	font-family:Helvetica,Arial;
+	font-size:14px;
+}
+
+.player {
+	display:inline-block;
+}
+
+.player .seekbar {
+	width:100%;
+	height:30px;
+	background:#ddd;
+	border:10px solid #f00;
+	padding:10px;
+	margin:10px;
+}
+
+.player .seekbar .progress {
+	width:50%;
+	height:100%;
+	background:#bbb;
+}
