@@ -11,10 +11,10 @@ GitHub de développement web pour la promotion P2019 H2
 - [x] HTML5 syntaxe
 - [x] CSS3 Animations/transitions
 - [x] JS Rappels
-- [ ] HTML5 Audio/video API
+- [x] HTML5 Audio/video API
 - [ ] Chrome Debug
-- [ ] Fonts
 - [ ] Responsive
+- [ ] Fonts
 - [ ] Du PSD à l’intégration
 - [ ] Canvas
 - [ ] HTML5 Local Storage API

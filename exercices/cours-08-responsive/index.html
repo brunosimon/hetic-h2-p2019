@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+		<title>Responsive</title>
+		<link rel="stylesheet" href="reset.css">
+		<link rel="stylesheet" href="style.css">
+		<script src="modernizr-custom.js"></script>
+	</head>
+	<body>
+		<div class="test">
+			Hello world
+		</div>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ea quidem saepe distinctio natus eligendi ab, illo velit totam error eaque adipisci excepturi, id, fugit consequuntur dolor cum quae quis.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ea quidem saepe distinctio natus eligendi ab, illo velit totam error eaque adipisci excepturi, id, fugit consequuntur dolor cum quae quis.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ea quidem saepe distinctio natus eligendi ab, illo velit totam error eaque adipisci excepturi, id, fugit consequuntur dolor cum quae quis.</p>
+
+		<picture>
+			<source srcset="image-test-320.png" media="(max-width:320px)">
+			<source srcset="image-test-640.png" media="(max-width:640px)">
+			<source srcset="image-test-1280.png" media="(min-width:641px)">
+			<img src="image-test-320.png" width="100%">
+		</picture>
+		
+		<script type='application/javascript' src='fastclick.js'></script>
+		<script>
+			if('addEventListener' in document)
+			{
+			    document.addEventListener('DOMContentLoaded',function() {
+			        FastClick.attach(document.body);
+			    },false);
+			}
+		</script>
+		<script src="script.js"></script>
+	</body>
+</html>

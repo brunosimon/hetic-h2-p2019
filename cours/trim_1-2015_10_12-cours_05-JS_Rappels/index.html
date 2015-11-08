@@ -22,7 +22,6 @@
     </head>
     <body>
         <div class="reveal">
-            <div id="pagination"></div>
             <div class="slides">
                 <section>
                     <h3>H2 - P2018</h3>
@@ -203,27 +202,6 @@ console.log(foo_bar)
                     <p>Puis dans l'onglet <span class="u">console</span></p>
                     <p><img src="src/img/inspecteur-console.png" alt=""></p>
                 </section>
-
-
-                <!-- <section>
-                    <p>Quand plusieurs variables sont associées à un même concept/élément, préférez un objet</p>
-                    <pre><code data-trim contenteditable class="js">
-// Éviter
-var image_name = 'foobar';
-var image_width = 600;
-var image_height = 400;
-
-// Bon
-var image = {
-    name   : 'foobar',
-    width  : 600,
-    height : 400
-};
-
-// Utilisation
-console.log(image.width);
-                    </code></pre>
-                </section> -->
 
                 <!-- MULTIPLE VARIABLES -->
                 <section>
@@ -1191,84 +1169,7 @@ console.log(typeof NaN);
                 <section>
                     <p><a href="http://wtfjs.com/" target="_blank">WtfJS.com</a></p>
                 </section>
-
-                <!-- <section>
-                    <h2>Debug</h2>
-                </section>
-
-                <section>
-                    <h2>Debug</h2>
-                    <p>Les navigateurs récents permettent de débugger facilement le javascript</p>
-                    <p>Nous allons prendre pour exemple Chrome</p>
-                </section>
-
-                <section>
-                    <h2>Debug</h2>
-                    <p>Ouvrez l'inspecteur</p>
-                    <p>La console est disponible dans l'onglet <span class="highlight">console</span> en haut de l'inspecteur ou en haut du drawer<br /><img src="src/img/inspecteur-console.png" alt=""></p>
-                </section>
-
-                <section>
-                    <h2>Debug</h2>
-                    <p>Il est possible d'afficher les valeurs des variables</p>
-                    <pre><code data-trim contenteditable class="js">
-console.log('coucou');
-console.info('coucou');
-console.warn('coucou');
-console.error('coucou');
-                    </code></pre>
-                    <p><img src="src/img/inspecteur-console-logs.png" alt=""></p>
-                    <p>Pensez à les retirer une fois terminé</p>
-                </section>
-
-                <section>
-                    <h2>Debug</h2>
-                    <p>Si un variable n'est pas accessible à cause de son scope, vous pouvez lui faire un log puis la rendre globale en faisant un clique droit dessus dans la console</p>
-                    <pre><code data-trim contenteditable class="js">
-function my_function()
-{
-    var foo = {
-        bar : 'coucou'
-    };
-    console.log(foo);
-}
-my_function();
-                    </code></pre>
-                    <p><img width="500" src="src/img/inspecteur-store-as-global.png" alt=""></p>
-                </section>
-
-                <section>
-                    <h2>Debug</h2>
-                    <p>La console indiquera ensuite le nom de la variable globale<br />(en général <span class="highlight">temp1</span>)</p>
-                    <p>Il sera donc possible d'accéder et modifier cette variable</p>
-                    <p><img width="400" src="src/img/inspecteur-store-as-global-2.png" alt=""></p>
-                </section>
-
-                <section>
-                    <h2>Debug</h2>
-                    <p>Il est possible d'arrêter le code à des endroits précis avec la commande <span class="highlight">debugger</span></p>
-                    <p>On appelle ces points d'arrêt <span class="highlight">breakpoints</span></p>
-                    <pre><code data-trim contenteditable class="js">
-console.log('1');
-console.log('2');
-debugger;
-console.log('3');
-console.log('4');
-debugger;
-console.log('5');
-console.log('6');
-                    </code></pre>
-                    <p>Chrome permet ensuite de naviguer aux breakpoints suivants</p>
-                    <p>Pensez à les retirer une fois terminé</p>
-                </section>
-
-                <section>
-                    <h2>Debug</h2>
-                    <p>Il est possible de rajouter les breakpoints directement dans l'inspecteur en cliquant sur le numéro de ligne dans l'onglet <span class="highlight">Source</span></p>
-                    <p><img src="src/img/inspecteur-breakpoint.png" alt=""></p>
-                    <p>Actualisez pour voir l'effet</p>
-                </section> -->
-                    
+ 
             </div>
         </div>
 

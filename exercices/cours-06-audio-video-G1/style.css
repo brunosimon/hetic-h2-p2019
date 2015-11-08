@@ -3,3 +3,41 @@ body {
 	font-family:Helvetica,Arial;
 	font-size:14px;
 }
+
+.player .seek-bar {
+	width:100%;
+	height:30px;
+	background:#ddd;
+	padding:10px;
+	margin:20px;
+	border:5px solid #000;
+}
+
+.player .seek-bar .progress-bar {
+	width:100%;
+	height:100%;
+	background:#bbb;
+	-webkit-transform:scaleX(0);
+	   -moz-transform:scaleX(0);
+	    -ms-transform:scaleX(0);
+	     -o-transform:scaleX(0);
+	        transform:scaleX(0);
+	-webkit-transform-origin:0;
+	   -moz-transform-origin:0;
+	    -ms-transform-origin:0;
+	     -o-transform-origin:0;
+	        transform-origin:0;
+	-webkit-transition:transform 0.1s ease-out;
+	   -moz-transition:transform 0.1s ease-out;
+	    -ms-transition:transform 0.1s ease-out;
+	     -o-transition:transform 0.1s ease-out;
+	        transition:transform 0.1s ease-out;
+}
+
+.player.playing {
+	
+}
+
+.player.paused {
+
+}
