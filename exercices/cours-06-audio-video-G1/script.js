@@ -92,3 +92,4 @@ player.video.autoplay = true;
 
 // player.video.controls = true;
 // player.video.play();
+

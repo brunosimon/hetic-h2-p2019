@@ -8,3 +8,7 @@ table.visible td {color:#aaa;}
 span.highlight,span.hl {display:inline-block;padding:0 6px;border:1px solid #FF9D00;}
 span.underline,span.u {border-bottom:0.13em solid #FF9D00 !important;text-decoration:none;}
 .reveal .slide-number {opacity:1;}
+ul.checked-list li {list-style-type:none;}
+ul.checked-list label{cursor:pointer;}
+ul.checked-list input[type=checkbox]{position:relative;top:-0.5em;width:22px;height:22px;margin-right:14px;}
+canvas{background:#fff;}

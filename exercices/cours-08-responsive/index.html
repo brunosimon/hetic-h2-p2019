@@ -9,20 +9,39 @@
 		<script src="modernizr-custom.js"></script>
 	</head>
 	<body>
-		<div class="test">
-			Hello world
+
+		<div class="wrapper">
+			<header>
+				<h1>Mon site</h1>
+				<nav>
+					<a href="#">Link 1</a>
+					<a href="#">Link 2</a>
+					<a href="#">Link 3</a>
+					<a href="#">Link 4</a>
+					<a href="#">Link 5</a>
+					<a href="#">Link 6</a>
+				</nav>
+			</header>
+			<section class="content">
+
+				<div class="picture"></div>
+
+				<div class="test">
+					Hello world
+				</div>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ea quidem saepe distinctio natus eligendi ab, illo velit totam error eaque adipisci excepturi, id, fugit consequuntur dolor cum quae quis.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ea quidem saepe distinctio natus eligendi ab, illo velit totam error eaque adipisci excepturi, id, fugit consequuntur dolor cum quae quis.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ea quidem saepe distinctio natus eligendi ab, illo velit totam error eaque adipisci excepturi, id, fugit consequuntur dolor cum quae quis.</p>
+
+				<picture>
+					<source srcset="image-test-320.png" media="(max-width:320px)">
+					<source srcset="image-test-640.png" media="(max-width:640px)">
+					<source srcset="image-test-1280.png" media="(min-width:641px)">
+					<img src="image-test-320.png" width="100%">
+				</picture>
+			</section>
 		</div>
-
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ea quidem saepe distinctio natus eligendi ab, illo velit totam error eaque adipisci excepturi, id, fugit consequuntur dolor cum quae quis.</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ea quidem saepe distinctio natus eligendi ab, illo velit totam error eaque adipisci excepturi, id, fugit consequuntur dolor cum quae quis.</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ea quidem saepe distinctio natus eligendi ab, illo velit totam error eaque adipisci excepturi, id, fugit consequuntur dolor cum quae quis.</p>
-
-		<picture>
-			<source srcset="image-test-320.png" media="(max-width:320px)">
-			<source srcset="image-test-640.png" media="(max-width:640px)">
-			<source srcset="image-test-1280.png" media="(min-width:641px)">
-			<img src="image-test-320.png" width="100%">
-		</picture>
 		
 		<script type='application/javascript' src='fastclick.js'></script>
 		<script>

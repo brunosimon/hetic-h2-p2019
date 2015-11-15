@@ -69,3 +69,5 @@ player.video.addEventListener('pause',function(){
 	player.container.classList.add('paused');
 	player.container.classList.remove('playing');
 });
+
+console.log(player.container);

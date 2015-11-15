@@ -1,0 +1,18 @@
+body {
+	background:#eee;
+	font-family:Helvetica,Arial;
+	font-size:14px;
+}
+
+.test {
+	width:100px;
+	height:100px;
+	background:orange;
+}
+
+.cover {
+	height:400px;
+	background-image:url(https://unsplash.it/600/300/?random);
+	background-size:cover;
+	background-position:center center;
+}

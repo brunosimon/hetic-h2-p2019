@@ -9,3 +9,52 @@ body {
 	height:100px;
 	background:orange;
 }
+
+.wrapper {
+	width:1024px;margin:0 auto;
+}
+
+header {
+	height:200px;
+	padding:40px;
+	background:#ccc;
+}
+
+header h1 {
+	font-size:50px;
+	font-weight:bold;
+	margin-bottom:20px;
+}
+
+header nav a {
+	display:inline-block;
+	padding:20px;
+	background:#fff;
+}
+
+.picture {
+	height:300px;
+	background:url(https://unsplash.it/800/400/?random) center center;
+	background-size:cover;
+}
+
+@media only screen and (max-width:1024px) {
+	.wrapper {
+		width:auto;
+	}
+}
+
+@media only screen and (max-width:600px) {
+	header {
+		height:auto;
+		padding:20px 0 0 0;
+	}
+	header h1 {
+		text-align:center;
+	}
+	header nav a {
+		display:block;
+		text-align:center;
+		border-bottom:1px solid #ddd;
+	}
+}
