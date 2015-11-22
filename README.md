@@ -13,9 +13,9 @@ GitHub de développement web pour la promotion P2019 H2
 - [x] JS Rappels
 - [x] HTML5 Audio/video API
 - [x] Chrome Debug
-- [ ] Responsive
-- [ ] Newsletter
-- [ ] Canvas
+- [x] Responsive
+- [x] Newsletter
+- [x] Canvas
 - [ ] Fonts
 - [ ] Du PSD à l’intégration
 - [ ] Organiser projet / choisir hébergement / mettre en ligne

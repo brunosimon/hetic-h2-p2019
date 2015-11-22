@@ -1,0 +1,168 @@
+/**
+ * GENERAL
+ */
+body {
+	background:#cacdd0;
+	font-family:Helvetica,Arial;
+	font-size:14px;
+	color:#444;
+}
+
+.wrapper {
+	width:840px;
+	margin:0 auto;
+}
+
+/**
+ * HEADER
+ */
+header {
+	position:relative;
+	background:#fff;
+	height:200px;
+}
+
+header h1 {
+	position:absolute;
+	top:65px;
+	left:40px;
+	font-size:60px;
+}
+
+header nav {
+	position:absolute;
+	top:80px;
+	right:20px;
+	font-size:0;
+}
+
+header nav a {
+	display:inline-block;
+	height:40px;
+	line-height:40px;
+	margin:0 0 0 1px;
+	padding:0 20px;
+	text-decoration:none;
+	/*background:#eee;*/
+	font-size:14px;
+}
+
+/**
+ * CONTENT
+ */
+.content {
+	width:calc(100% + 40px);
+	padding:40px 0;
+	font-size:0;
+}
+
+.content article {
+	position:relative;
+	display:inline-block;
+	width:400px;
+	margin:0 40px 60px 0;
+	font-size:14px;
+	background:#fff;
+	vertical-align:top;
+}
+
+.content article .text {
+	padding:30px 30px 50px 30px;
+}
+
+.content article .text h3 {
+	font-size:18px;
+	font-weight:bold;
+	margin:0 0 20px 0;
+}
+
+.content article .more {
+	display:block;
+	position:absolute;
+	bottom:-20px;
+	right:20px;
+	height:40px;
+	padding:0 20px;
+	line-height:40px;
+	text-decoration:none;
+	color:#fff;
+	background:#fc534c;
+}
+
+/**
+ * FOOTER
+ */
+footer {
+	background:#232729;
+	padding:30px;
+	color:#fff;
+}
+
+@media only screen and (max-width:900px) {
+	.wrapper {
+		width:auto;
+		overflow:hidden;
+	}
+
+	.content {
+		text-align:center;
+	}
+
+	.content article {
+		text-align:left;
+	}
+}
+
+@media only screen and (max-width:730px) {
+	header {
+		height:auto;
+		padding-bottom:20px;
+	}
+
+	header h1 {
+		position:relative;
+		top:auto;
+		left:auto;
+		text-align:center;
+		padding:20px 0;
+	}
+
+	header nav {
+		position:relative;
+		top:auto;
+		right:auto;
+		text-align:center;
+	}
+}
+
+@media only screen and (max-width:460px) {
+	header {
+		padding-bottom:0;
+	}
+
+	header nav a {
+		display:block;
+		border-top:1px solid #cacdd0;
+	}
+
+	.content article {
+		width:280px;
+		margin-bottom:40px;
+	}
+
+	.content article .picture img {
+		width:100%;
+		height:auto;
+	}
+
+	.content article .text {
+		padding:20px;
+	}
+
+	.content article .more {
+		position:relative;
+		right:0;
+		bottom:0;
+		text-align:center;
+	}
+}
