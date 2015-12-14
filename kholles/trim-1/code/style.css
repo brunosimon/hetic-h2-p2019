@@ -1,0 +1,29 @@
+body {
+	background:#eee;
+	font-family:Helvetica,Arial;
+	font-size:14px;
+}
+
+.player {
+	width:800px;
+	height:600px
+}
+
+.seek-bar {
+	width:100%;
+	height:30px;
+	background:#ccc
+}
+
+
+.progress-bar {
+	width:100%;
+	height:100%;
+	background:#bbb;
+    transform:scaleX(0);
+    transform-origin:0;
+    transition:transform 0.1s ease-out;
+}
+
+
+

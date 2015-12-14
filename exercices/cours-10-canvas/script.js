@@ -1,4 +1,12 @@
 /**
+ * Evolutions
+ *  - pooling
+ *  - gravity
+ *  - boucing
+ *  - life
+ */
+
+/**
  * CANVAS
  */
 var canvas    = document.querySelector( '.canvas' ),
