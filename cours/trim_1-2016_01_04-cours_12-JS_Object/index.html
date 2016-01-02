@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>TRIM 1 - Cours 12 - Javascript Programmation Orientée Objet</title>
+        <meta name="description" content="">
+        <meta name="author" content="Bruno Simon">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="../src/reveal.js/css/reveal.css">
+        <link rel="stylesheet" href="../src/reveal.js/css/theme/orange.css" id="theme">
+        <link rel="stylesheet" href="../src/reveal.js/lib/css/highlight/railscasts.css">
+        <!-- <link rel="stylesheet" href="../src/reveal.js/lib/css/highlight/github.css"> -->
+        <link rel="stylesheet" href="../src/custom/style.css">
+        <script>
+            document.write( '<link rel="stylesheet" href="../src/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+        <!--[if lt IE 9]>
+            <script src="../src/reveal.js/lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="reveal">
+            <div id="pagination"></div>
+            <div class="slides">
+                <section>
+                    <h3>H2 - P2018</h3>
+                    <h1>Développement web</h1>
+                    <h3>Cours 11 - 2014-11-24</h3>
+                    <p>github : <a target="_blank" href="https://github.com/brunosimon/hetic-p2018">https://github.com/brunosimon/hetic-p2018</a></p>
+                    <p>site : <a target="_blank" href="http://bruno-simon.com/hetic/p2018/">http://bruno-simon.com/hetic/p2018/</a></p>
+                    <p>contact : <a target="_blank" mailto="bruno.simon@hetic.net">bruno.simon@hetic.net</a> - <a target="_blank" href="https://twitter.com/bruno_simon">@bruno_simon</a></p>
+                </section>
+
+                <section>
+                    <h3>Javascript</h3>
+                    <h1>Programmation orientée objet</h1>
+                </section>
+
+                <section>
+                    <h2>Qu'est-ce que c'est ?</h2>
+                </section>
+                
+                <section>
+                    <p>Appelée <span class="hl">POO</span> ou <span class="hl">OOP</span></p>
+                    <p>Méthode de programmation consistant à séparer les différents composants d'une logique en objets</p>
+                    <p>Un objet possède des <span class="hl">propriétés</span> (ou attributs) et des <span class="hl">méthodes</span> (ou fonctions)</p>
+                    <p>Utilisé en Java, C#, Objective C, PHP, Ruby, AS3, Javascript, ...</p>
+                </section>
+                
+                <section>
+                    <p>Une moto peut être considérée comme un objet en programmation.</p>
+                    <p>Ses propriétés sont par exemple : <span class="hl">couleur</span>, <span class="hl">vitesse</span>, <span class="hl">immatriculation</span>, etc.</p>
+                    <p>Ses méthodes sont par exemple : <span class="hl">démarrer</span>, <span class="hl">accélerer</span>, <span class="hl">freiner</span>, etc.</p>
+                </section>
+                
+                <section>
+                    <p>Un exemple javascript : <span class="hl">Math</span></p>
+                    <p>Ses propriétés : Math.PI, Math.E, etc.</p>
+                    <p>Ses méthodes : Math.cos(), Math.sin(), Math.round(), etc.</p>
+                    <pre><code data-trim contenteditable class="js">
+Math.PI;    // Propriété
+Math.cos(); // Méthode
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>À quoi ça sert ?</h2>
+                </section>
+                
+                <section>
+                    <ul>
+                        <li class="fragment">Indépendance des éléments</li>
+                        <li class="fragment">Plus facile à entretenir</li>
+                        <li class="fragment">Plus lisible</li>
+                        <li class="fragment">Plus logique</li>
+                        <li class="fragment">Plus pro</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Objet statique (classique)</h2>
+                </section>
+
+                <section>
+                    <pre><code data-trim contenteditable class="js">
+var bike = {
+    color      : 'black',
+    speed      : 0,
+    accelerate : function()
+    {
+        this.speed += 1;
+    }
+};
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>
+                        <span class="hl">this</span> à l'intérieur d'une méthode fait référence à l'objet <span class="hl">bike</span>
+                        <br />On appelle ça le <span class="hl">context</span>
+                    </p>
+                    <p>Cette méthode fonctionne bien, mais pose problème quand on a plusieurs objets du même type</p>
+                </section>
+
+                <section>
+                    <pre><code data-trim contenteditable class="js">
+// Première moto
+var bike_1 = {
+    color      : 'black',
+    speed      : 0,
+    accelerate : function()
+    {
+        this.speed += 1;
+    }
+};
+
+// Deuxième moto
+var bike_2 = {
+    color      : 'red',
+    speed      : 0,
+    accelerate : function()
+    {
+        this.speed += 1;
+    }
+};
+
+// Troisième moto
+var bike_3 = {
+    color      : 'red',
+    speed      : 0,
+    accelerate : function()
+    {
+        this.speed += 1;
+    }
+};
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Objet avec constructeur</h2>
+                </section>
+
+                <section>
+                    <pre><code data-trim contenteditable class="js">
+// Class Bike
+var Bike = function(color)
+{
+    // Propriétés
+    this.color = color;
+    this.speed = 0;
+
+    // Méthodes publiques
+    this.accelerate = function()
+    {
+        this.speed += 1;
+    };
+};
+
+// Initialisation
+var bike_1 = new Bike('black'),
+    bike_2 = new Bike('red'),
+    bike_2 = new Bike('blue');
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>Un constructeur (on peut parler de Class) se créé à partir d'une fonction</p>
+                    <p>L'initialisation se fait avec <span class="hl">new</span></p>
+                    <p>Un seul constructeur permet d'instancier plusieurs objets</p>
+                    <p>Cette méthode fonctionne bien, mais pose problème si on souhaite créer une nouvelle classe héritant de notre constructeur</p>
+                </section>
+
+                <section>
+                    <h2>Objet avec constructeur et prototypage</h2>
+                </section>
+
+                <section>
+                    <pre><code data-trim contenteditable class="js">
+// Class Bike
+var Bike = function(color)
+{
+    this.color = color;
+};
+
+// Prototype
+Bike.prototype.color      = 'black';
+Bike.prototype.speed      = 0;
+Bike.prototype.accelerate = function()
+{
+    this.speed += 1;
+};
+
+// Initialisation
+var bike_1 = new Bike('black'),
+    bike_2 = new Bike('red'),
+    bike_2 = new Bike('blue');
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>Chaque objet possède un prototype</p>
+                    <p>Les propriétés et méthodes du prototype sont utilisées si elles n'existent pas dans l'instance</p>
+                    <p>Cet objet fonctionne exactement comme le précédent sauf que nous allons pouvoir utiliser son protype pour faire de l'héritage</p>
+                </section>
+
+                <section>
+                    <h2>Objet avec héritage</h2>
+                </section>
+
+                <section>
+                    <pre><code data-trim contenteditable class="js">
+// Class Bike
+var Bike = function(color)
+{
+    // Propriétés
+    this.color = color;
+};
+
+Bike.prototype = {
+    color      : 'black',
+    speed      : 0,
+    accelerate : function()
+    {
+        this.speed += 1;
+    }
+};
+
+// Class Bandit (héritée de Bike)
+var Bandit = function(){};
+Bandit.prototype = Object.create(Bike.prototype);
+Bandit.prototype.brand = 'Suzuki';
+
+// Initialisation
+var bike_1 = new Bike('red'),
+    bike_2 = new Bandit('blue');
+
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>Nous avons créé une classe <span class="hl">Bandit</span> qui hérite de la classe <span class="hl">Bike</span></p>
+                    <p>Pour commencer, nous copions le prototype de Bike dans le prototype de Bandit avec <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create">Object.create()</a></p>
+                </section>
+
+                <section>
+                    <p>La méthode <span class="hl">instanceof</span> permet de savoir si un objet hérite d'une classe</p>
+                    <pre><code data-trim contenteditable class="js">
+console.log(bike_1 instanceof Bike)
+console.log(bike_1 instanceof Bandit)
+console.log(bike_2 instanceof Bike)
+console.log(bike_2 instanceof Bandit)
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>Coder orienté objet est primordiale, même pour du web</p>
+                    <p>Les éléments qui composent un site peuvent être encapsulés dans des objets</p>
+                    <p>Exemple : Header, Sidebar, Carousel, Page</p>
+                    <p>Les différents objets peuvent ensuite être séparés dans des fichiers et classés dans des dossiers</p>
+                </section>
+
+                <section>
+                    <h2>Alternatives au prototypage</h2>
+                </section>
+
+                <section>
+                    <p><a href="http://ejohn.org/blog/simple-javascript-inheritance/" target="_blank">Simple JavaScript Inheritance</a><br>(par John Resig, le papa de jQuery)</p>
+                    <pre><code data-trim contenteditable class="js">
+var Person = Class.extend({
+    init: function(isDancing){
+        this.dancing = isDancing;
+    },
+    dance: function(){
+        return this.dancing;
+    }
+});
+ 
+var Ninja = Person.extend({
+    init: function(){
+        this._super( false );
+    },
+    dance: function(){
+        // Call the inherited version of dance()
+        return this._super();
+    },
+    swingSword: function(){
+        return true;
+    }
+});
+ 
+var p = new Person(true);
+p.dance(); // => true
+ 
+var n = new Ninja();
+n.dance();      // => false
+n.swingSword(); // => true
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>features</p>
+                    <ul>
+                        <li>Héritage avec <span class="hl">extends</span></li>
+                        <li><span class="hl">this._super()</span> pour appeler la méthode de la classe parente</li>
+                        <li>Méthode <span class="hl">init()</span> appelée à l'instanciation</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <p><a href="https://github.com/brunosimon/burno.js" target="_blank">Burno.js</a></p>
+                    <pre><code data-trim contenteditable class="js">
+// Create a class wrapping the all application
+B.Components.My_App = B.Core.Abstract.extend(
+{
+    construct : function()
+    {
+        // Instantiate a sidebar and header
+        this.sidebar = new B.Components.My_Sidebar( { color : 'blue' } );
+        this.header  = new B.Components.My_Header();
+    }
+} );
+
+// Create a class for the sidebar
+B.Components.My_Sidebar = B.Core.Abstract.extend(
+{
+    // Default options
+    options :
+    {
+        colors : 'red'
+    },
+
+    construct : function( options )
+    {
+        this._super( options );
+
+        this.main = document.querySelector( 'aside' );
+
+        console.log( 'Init Sidebar' );
+    }
+} );
+
+// Create a class for the header
+B.Components.My_Header = B.Core.Abstract.extend(
+{
+    construct : function()
+    {
+        this.main = document.querySelector( 'header' );
+
+        console.log( 'Init Header' );
+    }
+} );
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>features</p>
+                    <ul>
+                        <li>
+                            Basé sur le système de classe de John Resign
+                            <ul>
+                                <li>Héritage avec <span class="hl">extends</span></li>
+                                <li><span class="hl">this._super()</span> pour appeler la méthode de la classe parente</li>
+                                <li>Méthode <span class="hl">construct()</span> appelée à l'instanciation</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <ul>
+                        <li>Deep property merging</li>
+                        <li>Singleton/Static</li>
+                        <li>Options par défaut</li>
+                        <li>
+                            Classes de base
+                            <ul>
+                                <li>Abstract</li>
+                                <li>Event_Emitter</li>
+                                <li>Breakpoints</li>
+                                <li>Colors</li>
+                                <li>Css</li>
+                                <li>Detector</li>
+                                <li>GA tags</li>
+                                <li>Keyboard</li>
+                                <li>...
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" target="_blank">ES6 Classes</a></p>
+                    <pre><code data-trim contenteditable class="js">
+class Cat { 
+    constructor(name) {
+        this.name = name;
+    }
+
+    speak() {
+        console.log(this.name + ' makes a noise.');
+    }
+}
+
+class Lion extends Cat {
+    speak() {
+        super.speak();
+        console.log(this.name + ' roars.');
+    }
+}
+                    </code></pre>
+                </section>
+
+                <script>
+                    var Bike =
+                    {
+                        color   : 'black',
+                        speed   : 0,
+                        started : false,
+                        start   : function()
+                        {
+                            this.started = true;
+                            console.log('Engine started');
+                        },
+                        accelerate : function()
+                        {
+                            if(this.started)
+                                this.speed += 1;
+                            else
+                                console.log('You must start the engine');
+                        },
+                        break : function()
+                        {
+                            this.speed -= 1;
+                            if(this.speed < 0)
+                                this.speed = 0;
+                        }
+                    };
+
+                    var Suzuki_Bandit_GSF_650         = Object.create(Bike);
+                    Suzuki_Bandit_GSF_650.brand       = 'suzuki';
+                    Suzuki_Bandit_GSF_650.engine_size = 650;
+
+                    var Triumph_Bonneville_T100         = Object.create(Bike);
+                    Triumph_Bonneville_T100.brand       = 'triumph';
+                    Triumph_Bonneville_T100.engine_size = 650;
+
+                    var my_bike   = Object.create(Suzuki_Bandit_GSF_650),
+                        your_bike = Object.create(Triumph_Bonneville_T100);
+
+                </script>
+            </div>
+        </div>
+
+        <script src="../src/reveal.js/lib/js/head.min.js"></script>
+        <script src="../src/reveal.js/js/reveal.js"></script>
+        <script src="../src/custom/script.js"></script>
+        <script src="src/js/script.js"></script>
+    </body>
+</html>
