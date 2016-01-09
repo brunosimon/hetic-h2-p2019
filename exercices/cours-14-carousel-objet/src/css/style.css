@@ -1,0 +1,103 @@
+body {
+	background:#eee;
+	font-family:Helvetica,Arial;
+	font-size:14px;
+}
+
+/**
+ * CAROUSEL
+ */
+.carousel {
+	position:relative;
+	width:600px;
+	height:400px;
+	background:#333;
+}
+
+/* SLIDES */
+.carousel .slides {
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	overflow:hidden;
+}
+
+.carousel .slides .items {
+	position:absolute;
+	top:0;
+	left:0;
+	width:9999px;
+	height:100%;
+	font-size:0;
+}
+
+.carousel .slides .items .item {
+	display:inline-block;
+	width:600px;
+	height:100%;
+	background-size:cover;
+	background-position:center center;
+}
+
+/* SIBLINGS */
+.carousel .siblings .sibling {
+	position:absolute;
+	display:block;
+	top:50%;
+	width:60px;
+	height:60px;
+	margin-top:-30px;
+	background:#fff;
+	text-decoration:none;
+	text-align:center;
+	line-height:60px;
+	opacity:0.3;
+	transition:opacity 0.15s;
+}
+
+.carousel .siblings .sibling:hover {
+	opacity:1;
+}
+
+.carousel .siblings .sibling.prev {
+	left:15px;
+}
+
+.carousel .siblings .sibling.next {
+	right:15px;
+}
+
+/* PAGINATION */
+.carousel .pagination {
+	position:absolute;
+	bottom:0px;
+	width:100%;
+	font-size:0;
+	text-align:center;
+}
+
+.carousel .pagination .item {
+	display:inline-block;
+	position:relative;
+	width:40px;
+	height:40px;
+	opacity:0.3;
+	transition:opacity 0.15s;
+}
+
+.carousel .pagination .item.active,
+.carousel .pagination .item:hover {
+	opacity:1;
+}
+
+.carousel .pagination .item:after {
+	content:'';
+	position:absolute;
+	top:15px;
+	left:15px;
+	width:10px;
+	height:10px;
+	background:#fff;
+}

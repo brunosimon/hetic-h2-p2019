@@ -1,0 +1,104 @@
+<!-- 
+
+TODO :
+	[√] Mise en place du template
+	[√] Création du DOM
+		[√] Choix sur la gestion des images
+		[√] Choix sur la gestion de la pagination
+	[√] CSS
+		[√] background-size
+	[√] JS
+		[√] Création d'une classe
+			[√] Méthodes vides
+			[√] Propriétés
+			[√] Complétion
+				[√] go_to
+				[√] next
+				[√] prev
+				[√] update_pagination
+		[√] Instanciation unique
+		[√] Instanciation multiple
+		[ ] Class App
+	[ ] Évolutions
+		[ ] Clavier
+		[ ] Touch
+		[ ] Drag n drop souris
+		[ ] Limites
+		[ ] Resize de carousel / Responsive
+		[ ] Vocal
+		[ ] Design
+		[ ] Meilleur animations
+		[ ] Full screen
+		[ ] Pagination
+		[ ] Texts de description
+		[ ] Options
+		[ ] Autoplay (stop au rollover)
+		[ ] Lazyload
+
+-->
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+		<title>Carousel</title>
+		<link rel="stylesheet" href="src/css/reset.css">
+		<link rel="stylesheet" href="src/css/style.css">
+	</head>
+	<body>
+		<div class="carousel">
+			<div class="slides">
+				<div class="items">
+					<div class="item" style="background-image:url(src/medias/1.jpg)"></div>
+					<div class="item" style="background-image:url(src/medias/2.jpg)"></div>
+					<div class="item" style="background-image:url(src/medias/3.jpg)"></div>
+					<div class="item" style="background-image:url(src/medias/4.jpg)"></div>
+					<div class="item" style="background-image:url(src/medias/5.jpg)"></div>
+					<div class="item" style="background-image:url(src/medias/6.jpg)"></div>
+					<div class="item" style="background-image:url(src/medias/7.jpg)"></div>
+				</div>
+			</div>
+			<div class="pagination">
+				<div class="items">
+					<a href="#" class="item active"></a>
+					<a href="#" class="item"></a>
+					<a href="#" class="item"></a>
+					<a href="#" class="item"></a>
+					<a href="#" class="item"></a>
+					<a href="#" class="item"></a>
+					<a href="#" class="item"></a>
+				</div>
+			</div>
+			<div class="siblings">
+				<a href="#" class="sibling next">&gt;</a>
+				<a href="#" class="sibling prev">&lt;</a>
+			</div>
+		</div>
+
+		<div class="carousel">
+			<div class="slides">
+				<div class="items">
+					<div class="item" style="background-image:url(src/medias/5.jpg)"></div>
+					<div class="item" style="background-image:url(src/medias/6.jpg)"></div>
+					<div class="item" style="background-image:url(src/medias/7.jpg)"></div>
+				</div>
+			</div>
+			<div class="pagination">
+				<div class="items">
+					<a href="#" class="item active"></a>
+					<a href="#" class="item"></a>
+					<a href="#" class="item"></a>
+				</div>
+			</div>
+			<div class="siblings">
+				<a href="#" class="sibling next">&gt;</a>
+				<a href="#" class="sibling prev">&lt;</a>
+			</div>
+		</div>
+
+		<script src="src/js/libs/fastclick.js"></script>
+		<script src="src/js/libs/jquery.min.js"></script>
+		<script src="src/js/app/carousel.class.js"></script>
+		<script src="src/js/app/script.js"></script>
+	</body>
+</html>
