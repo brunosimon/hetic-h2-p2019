@@ -16,21 +16,21 @@ GitHub de développement web pour la promotion P2019 H2
 - [x] Responsive
 - [x] Newsletter
 - [x] Canvas
-- [ ] Fonts
-- [ ] Du PSD à l’intégration
-- [ ] Organiser projet / choisir hébergement / mettre en ligne
-- [ ] JS jQuery
-- [ ] Versionning avec git
+- [x] Fonts
 - [ ] JS orienté objet
+- [ ] JS jQuery
 
 Optionnels
 
+- [ ] Task runners (grunt/gulp)
+- [ ] Sass
+- [ ] Versionning avec git
 - [ ] HTML5 Local Storage API
 - [ ] HTML5 Offline API
 - [ ] HTML5 Websocket API
 - [ ] SVG
-- [ ] Task runners (grunt/gulp)
-- [ ] Sass
+- [ ] Du PSD à l’intégration
+- [ ] Organiser projet / choisir hébergement / mettre en ligne
 
 ### Trimestre 2
 
