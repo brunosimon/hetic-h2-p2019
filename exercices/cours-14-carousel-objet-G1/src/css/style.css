@@ -1,0 +1,51 @@
+body {
+	background:#eee;
+	font-family:Helvetica,Arial;
+	font-size:14px;
+}
+
+/**
+ * CAROUSEL
+ */
+.carousel {position:relative;width:600px;height:400px;}
+
+/* SLIDES */
+.carousel .slides {
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	overflow:hidden;
+}
+.carousel .slides .items {
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	width:999999px;
+	font-size:0;
+}
+.carousel .slides .item {
+	width:600px;
+	height:100%;
+	display:inline-block;
+}
+
+/* SIBLINGS */
+.carousel .siblings .sibling {
+	position:absolute;
+	top:calc(50% - 20px);
+	width:40px;
+	height:40px;
+	background:#fff;
+	text-align:center;
+	line-height:40px;
+	text-decoration:none;
+}
+.carousel .siblings .sibling.prev {
+	left:20px;
+}
+.carousel .siblings .sibling.next {
+	right:20px;
+}

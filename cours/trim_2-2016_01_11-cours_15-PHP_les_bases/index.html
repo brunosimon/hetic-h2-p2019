@@ -103,17 +103,29 @@
 
                 <section>
                     <p>Il va donc falloir installer Apache</p>
-                    <p><a target="_blank" href="http://www.commentcamarche.net/download/telecharger-34055064-wampserver">http://goo.gl/c6anfG</a> - WampServer (windows)</p>
-                    <p><a target="_blank" href="http://www.mamp.info/en/index.html">http://goo.gl/8VYpRa</a> - MAMP (mac)</p>
+                    <p><a target="_blank" href="http://www.wampserver.com/#download-wrapper">http://www.wampserver.com/#download-wrapper</a> - WampServer (windows)</p>
+                    <p><a target="_blank" href="https://www.mamp.info/">https://www.mamp.info/</a> - MAMP (mac)</p>
                 </section>
 
                 <section>
-                    <p>Les deux versions (windows et mac) fonctionnent sensiblement de la même manière.</p>
+                    <h3>Apache et Skype</h3>
+                    <p>Depuis peu, Skype utilise les mêmes ports que Apache, empêchant ce dernier de démarrer</p>
+                    <p>Sur Skype, aller dans <span class="hl">Outils > Options...</span></p>
+                    <p><img src="src/img/skype-1.png" alt=""></p>
+                </section>
+
+                <section>
+                    <p>Aller dans <span class="hl">Avancées > Connexion</span> et décocher <span class="hl">Utiliser les ports 80 et 443 pour...</span></p>
+                    <p><img src="src/img/skype-2.png" alt="" width="500"></p>
+                </section>
+
+                <section>
+                    <p>Les deux logiciels (windows et mac) fonctionnent sensiblement de la même manière.</p>
                     <p>Il faut lancer le logiciel puis lancer le serveur</p>
                     <p>
-                        Les scripts se trouvent en général par défaut dans les dossiers :
-                        <br /><span class="highlight">Applications/MAMP/htdocs/</span> (mac)
-                        <br /><span class="highlight">C:\wamp\www\</span> (windows)
+                        Vous allez maintenant devoir développer dans des dossiers spécifiques :
+                        <br /><span class="highlight">Applications/MAMP/htdocs/</span> (mamp)
+                        <br /><span class="highlight">C:\wamp\www\</span> (wamp)
                     </p>
                 </section>
 
