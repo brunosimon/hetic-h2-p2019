@@ -2,7 +2,7 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8">
-        <title>TRIM 2 - Cours 18 - PHP - Conditions</title>
+        <title>TRIM 2 - Cours 17 - PHP - Boucles</title>
         <meta name="description" content="">
         <meta name="author" content="Bruno Simon">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -26,7 +26,7 @@
                 <section>
                     <h3>H2 - P2019</h3>
                     <h1>Développement web</h1>
-                    <h3>Cours 18 - 2016-01-04</h3>
+                    <h3>Cours 17 - 2016-01-25</h3>
                     <ul>
                         <li>github : <a target="_blank" href="https://github.com/brunosimon/hetic-p2019">https://github.com/brunosimon/hetic-p2019</a></li>
                         <li>site : <a target="_blank" href="http://bruno-simon.com/hetic/p2019/">http://bruno-simon.com/hetic/p2019/</a></li>
@@ -36,211 +36,174 @@
 
                 <section>
                     <h3>PHP</h3>
-                    <h1>Conditions</h1>
+                    <h1>Boucles</h1>
                 </section>
 
                 <section>
-                    <h2>IF</h2>
+                    <h2>FOR</h2>
                 </section>
 
                 <section>
-                    <h3>IF</h3>
-                    <p>If permet de tester qu'une condition soit vraie</p>
-                    <p>Fonctionne comme en javascript</p>
+                    <h3>FOR</h3>
+                    <p>La boucle <span class="highlight">FOR</span> permet d'itérer jusqu'à atteindre une condition</p>
                     <pre><code  data-trim contenteditable class="php">
 &lt;?php
-    $foo = true;
-
-    if($foo == true)
+    for($i = 0; $i &lt; 6; $i++)
     {
-        echo 'Vraie !';
+        echo $i;
     }
-                    </code></pre>
-                    <p><span class="highlight">Vraie !</span> va s'afficher car <span class="highlight">$foo = true</span></p>
-                </section>
 
-                <section>
-                    <h3>IF</h3>
-                    <p>Comme en JS, lorsqu'il n'y a qu'une seule instruction, il n'est pas nécessaire d'écrire les accolades <span class="highlight">{ }</span></p>
-                    <pre><code  data-trim contenteditable class="php">
-&lt;?php
-    $foo = true;
-
-    if($foo == true)
-        echo 'Vraie !';
-
-    // 'Vraie !' va s'afficher
-
+    // Va afficher '012345'
                     </code></pre>
                 </section>
 
                 <section>
-                    <h3>IF</h3>
-                    <p>Si l'on test que la valeur doit être <span class="highlight">true</span> ou <span class="highlight">false</span> il n'est pas nécessaire de l'écrire</p>
+                    <h3>FOR</h3>
+                    <p>Les différentes parties entre parenthèses sont séparées par des <span class="highlight">;</span></p>
+                    <p>La première correspond à l'initialisation</p>
+                    <p>La deuxième correspond à la condition (si vraie, continuer)</p>
+                    <p>La troisième correspond à l'action</p>
+                    <p>Les <span class="highlight">{ }</span> ne sont pas nécessaires pour une seule instruction</p>
                     <pre><code  data-trim contenteditable class="php">
 &lt;?php
-    if($foo == true)
-        echo 'Vraie !';
-
-    if($foo == false)
-        echo 'Faux !';
-
-                    </code></pre>
-                    <p>Équivaut à</p>
-                    <pre><code  data-trim contenteditable class="php">
-&lt;?php
-
-    if($foo)
-        echo 'Vraie !';
-
-    if(!$foo)
-        echo 'Faux !';
-
+    for($i = 0; $i &lt; 6; $i++)
+        echo $i;
                     </code></pre>
                 </section>
 
                 <section>
-                    <h3>IF</h3>
-                    <pre><code  data-trim contenteditable class="php">
-&lt;?php
-    $foo = 1;
-    if($foo == '1')
-        echo 'Vraie !';
-
-                    </code></pre>
-                    <p class="fragment">Va renvoyer <span class="highlight">Vraie !</span> car, avec <span class="highlight">==</span>, PHP tente de faire correspondre les variables quelque soit le type</p>
-                </section>
-
-                <section>
-                    <h3>IF</h3>
-                    <pre><code  data-trim contenteditable class="php">
-&lt;?php
-    $foo = 1;
-    if($foo === true)
-        echo 'Vraie !';
-                    </code></pre>
-                    <p>Ne va pas renvoyer <span class="highlight">Vraie !</span> car, avec <span class="highlight">===</span> (triple égalité), PHP va aussi tester le type de la variable</p>
-                </section>
-
-                <section>
-                    <h3>IF</h3>
+                    <h3>FOR</h3>
                     <p>Exercice</p>
                     <pre><code  data-trim contenteditable class="php">
 &lt;?php
-    if('1' == 1)
-        echo 'vraie !';
+    // Va afficher : ________
+    for($i = 0; $i &lt; 6; $i++)
+        echo $i;
 
-    if('1' === 1)
-        echo 'vraie !';
-        
-    if('1' !== 1)
-        echo 'vraie !';
-        
-    if('1' != 1)
-        echo 'vraie !';
-        
-    if('1' == true)
-        echo 'vraie !';
-        
-    if(1 === true)
-        echo 'vraie !';
+    // Va afficher : ________
+    for($i = 2; $i &lt;= 6; $i++)
+        echo $i;
 
+    // Va afficher : ________
+    for($i = 6; $i > 0; $i--)
+        echo $i;
+
+    // Va afficher : ________
+    for($i = 0; $i &lt; 6; $i += 2)
+        echo $i;
+
+    // Va afficher : ________
+    for($i = 0; $i &lt; 9; $i++)
+        echo $i % 3;
+
+    // Va afficher : ________
+    for($i = 10; $i < 6; $i++)
+        echo $i;
                     </code></pre>
                 </section>
 
                 <section>
-                    <h2>ELSE</h2>
-                    <p>Comme en JS, le <span class="highlight">ELSE</span> est interprété si le <span class="highlight">IF</span> ne l'est pas</p>
+                    <h2>WHILE</h2>
+                </section>
+
+                <section>
+                    <h3>WHILE</h3>
+                    <p>La boucle <span class="highlight">WHILE</span> permet d'itérer tant qu'une condition est vraie</p>
                     <pre><code  data-trim contenteditable class="php">
 &lt;?php
-    $foo = false;
+    $foo = 0;
 
-    if($foo)
+    while($foo &lt; 10)
     {
-        echo 'dans le IF';
+        $foo++;
+        echo $foo;
     }
-    else
-    {
-        echo 'dans le ELSE';
-    }
-
                     </code></pre>
                 </section>
 
                 <section>
-                    <h2>SWITCH ... CASE</h2>
-                </section>
-
-                <section>
-                    <h2>Switch ... Case</h2>
-                    <p>Le format suivant peut-être écrit plus simplement avec un <a href="">switch</a></p>
+                    <h3>WHILE</h3>
+                    <p>Attention aux boucles infinies</p>
                     <pre><code  data-trim contenteditable class="php">
 &lt;?php
-    $foo = 3;
-
-    if($foo == 1)
+    while(true)
     {
-        echo 'On fait ça';
+        echo 'vers l\'infini';
     }
-    else if($foo == 2)
-    {
-        echo 'Ou alors ceci';
-    }
-    else if($foo == 3)
-    {
-        echo 'Ou encore cela';
-    }
-    else
-    {
-        echo 'Sinon ça';
-    }
-
                     </code></pre>
                 </section>
 
                 <section>
-                    <h2>Switch ... Case</h2>
-                    <p>Avec le <a href="">switch</a></p>
+                    <h3>WHILE</h3>
+                    <p>Les <span class="highlight">{ }</span> ne sont pas nécessaires pour une seule instruction</p>
                     <pre><code  data-trim contenteditable class="php">
 &lt;?php
-    $foo = 3;
+    $foo = 0;
 
-    switch($foo)
-    {
-        case 1:
-            echo 'On fait ça';
-            break;
-        case 2:
-            echo 'Ou alors ceci';
-            break;
-        case 3:
-            echo 'Ou encore cela';
-            break;
-        default:
-            echo 'Sinon ça';
-    }
-
+    while($foo &lt; 10)
+        echo $foo++;
                     </code></pre>
                 </section>
 
                 <section>
-                    <small>BONUS</small>
-                    <h2>IF ternaire</h2>
-                    <p>Il est possible de se passer du <span class="highlight">IF</span> lors d'une assignation ou d'un echo</p>
+                    <h2>FOREACH</h2>
+                </section>
+
+                <section>
+                    <h3>FOREACH</h3>
+                    <p>la boucle <span class="highlight">FOREACH</span> permet d'itérer à travers un tableau</p>
+                    <p>Les accolades <span class="highlight">{ }</span> ne sont pas nécessaires pour une seule instruction</p>
                     <pre><code  data-trim contenteditable class="php">
 &lt;?php
-    $foo = true;
+    $my_array = array('un','deux',true,4);
 
-    $bar = $foo ? 'toto' : 'tata';
-
-    echo $foo ? 'oui' : 'non';
-
+    foreach($my_array as $value)
+    {
+        echo $value;
+    }
                     </code></pre>
                 </section>
 
+                <section>
+                    <h3>FOREACH</h3>
+                    <p>Il est possible de récupérer la clé correspondant à la valeur</p>
+                    <pre><code  data-trim contenteditable class="php">
+&lt;?php
+    $my_array = array(
+        'toto' => 'un',
+        'tata' => 'deux',
+        'tutu' => true,
+        'tete' => 4
+    );
+
+    foreach($my_array as $key => $value)
+    {
+        echo $key . ' = ' . $value . '&lt;br /&gt;';
+    }
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>FOREACH</h3>
+                    <p>Cela fonctionne aussi avec avec un tableau sans clé</p>
+                    <pre><code  data-trim contenteditable class="php">
+&lt;?php
+    $my_array = array(
+        'un',
+        'deux',
+        true,
+        4
+    );
+
+    foreach($my_array as $key => $value)
+    {
+        echo $key . ' = ' . $value . '&lt;br /&gt;';
+    }
+                    </code></pre>
+                </section>
             </div>
         </div>
-        
+
         <script src="../src/reveal.js/lib/js/head.min.js"></script>
         <script src="../src/reveal.js/js/reveal.js"></script>
         <script src="../src/custom/script.js"></script>

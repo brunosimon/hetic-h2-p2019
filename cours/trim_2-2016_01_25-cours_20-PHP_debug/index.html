@@ -26,7 +26,7 @@
                 <section>
                     <h3>H2 - P2019</h3>
                     <h1>Développement web</h1>
-                    <h3>Cours 20 - 2016-01-04</h3>
+                    <h3>Cours 20 - 2016-01-25</h3>
                     <ul>
                         <li>github : <a target="_blank" href="https://github.com/brunosimon/hetic-p2019">https://github.com/brunosimon/hetic-p2019</a></li>
                         <li>site : <a target="_blank" href="http://bruno-simon.com/hetic/p2019/">http://bruno-simon.com/hetic/p2019/</a></li>
@@ -40,6 +40,63 @@
                 </section>
 
 
+                <!-- AFFICHER LES ERREURS (Coté logiciel) -->
+                <section>
+                    <h2>Afficher les erreurs</h2>
+                </section>
+
+                <section>
+                    <p>On peut choisir d'afficher ou non les erreurs</p>
+                    <p>Il est possible de n'afficher que certains types d'erreurs</p>
+                    <p>La configuration dépend du logiciel utilisé</p>
+                </section>
+
+                <section>
+                    <h3>MAMP (mac - gratuit)</h3>
+                    <p>Pour afficher les erreurs sur MAMP, il faut modifier le fichier de configuration de PHP manuellement</p>
+                    <ul>
+                        <li>Lancer MAMP</li>
+                        <li>Aller dans <span class="hl">Préférences</span></li>
+                        <li>Noter la version de PHP</li>
+                        <li>Aller dans le dossier <span class="hl">Applications/MAMP/bin/php/phpX.X.X/conf</span> (remplacer X.X.X par version de PHP)</li>
+                        <li>Trouver la ligne <span class="hl">display_errors</span> et mettre <span class="hl">On</span> en valeur</li>
+                        <li>Trouver la ligne <span class="hl">error_reporting</span> et mettre <span class="hl">E_ALL</span> en valeur</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>MAMP PRO (mac - payant)</h3>
+                    <p>Il est possible de choisir les messages à afficher</p>
+                    <p>Et de les afficher dans la page ou dans les logs</p>
+                    <p><img class="no-style" src="src/img/mamp-pro.png" alt=""></p>
+                </section>
+
+                <section>
+                    <h3>WAMP (windows - gratuit)</h3>
+                    <p>Il est possible de choisir si oui ou non les erreurs s'affichent</p>
+                    <p><img class="no-style" src="src/img/wamp.png" alt=""></p>
+                </section>
+
+                <section>
+                    <h3>WAMP (windows - gratuit)</h3>
+                    <p>Affichage plus lisible des erreurs</p>
+                    <p><img class="no-style" src="src/img/wamp-error-2.png" alt=""></p>
+                </section>
+
+
+                <!-- AFFICHER LES ERREURS (Coté script) -->
+                <section>
+                    <p>Les paramètres d'affichage des erreurs peuvent être surchargés directement en PHP</p>
+                    <p>On utilise la méthode <span class="highlight">error_reporting()</span> pour choisir quels messages afficher</p>
+                    <p>Et la méthode <span class="highlight">init_set('display_errors',1)</span> pour afficher ou non les erreurs</p>
+                    <pre><code contenteditable class="php">
+//Peut &ecirc;tre remplac&eacute; par E_WARNING, E_PARSE, E_NOTICE, E_ERROR
+error_reporting(E_ALL); 
+ini_set('display_errors', 1);
+                    </code></pre>
+                </section>
+
+
                 <!-- LES TYPES D'ERREURS -->
                 <section>
                     <h2>Les types d'erreurs</h2>
@@ -47,10 +104,12 @@
 
                 <section>
                     <p>Il existe 4 principaux types d'erreurs en PHP</p>
-                    <p><span class="highlight">Notice</span></p>
-                    <p><span class="highlight">Warning</span></p>
-                    <p><span class="highlight">Fatal Error</span></p>
-                    <p><span class="highlight">Parse Error</span></p>
+                    <ul>
+                        <li><span class="highlight">Notice</span></li>
+                        <li><span class="highlight">Warning</span></li>
+                        <li><span class="highlight">Fatal Error</span></li>
+                        <li><span class="highlight">Parse Error</span></li>
+                    </ul>
                     <p>Il est important de toutes les corriger</p>
                 </section>
 
@@ -86,56 +145,6 @@ require &#039;fichier_qui_nexiste_pas.php&#039;;
                     <pre><code contenteditable class="php">
 echo &#039;hey&#039;
 echo &#039;boum error&#039;;
-                    </code></pre>
-                </section>
-
-
-                <!-- AFFICHER LES ERREURS (Coté logiciel) -->
-                <section>
-                    <h2>Afficher les erreurs</h2>
-                </section>
-
-                <section>
-                    <p>Les erreurs peuvent s'afficher ou non</p>
-                    <p>Il est possible de n'afficher que certains types d'erreurs</p>
-                    <p>La configuration peut se faire à plusieurs endroits</p>
-                </section>
-
-                <section>
-                    <h3>MAMP (mac - gratuit)</h3>
-                    <p>Il n'est pas possible de paramétrer l'affichage des erreurs depuis le logiciel</p>
-                    <p><img class="no-style" src="src/img/mamp-lite.png" alt=""></p>
-                </section>
-
-                <section>
-                    <h3>MAMP PRO (mac - payant)</h3>
-                    <p>Il est possible de choisir les messages à afficher</p>
-                    <p>Et de les afficher dans la page ou dans les logs</p>
-                    <p><img class="no-style" src="src/img/mamp-pro.png" alt=""></p>
-                </section>
-
-                <section>
-                    <h3>WAMP (windows - gratuit)</h3>
-                    <p>Il est possible de choisir si oui ou non les erreurs s'affichent</p>
-                    <p><img class="no-style" src="src/img/wamp.png" alt=""></p>
-                </section>
-
-                <section>
-                    <h3>WAMP (windows - gratuit)</h3>
-                    <p>Affichage plus lisible des erreurs</p>
-                    <p><img class="no-style" src="src/img/wamp-error-2.png" alt=""></p>
-                </section>
-
-
-                <!-- AFFICHER LES ERREURS (Coté script) -->
-                <section>
-                    <p>Les paramètres d'affichage des erreurs peuvent être surchargés directement en PHP</p>
-                    <p>On utilise la méthode <span class="highlight">error_reporting()</span> pour choisir quels messages afficher</p>
-                    <p>Et la méthode <span class="highlight">init_set("display_errors",1)</span> pour afficher ou non les erreurs</p>
-                    <pre><code contenteditable class="php">
-//Peut &ecirc;tre remplac&eacute; par E_WARNING, E_PARSE, E_NOTICE, E_ERROR
-error_reporting(E_ALL); 
-ini_set(&quot;display_errors&quot;, 1);
                     </code></pre>
                 </section>
 
@@ -232,6 +241,8 @@ die($foo);
                     <p>var_dump contient plus d'informations (tailles des tableaux et types des contenus)</p>
                     <pre><code  contenteditable class="php">
 $foo = [40,&#039;test&#039;,true];
+
+echo $foo; // Array
 
 print_r($foo); // Array ( [0] =&gt; 40 [1] =&gt; test [2] =&gt; 1 )
 
