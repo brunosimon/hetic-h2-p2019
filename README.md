@@ -17,8 +17,8 @@ GitHub de développement web pour la promotion P2019 H2
 - [x] Newsletter
 - [x] Canvas
 - [x] Fonts
-- [ ] JS orienté objet
-- [ ] JS jQuery
+- [x] JS orienté objet
+- [x] JS jQuery
 
 Optionnels
 
@@ -34,17 +34,17 @@ Optionnels
 
 ### Trimestre 2
 
-- [ ] PHP les bases
-- [ ] PHP variables
-- [ ] PHP conditions
-- [ ] PHP boucles
-- [ ] PHP fonctions
-- [ ] PHP includes
-- [ ] PHP debug
-- [ ] HTML/PHP formulaire
-- [ ] PHP cookies/sessions
+- [x] PHP les bases
+- [x] PHP variables
+- [x] PHP conditions
+- [x] PHP boucles
+- [x] PHP fonctions
+- [x] PHP includes
+- [x] PHP debug
+- [x] HTML/PHP formulaire
 - [ ] PHP/SQL Base de données MySQL
 - [ ] PHP/SQL Mots de passes
+- [ ] PHP cookies/sessions
 - [ ] PHP en vrac
 - [ ] PHP regex
 - [ ] PHP routing

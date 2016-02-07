@@ -1,0 +1,24 @@
+body {
+	background:#eee;
+	font-family:Helvetica,Arial;
+	font-size:14px;
+	padding-bottom:200px;
+}
+
+.errors {
+	color:red;
+	border:1px solid red;
+	padding:15px;
+	margin:0 0 15px 0;
+}
+
+.success {
+	color:green;
+	border:1px solid green;
+	padding:15px;
+	margin:0 0 15px 0;
+}
+
+form .error {
+	color:red;
+}
