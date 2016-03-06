@@ -1,6 +1,6 @@
 <?php 
-	include 'config.php';
-	include 'form.php';
+	include 'includes/config.php';
+	include 'includes/form.php';
 
 	$query = $pdo->query('SELECT * FROM users');
 	$users = $query->fetchAll();

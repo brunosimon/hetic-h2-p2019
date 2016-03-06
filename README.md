@@ -49,11 +49,11 @@ Optionnels
 - [ ] PHP regex
 - [ ] PHP routing
 - [ ] PHP APIs
-- [ ] PHP orienté objet
-- [ ] VHOST
 
 ### Trimestre 3
 
+- [ ] VHOST
+- [ ] PHP orienté objet
 - [ ] PHP frameworks
 - [ ] Silex/Slim/Cake (?)
 

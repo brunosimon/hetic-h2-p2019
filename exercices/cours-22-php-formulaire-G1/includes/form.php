@@ -1,12 +1,13 @@
 <?php 
 
+
 /*
 	TODO
 	[ ] Form
-		[ ] in_array pour gérer le genre
-		[ ] afficher les erreurs
-		[ ] remplir tableau success
-		[ ] afficher les success
+		[x] in_array pour gérer le genre
+		[x] afficher les erreurs
+		[x] remplir tableau success
+		[x] afficher les success
 		[ ] Valeurs par défaut
 		[ ] Reset valeurs si validé
 
@@ -21,6 +22,9 @@
 
 $errors  = array();
 $success = array();
+$name    = '';
+$age     = '';
+$gender  = '';
 
 // Data sent
 if(!empty($_POST))
@@ -47,8 +51,18 @@ if(!empty($_POST))
 	// Gender
 	if(empty($gender))
 		$errors['gender'] = 'Missing gender';
-	else if($gender != 'male' && $gender != 'female')
+	else if(!in_array($gender,['male','female']))
 		$errors['gender'] = 'Impossible gender';
+
+	// Success
+	if(empty($errors))
+	{
+		$success[] = 'Utilisateur enregistré';
+
+		$name   = '';
+		$age    = '';
+		$gender = '';
+	}
 }
 
 // No data sent
