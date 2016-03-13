@@ -10,13 +10,13 @@
 		[x] Valeurs par défaut
 		[x] Reset valeurs si validé
 
-	[ ] BDD
-		[ ] Config
-		[ ] Récupérer users
-		[ ] Afficher users
-		[ ] Sauvegarder user
-		[ ] Gérer erreur de sauvegarde
-		[ ] Gérer faille XSS
+	[x] BDD
+		[x] Config
+		[x] Récupérer users
+		[x] Afficher users
+		[x] Sauvegarder user
+		[x] Gérer erreur de sauvegarde
+		[x] Gérer faille XSS
 */
 
 $errors  = array();
@@ -33,9 +33,9 @@ if(!empty($_POST))
 		$_POST['gender'] = '';
 
 	// Set variables
-	$name   = trim($_POST['name']);
-	$age    = trim($_POST['age']);
-	$gender = trim($_POST['gender']);
+	$name   = strip_tags(trim($_POST['name']));
+	$age    = strip_tags(trim($_POST['age']));
+	$gender = strip_tags(trim($_POST['gender']));
 
 	// Name error
 	if(empty($name))
@@ -56,12 +56,25 @@ if(!empty($_POST))
 	// Success
 	if(empty($errors))
 	{
-		$success[] = 'Utilisateur enregistré';
+		$prepare = $pdo->prepare('INSERT INTO users (name,age,gender) VALUES (:name,:age,:gender)');
+		$prepare->bindValue('name',$name);
+		$prepare->bindValue('age',$age);
+		$prepare->bindValue('gender',$gender);
+		$execute = $prepare->execute();
 
-		// Reset values
-		$name   = '';
-		$age    = '';
-		$gender = '';
+		if($execute)
+		{
+			$success[] = 'Utilisateur enregistré';
+
+			// Reset values
+			$name   = '';
+			$age    = '';
+			$gender = '';
+		}
+		else
+		{
+			$errors[] = 'Something wrong happened';
+		}
 	}
 }
 // No data sent

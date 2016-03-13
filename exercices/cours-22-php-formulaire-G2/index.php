@@ -1,5 +1,10 @@
 <?php 
+	require 'includes/config.php';
 	require 'includes/form.php';
+
+	$query = $pdo->query('SELECT * FROM users');
+	$users = $query->fetchAll();
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -51,6 +56,25 @@
 				<input type="submit">
 			</div>
 		</form>
+
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Age</th>
+				<th>Gender</th>
+			</tr>
+
+			<?php foreach($users as $_user): ?>
+				<tr>
+					<td><?= $_user->id ?></td>
+					<td><?= $_user->name ?></td>
+					<td><?= $_user->age ?></td>
+					<td><?= $_user->gender ?></td>
+				</tr>
+			<?php endforeach; ?>
+
+		</table>
 
 		<script src="src/js/libs/jquery-2.2.0.js"></script>
 		<script src="src/js/app/script.js"></script>

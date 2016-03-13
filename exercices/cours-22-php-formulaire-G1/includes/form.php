@@ -3,21 +3,21 @@
 
 /*
 	TODO
-	[ ] Form
+	[x] Form
 		[x] in_array pour gérer le genre
 		[x] afficher les erreurs
 		[x] remplir tableau success
 		[x] afficher les success
-		[ ] Valeurs par défaut
-		[ ] Reset valeurs si validé
+		[x] Valeurs par défaut
+		[x] Reset valeurs si validé
 
-	[ ] BDD
-		[ ] Config
-		[ ] Récupérer users
-		[ ] Afficher users
-		[ ] Sauvegarder user
-		[ ] Gérer erreur de sauvegarde
-		[ ] Gérer faille XSS
+	[x] BDD
+		[x] Config
+		[x] Récupérer users
+		[x] Afficher users
+		[x] Sauvegarder user
+		[x] Gérer erreur de sauvegarde
+		[x] Gérer faille XSS
  */
 
 $errors  = array();
@@ -34,9 +34,9 @@ if(!empty($_POST))
 		$_POST['gender'] = '';
 
 	// Set variables
-	$name   = trim($_POST['name']);
-	$age    = trim($_POST['age']);
-	$gender = trim($_POST['gender']);
+	$name   = strip_tags(trim($_POST['name']));
+	$age    = strip_tags(trim($_POST['age']));
+	$gender = strip_tags(trim($_POST['gender']));
 
 	// Name errors
 	if(empty($name))
@@ -57,11 +57,25 @@ if(!empty($_POST))
 	// Success
 	if(empty($errors))
 	{
-		$success[] = 'Utilisateur enregistré';
+		$prepare = $pdo->prepare('INSERT INTO users (name,age,gender) VALUES (:name,:age,:gender)');
+		$prepare->bindValue('name',$name);
+		$prepare->bindValue('age',$age);
+		$prepare->bindValue('gender',$gender);
 
-		$name   = '';
-		$age    = '';
-		$gender = '';
+		$execute = $prepare->execute();
+
+		if(!$execute)
+		{
+			$errors[] = 'Une erreur s\'est produite lors de la sauvegarde';
+		}
+		else
+		{
+			$success[] = 'Utilisateur enregistré';
+
+			$name   = '';
+			$age    = '';
+			$gender = '';
+		}
 	}
 }
 
