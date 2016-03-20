@@ -159,6 +159,7 @@ setcookie(&#039;mon_cookie&#039;,&#039;&#039;,time() -10); // La date d&#039;exp
                         <li>L'utilisateur ne peut pas les modifier</li>
                         <li>Va tout de même stocker un cookie appelé <a href="http://us3.php.net/manual/fr/function.session-id.php" target="_blank">session_id</a> permettant de faire le lien avec le visiteur</li>
                         <li>S'utilise comme les cookies</li>
+                        <li>Permet de stocker plus que des chaînes de caractères</li>
                     </ul>
                 </section>
 
@@ -173,8 +174,15 @@ $_SESSION['role']     = 'admin';
                 </section>
 
                 <section>
+                    <p>Pour terminer une session, il faut appeler la fonction <a href="http://www.php.net/manual/fr/function.session-destroy.php" target="_blank">session_destroy</a> (avant d'envoyer le moindre code HTML)</p>
+                    <pre><code contenteditable class="php">
+session_destroy();
+                    </code></pre>
+                </section>
+
+                <section>
                     <p>Idéal pour stocker des données sensibles ne pouvant figurer sur l'ordinateur du visiteur</p>
-                    <p>Demande plus de ressources coté serveur</p>
+                    <p>Demande plus de ressources côté serveur</p>
                 </section>
 
             </div>

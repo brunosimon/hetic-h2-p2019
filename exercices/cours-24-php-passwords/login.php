@@ -17,9 +17,19 @@
 
 		// Test password
 		if($user->password == $password)
+		{
+			// Update session
+			$_SESSION['user'] = array(
+				'id'    => $user->id,
+				'email' => $user->email
+			);
+
 			echo 'You shall pass !';
+		}
 		else
+		{
 			echo 'You shall not pass !';
+		}
 	}
 ?>
 <!DOCTYPE html>
@@ -31,18 +41,27 @@
 <body>
 	<h1>Login</h1>
 	<a href="inscription.php">Inscription</a>
-	<form action="#" method="post">
+
+	<?php if(!empty($_SESSION['user'])): ?>
+		<a href="disconnect.php">Disconnect</a>
 		<div>
-			<input type="text" id="email" name="email">
-			<label for="email">Email</label>
+			
+			Bonjour <?= $_SESSION['user']['email'] ?>
 		</div>
-		<div>
-			<input type="password" id="password" name="password">
-			<label for="password">Password</label>
-		</div>
-		<div>
-			<input type="submit">
-		</div>
-	</form>
+	<?php else: ?>
+		<form action="#" method="post">
+			<div>
+				<input type="text" id="email" name="email">
+				<label for="email">Email</label>
+			</div>
+			<div>
+				<input type="password" id="password" name="password">
+				<label for="password">Password</label>
+			</div>
+			<div>
+				<input type="submit">
+			</div>
+		</form>
+	<?php endif; ?>
 </body>
 </html>

@@ -13,6 +13,15 @@
         <link rel="stylesheet" href="../src/reveal.js/lib/css/highlight/railscasts.css">
         <!-- <link rel="stylesheet" href="../src/reveal.js/lib/css/highlight/github.css"> -->
         <link rel="stylesheet" href="../src/custom/style.css">
+        <style>
+            table tr td {white-space:nowrap;}
+            table.visible {width:100%;border-spacing: 0px;}
+            table.visible td,
+            table.visible th {border:2px solid #fff;margin:0;padding:10px 20px;text-align:center;color:#fff;}
+            table.visible td {color:#fff;}
+            table.visible td .true {color:#0f0;}
+            table.visible td .false {color:#f00;}
+        </style>
         <script>
             document.write( '<link rel="stylesheet" href="../src/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
         </script>
@@ -74,7 +83,7 @@
 
                 <section>
                     <p>Pour bien démarrer, nous n'allons utiliser que la fonction <a href="http://php.net/manual/fr/function.preg-match.php" target="_blank">preg_match()</a></p>
-                    <p>preg_match() va tester si notre regex "correspond" à la chaîne de caractères</p>
+                    <p>preg_match() va tester si notre regex "se trouve" dans la chaîne de caractères</p>
                     <pre><code contenteditable class="php">
 // Ce code ne fonctionnera pas
 if(preg_match('regex','chaine de caractères'))
@@ -95,7 +104,7 @@ else
                         <li>Celui d'ouverture doit être le même que celui de fermeture</li>
                     </ul>
                     <pre><code contenteditable class="php">
-preg_match('/regex/','chaine de caractères')
+preg_match('/regex/','chaine de caractères');
                     </code></pre>
                 </section>
 
@@ -135,10 +144,10 @@ preg_match('/regex/','chaine de caractères')
 
                 <section>
                     <ul>
-                        <li><span class="highlight">|</span> appelé "pipe" correspond à un ou</li>
+                        <li><span class="highlight">|</span> appelé <span class="u">pipe</span> correspond à un <span class="hl">ou</span></li>
                     </ul>
                     <pre><code contenteditable class="php">
-preg_match('/bonjour|hello/','bonjour tout le monde')
+preg_match('/bonjour|hello/','bonjour tout le monde');
                     </code></pre>
                 </section>
 
@@ -178,7 +187,8 @@ preg_match('/bonjour|hello/','bonjour tout le monde')
                         <li><span class="highlight">$</span> pour la fin</li>
                     </ul>
                     <pre><code contenteditable class="php">
-preg_match('/^bonjour/','bonjour tout le monde')
+preg_match('/^bonjour/','bonjour tout le monde');
+preg_match('/monde$/','bonjour tout le monde');
                     </code></pre>
                 </section>
 
@@ -216,10 +226,10 @@ preg_match('/^bonjour/','bonjour tout le monde')
                         <li>Tester un panel de caractères : <span class="highlight">[abc]</span></li>
                         <li>Tester l'inverse d'un groupement de caractères : <span class="highlight">[^abc]</span></li>
                         <li>Tester une plage de caractères : <span class="highlight">[a-z]</span> ou <span class="highlight">[A-Z]</span> ou <span class="highlight">[0-9]</span></li>
-                        <li>Combiner tout ça : [^a-bA-Z048!]</li>
+                        <li>Combiner tout ça : [^a-dA-Z048!]</li>
                     </ul>
                     <pre><code contenteditable class="php">
-preg_match('/[a-zA-Z0-1]/','bonjour tout le monde')
+preg_match('/[a-zA-Z0-1]/','bonjour tout le monde');
                     </code></pre>
                 </section>
 
@@ -259,7 +269,7 @@ preg_match('/[a-zA-Z0-1]/','bonjour tout le monde')
                         <li>Le reste des options est disponible ici <a href="http://www.expreg.com/options.php" target="_blank">http://www.expreg.com/options.php</a></li>
                     </ul>
                     <pre><code contenteditable class="php">
-preg_match('/^bonjour/i','Bonjour tout le monde')
+preg_match('/^bonjour/i','Bonjour tout le monde');
                     </code></pre>
                 </section>
 
@@ -278,7 +288,7 @@ preg_match('/^bonjour/i','Bonjour tout le monde')
                         <li><span class="highlight">{3,}</span> : Minimum 3 fois</li>
                     </ul>
                     <pre><code contenteditable class="php">
-preg_match('/o{3}/','booonjour tout le monde')
+preg_match('/o{3}/','booonjour tout le monde');
                     </code></pre>
                 </section>
 
@@ -288,6 +298,11 @@ preg_match('/o{3}/','booonjour tout le monde')
                             <td>/o{3}/</td>
                             <td>booonjour tout le monde</td>
                             <td><span class="fragment true">vrai</span></td>
+                        </tr>
+                        <tr>
+                            <td>/o{4}/</td>
+                            <td>booonjour tout le monde</td>
+                            <td><span class="fragment false">faux</span></td>
                         </tr>
                         <tr>
                             <td>/a?/</td>
@@ -322,7 +337,7 @@ preg_match('/o{3}/','booonjour tout le monde')
                         <li>Cela permet, par exemple, d'utiliser des quantifieurs sur une suite de caractères</li>
                     </ul>
                     <pre><code contenteditable class="php">
-preg_match('/(bla){2,}/','blablablabla')
+preg_match('/(bla){2,}/','blablablabla');
                     </code></pre>
                 </section>
 
@@ -362,7 +377,7 @@ preg_match('/(bla){2,}/','blablablabla')
                         <li>Précédez-les par <span class="highlight">\</span></li>
                     </ul>
                     <pre><code contenteditable class="php">
-preg_match('/http:\/\//','http://google.com')
+preg_match('/http:\/\//','http://google.com');
                     </code></pre>
                 </section>
 
@@ -371,17 +386,17 @@ preg_match('/http:\/\//','http://google.com')
                 </section>
 
                 <section>
-                    <p>Il existe des raccourcis permettant simplifier nos regex</p>
+                    <p>Il existe des raccourcis permettant de simplifier nos regex</p>
                     <ul>
                         <li><span class="highlight">\d</span> : chiffre</li>
                         <li><span class="highlight">\D</span> : pas un chiffre</li>
-                        <li><span class="highlight">\w</span> : mot</li>
-                        <li><span class="highlight">\W</span> : pas un mot</li>
-                        <li><span class="highlight">\s</span> : espace</li>
+                        <li><span class="highlight">\w</span> : caractère normal (lettres, chiffres, tirets, underscore)</li>
+                        <li><span class="highlight">\W</span> : Inverse d'un caractère normal (espace, ponctuation)</li>
+                        <li><span class="highlight">\s</span> : espace ou tabulation</li>
                         <li><span class="highlight">.</span> : n'importe quel caractère</li>
                     </ul>
                     <pre><code contenteditable class="php">
-preg_match('/\w-\d/','foo-10')
+preg_match('/\w-\d/','foo-10');
                     </code></pre>
                 </section>
 
@@ -389,17 +404,22 @@ preg_match('/\w-\d/','foo-10')
                     <table class="visible">
                         <tr>
                             <td>/\w/</td>
-                            <td>bonjour</td>
+                            <td>c</td>
                             <td><span class="fragment true">vrai</span></td>
                         </tr>
                         <tr>
                             <td>/\w/</td>
-                            <td>bonjour10</td>
-                            <td><span class="fragment true">vrai</span></td>
+                            <td>ç</td>
+                            <td><span class="fragment false">faux</span></td>
                         </tr>
                         <tr>
                             <td>/\w/</td>
-                            <td>10</td>
+                            <td>,</td>
+                            <td><span class="fragment false">faux</span></td>
+                        </tr>
+                        <tr>
+                            <td>/\w/</td>
+                            <td>3</td>
                             <td><span class="fragment true">vrai</span></td>
                         </tr>
                         <tr>

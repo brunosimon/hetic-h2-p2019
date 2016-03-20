@@ -1,12 +1,10 @@
-<?php 
+<?php
 
-// Connexion variables
+define('SALT','B67(s§èfdè!');
 define('DB_HOST','localhost');
-define('DB_NAME','hetic-p2019-password');
+define('DB_NAME','hetic_p2019_password_g1');
 define('DB_USER','root');
 define('DB_PASS','root'); // '' par défaut sur windows
-
-define('SALT','8Qqudè!è§S76D');
 
 try
 {
@@ -19,8 +17,6 @@ try
 catch (Exception $e)
 {
     // Failed to connect
-    die('Cound not connect');
+    die('Could not connect');
 }
-
-// Start session
-session_start();
+                    

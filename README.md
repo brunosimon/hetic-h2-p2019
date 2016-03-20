@@ -42,12 +42,13 @@ Optionnels
 - [x] PHP includes
 - [x] PHP debug
 - [x] HTML/PHP formulaire
-- [ ] PHP/SQL Base de données MySQL
-- [ ] PHP/SQL Mots de passes
+- [x] PHP/SQL Base de données MySQL
+- [x] PHP/SQL Mots de passes
 - [ ] PHP cookies/sessions
 - [ ] PHP en vrac
 - [ ] PHP regex
 - [ ] PHP routing
+- [ ] PHP/SQL Avancé
 - [ ] PHP APIs
 
 ### Trimestre 3

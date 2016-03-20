@@ -41,12 +41,14 @@
 
                 <section>
                     <h2>Envoyer des mails</h2>
+                </section>
+
+                <section>
                     <p>La fonction <a href="http://fr2.php.net/manual/fr/function.mail.php" target="_blank">mail()</a> de PHP permet d'envoyer des emails</p>
                     <p>Ne fonctionne pas toujours par défaut en localhost</p>
                 </section>
 
                 <section>
-                    <h2>Envoyer des mails</h2>
                     <p>Exemple</p>
                     <pre><code contenteditable class="php">
 $to      = 'toto@domain.com';
@@ -60,7 +62,6 @@ mail($to,$subject,$message,$headers);
                 </section>
 
                 <section>
-                    <h2>Envoyer des mails</h2>
                     <p>Destinataires</p>
                     <pre><code contenteditable class="php">
 // Destinataire unique
@@ -76,7 +77,6 @@ $to = &#039;Toto &lt;toto@domain.com&gt;, Tata &lt;tata@domain.com&gt;&#039;;
                 </section>
 
                 <section>
-                    <h2>Envoyer des mails</h2>
                     <p>Subject</p>
                     <pre><code contenteditable class="php">
 // Classique
@@ -88,7 +88,6 @@ $subject = '=?UTF-8?B?'.base64_encode('Subject éèêùà').'?=';
                 </section>
 
                 <section>
-                    <h2>Envoyer des mails</h2>
                     <p>Message</p>
                     <pre><code contenteditable class="php">
 // Text
@@ -102,7 +101,6 @@ $message = &#039;&lt;strong&gt;Salut&lt;/strong&gt;&lt;br /&gt;&Ccedil;a va ?&#0
                 </section>
 
                 <section>
-                    <h2>Envoyer des mails</h2>
                     <p>Headers</p>
                     <pre><code contenteditable class="php">
 // Les valeurs sont séparées par des \r\n entre double quotes
@@ -120,12 +118,14 @@ $headers .= 'Content-Type:text/plain;charset=ISO-8859-1'."\r\n"; // Contenu text
 
                 <section>
                     <h2>Headers</h2>
+                </section>
+
+                <section>
                     <p>La fonction <a href="http://www.php.net/manual/fr/function.header.php" target="_blank">header()</a> de PHP permet de modifier l'entête d'une page</p>
                     <p>Cette fonction doit être appelée avant que le moindre contenu soit envoyé (comme session_start et setcookie)</p>
                 </section>
 
                 <section>
-                    <h2>Headers</h2>
                     <p>Il est possible de déclencher une redirection avec 'Location'</p>
                     <pre><code contenteditable class="php">
 header('Location:http://www.google.com/');
@@ -135,7 +135,6 @@ exit;
                 </section>
 
                 <section>
-                    <h2>Headers</h2>
                     <p>Il est possible de spécifier le code HTTP de la page<br />(200, 401, 404, ...)</p>
                     <pre><code contenteditable class="php">
 header('HTTP/1.0 404 Not Found');
@@ -144,7 +143,6 @@ exit;
                 </section>
 
                 <section>
-                    <h2>Headers</h2>
                     <p><a href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes" target="_blank">Liste des codes</a></p>
                     <ul>
                         <li>2XX : Success</li>
@@ -155,7 +153,6 @@ exit;
                 </section>
 
                 <section>
-                    <h2>Headers</h2>
                     <p>Les plus connus :</p>
                     <ul>
                         <li>200 : Ok</li>
@@ -163,19 +160,22 @@ exit;
                         <li>401 : Unauthorized</li>
                         <li>403 : Forbidden</li>
                         <li>404 : Not found</li>
+                        <li>418 : <a href="http://knowyourmeme.com/memes/htp-error-418-im-a-teapot" target="_blank" class="fragment">I'm a Teapot</a></li>
                         <li>500 : Server error</li>
                     </ul>
                 </section>
 
                 <section>
                     <h2>cURL</h2>
+                </section>
+
+                <section>
                     <p><a href="http://php.net/manual/fr/book.curl.php/" target="_blank">cURL</a> est une librairie PHP permettant de se connecter à d'autres serveurs</p>
                     <p>Elle se traduit par plusieurs fonctions PHP commençant toutes par <span class="highlight">curl_</span></p>
                     <p>Elle est disponible de base sur la majorité des configurations</p>
                 </section>
 
                 <section>
-                    <h2>Curl</h2>
                     <p>Exemple</p>
                     <pre><code contenteditable class="php">
 // Initialise une instance de curl
@@ -193,7 +193,6 @@ curl_close($ch);
                 </section>
 
                 <section>
-                    <h2>Curl</h2>
                     <p>Options</p>
                     <p><a href="http://www.php.net/manual/fr/function.curl-setopt.php" target="_blank">curl_setopt()</a> permet de définir les différentes options</p>
                     <p></p>
@@ -205,7 +204,6 @@ curl_close($ch);
                 </section>
 
                 <section>
-                    <h2>Curl</h2>
                     <p>Options</p>
                     <ul>
                         <li>CURLOPT_POST : Indique si la requête est en POST</li>
@@ -217,7 +215,6 @@ curl_close($ch);
                 </section>
 
                 <section>
-                    <h2>Curl</h2>
                     <p>Exemple d'options</p>
                     <pre><code contenteditable class="php">
 $ch = curl_init();
@@ -238,23 +235,26 @@ curl_close($ch);
 
                 <section>
                     <h2>Constantes magiques</h2>
-                    <p>PHP fournit des <a href="http://www.php.net/manual/en/language.constants.predefined.php" target="_blank">constantes magiques</a> dont la valeurs change (?) selon l'endroit où elles sont appelées</p>
+                </section>
+
+                <section>
+                    <p>PHP fournit des <a href="http://www.php.net/manual/en/language.constants.predefined.php" target="_blank">constantes magiques</a> dont les valeurs change selon l'endroit où elles sont appelées</p>
                     <p>
                         <img src="src/img/its-magic-shia-labeouf.gif" width="500" alt="It's magic">
                     </p>
                 </section>
 
                 <section>
-                    <h2>Constantes magiques</h2>
                     <pre><code contenteditable class="php">
 echo __LINE__; // Ligne
+echo '<br>';
 echo __FILE__; // Fichier
+echo '<br>';
 echo __DIR__;  // Dossier du fichier
                     </code></pre>
                 </section>
 
                 <section>
-                    <h2>Constantes magiques</h2>
                     <pre><code contenteditable class="php">
 function ma_fonction()
 {
@@ -266,7 +266,6 @@ ma_fonction();
                 </section>
 
                 <section>
-                    <h2>Constantes magiques</h2>
                     <pre><code contenteditable class="php">
 class Ma_Class
 {
@@ -282,11 +281,13 @@ $class = new Ma_Class();
 
                 <section>
                     <h2>Fichiers</h2>
+                </section>
+
+                <section>
                     <p>En PHP, il existe une large quantité de fonctions permettant de manipuler les fichiers. Il est possible de les créer, de les lire, de les modifier, de les supprimer, de les lister, d'obtenir la date de création/modification, de changer les droits d'accès, etc.</p>
                 </section>
 
                 <section>
-                    <h2>Fichiers</h2>
                     <p><a href="http://www.php.net/manual/fr/function.dirname.php" target="_blank">dirname()</a> permet d'extraire le chemin vers le dossier</p>
                     <pre><code contenteditable class="php">
 echo dirname(__FILE__);
@@ -294,7 +295,6 @@ echo dirname(__FILE__);
                 </section>
 
                 <section>
-                    <h2>Fichiers</h2>
                     <p><a href="http://www.php.net/manual/fr/function.glob.php" target="_blank">glob()</a> renvoie un tableau de chemins verifiant un masque (ou pattern)</p>
                     <pre><code contenteditable class="php">
 $dir   = dirname(__FILE__);
@@ -304,7 +304,6 @@ $files = glob($dir.&#039;/*&#039;);
                 </section>
 
                 <section>
-                    <h2>Fichiers</h2>
                     <p><a href="http://www.php.net/manual/fr/function.file-get-contents.php" target="_blank">file_get_contents()</a> récupère le contenu d'un fichier</p>
                     <pre><code contenteditable class="php">
 $path    = 'monfichier.txt';
@@ -313,7 +312,6 @@ $content = file_get_contents($path);
                 </section>
 
                 <section>
-                    <h2>Fichiers</h2>
                     <p><a href="http://www.php.net/manual/fr/function.file-put-contents.php" target="_blank">file_put_contents()</a> ajoute du contenu au fichier</p>
                     <p>Par défaut, elle va remplacer le contenu existant</p>
                     <p>Si le fichier n'existe pas, elle va le créer</p>
@@ -329,7 +327,6 @@ file_put_contents($path,'test 1234',FILE_APPEND);
                 </section>
 
                 <section>
-                    <h2>Fichiers</h2>
                     <p><a href="http://www.php.net/manual/fr/function.file-exists.php" target="_blank">file_exists()</a> test si le fichier existe</p>
                     <pre><code contenteditable class="php">
 $path = 'monfichier.txt';
@@ -342,7 +339,6 @@ else
                 </section>
 
                 <section>
-                    <h2>Fichiers</h2>
                     <p><a href="http://www.php.net/manual/fr/function.unlink.php" target="_blank">unlink()</a> supprime le fichier</p>
                     <pre><code contenteditable class="php">
 $path = 'monfichier.txt';
@@ -351,7 +347,6 @@ unlink($path);
                 </section>
 
                 <section>
-                    <h2>Fichiers</h2>
                     <p>Une liste de fonctions PHP permettent de manipuler les fichiers tout comme nous l'avons fait jusqu'à présent mais avec moins d'automatismes et plus de flexibilité</p>
                     <ul>
                         <li><a href="http://www.php.net/manual/fr/function.fopen.php">fopen</a> ouvre un fichier</li>
@@ -363,13 +358,122 @@ unlink($path);
                 </section>
 
                 <section>
-                    <h2>Fichiers</h2>
                     <p>exemple avec fopen / fwrite / fclose</p>
                     <pre><code contenteditable class="php">
 $path = 'monfichier.txt';
 $fp   = fopen($path,'a+');
 fwrite($fp,'hey');
 fclose($fp);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Math</h2>
+                </section>
+
+                <section>
+                    <p>PHP intègre un grand nombre de <a href="http://php.net/manual/fr/book.math.php" target="_blank">fonctions mathématiques</a></p>
+
+                    <ul>
+                        <li><a href="http://php.net/manual/fr/function.abs.php" target="_blank">abs</a> : valeur absolue</li>
+                        <li><a href="http://php.net/manual/fr/function.round.php" target="_blank">round</a> : arrondi</li>
+                        <li><a href="http://php.net/manual/fr/function.ceil.php" target="_blank">ceil</a> : arrondi au dessus</li>
+                        <li><a href="http://php.net/manual/fr/function.floor.php" target="_blank">floor</a> : arrondi en dessous</li>
+                        <li><a href="http://php.net/manual/fr/function.min.php" target="_blank">min</a> : valeur minimal</li>
+                        <li><a href="http://php.net/manual/fr/function.max.php" target="_blank">max</a> : valeur maximal</li>
+                        <li><a href="http://php.net/manual/fr/function.rand.php" target="_blank">rand</a> : valeur aléatoire</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <pre><code contenteditable class="php">
+echo abs(-10);           // 10
+echo round(2.4);         // 2
+echo ceil(2.4);          // 3
+echo floor(2.6);         // 2
+echo min(1,-2,999,3,10); // -2
+echo max(1,-2,999,3,10); // 999
+echo rand(0,9);          // 0 ou 1 ou 2 ou 3 ou ...
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>JSON</h2>
+                    <p>Il est possible de convertir une donnée (tableau ou objet) en JSON avec la fonction <a href="http://php.net/manual/fr/function.json-encode.php" target="_blank">json_encode()</a></p>
+
+                    <pre><code contenteditable class="php">
+$user = array(
+    'name'  => 'Toto',
+    'age'   => 26,
+    'admin' => false
+);
+
+$user_json = json_encode($user); // {"name":"Toto","age":26,"admin":false}
+
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>JSON</h2>
+                </section>
+
+                <section>
+                    <p>Cette donnée peut ensuite être utilisée pour l'intégrer au javascript</p>
+
+                    <pre><code data-trim contenteditable class="php">
+&lt;?php
+$user = array(
+    'name'  => 'Toto',
+    'age'   => 26,
+    'admin' => false
+);
+
+$user_json = json_encode($user); // {"name":"Toto","age":26,"admin":false}
+?&gt;
+                    </code></pre>
+
+                    <pre><code data-trim contenteditable class="html">
+&lt;script&gt;
+    var user = &lt;?= $user_json ?&gt;;
+    console.log(user);
+&lt;/script&gt;
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Arrays</h2>
+                </section>
+
+                <section>
+                    <p>Il existe un très grand nombre de <a href="http://php.net/manual/fr/ref.array.php" target="_blank">fonctions pour gérer les tableaux</a></p>
+
+                    <ul>
+                        <li><a href="http://php.net/manual/fr/function.count.php" target="_blank">count</a> : Compte tous les éléments d'un tableau ou quelque chose d'un objet</li>
+                        <li><a href="http://php.net/manual/fr/function.array-pop.php" target="_blank">array_pop</a> : Dépile un élément de la fin d'un tableau</li>
+                        <li><a href="http://php.net/manual/fr/function.array-unshift.php" target="_blank">array_unshift</a> : Empile un ou plusieurs éléments au début d'un tableau</li>
+                        <li><a href="http://php.net/manual/fr/function.array-shift.php" target="_blank">array_shift</a> : Dépile un élément au début d'un tableau</li>
+                        <li><a href="http://php.net/manual/fr/function.array-push.php" target="_blank">array_push</a> : Empile un ou plusieurs éléments à la fin d'un tableau</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <ul>
+                        <li><a href="http://php.net/manual/fr/function.array-search.php" target="_blank">array_search</a> : Recherche dans un tableau la clé associée à une valeur</li>
+                        <li><a href="http://php.net/manual/fr/function.array-merge.php" target="_blank">array_merge</a> : Fusionne plusieurs tableaux en un seul</li>
+                        <li><a href="http://php.net/manual/fr/function.in-array.php" target="_blank">in_array</a> : Indique si une valeur appartient à un tableau</li>
+                        <li><a href="http://php.net/manual/fr/function.array-key-exists.php" target="_blank">array_key_exists</a> : Vérifie si une clé existe dans un tableau</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>PhpInfo</h2>
+                </section>
+
+                <section>
+                    <p>La fonction <a href="http://php.net/manual/fr/function.phpinfo.php" target="_blank">phpinfo()</a> permet d'afficher une grande quantité d'informations liées à l'environnement PHP</p>
+
+                    <pre><code contenteditable class="php">
+phpinfo();
                     </code></pre>
                 </section>
             </div>

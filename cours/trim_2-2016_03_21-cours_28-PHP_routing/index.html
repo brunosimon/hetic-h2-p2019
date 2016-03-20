@@ -45,13 +45,13 @@
 
                 <section>
                     <p>Il y a des centaines de façons de faire. Nous allons en voir une assez facile et robuste.</p>
-                    <p>Nous allons en profiter pour nous débarasser des noms de fichiers <span class="highlight">.php</span></p>
+                    <p>Ce sera l'occasion d'avoir des URL de la forme voulue</p>
                 </section>
 
                 <section>
                     <h3>Processus</h3>
                     <ul>
-                        <li>Rediriger toutes les requêtes sur <span class="highlight">index.php</span> quelque soit le chemin</li>
+                        <li>Rediriger toutes les requêtes sur <span class="highlight">index.php</span> quelque soit le chemin sauf s'il s'agit d'un fichier</li>
                         <li>Organiser les fichiers dans des dossiers <span class="highlight">views</span> pour les pages et <span class="highlight">partials</span> pour les morceaux (header, footer)</li>
                         <li>Analyser le chemin dans <span class="highlight">index.php</span> pour ensuite faire des <span class="highlight">includes</span> des bons contenus</li>
                         <li>Renvoyer une page <span class="highlight">404</span> si le chemin ne correspond à aucun contenu</li>
@@ -60,11 +60,12 @@
 
                 <section>
                     <p>Pour renvoyer dans index.php quelque soit le chemin demandé, nous allons avoir besoin d'un <span class="highlight">.htaccess</span></p>
-                    <p>Ce fichier contient des commandes qui seront exécuté par Apache</p>
+                    <p>Ce fichier contient des commandes qui seront exécutés par Apache</p>
                 </section>
 
                 <section>
                     <p>Sur mac, les fichiers commençant par un <span class="highlight">.</span> sont cachés</p>
+                    <p>Pour les afficher</p>
                     <ul>
                         <li>Ouvrez le terminal</li>
                         <li>Envoyez <span class="highlight">defaults write com.apple.finder AppleShowAllFiles 1</span></li>

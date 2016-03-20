@@ -6,8 +6,6 @@ define('DB_NAME','hetic-p2019-password');
 define('DB_USER','root');
 define('DB_PASS','root'); // '' par défaut sur windows
 
-define('SALT','8Qqudè!è§S76D');
-
 try
 {
     // Try to connect to database
