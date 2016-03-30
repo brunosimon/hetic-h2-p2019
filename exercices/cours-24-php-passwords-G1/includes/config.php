@@ -19,4 +19,6 @@ catch (Exception $e)
     // Failed to connect
     die('Could not connect');
 }
-                    
+                   
+// Session
+session_start();

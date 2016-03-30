@@ -26,7 +26,7 @@
                 <section>
                     <h3>H2 - P2018</h3>
                     <h1>Développement web</h1>
-                    <h3>Cours 28 - 2016-03-21</h3>
+                    <h3>Cours 28 - 2016-03-31</h3>
                     <ul>
                         <li>github : <a target="_blank" href="https://github.com/brunosimon/hetic-p2019">https://github.com/brunosimon/hetic-p2019</a></li>
                         <li>site : <a target="_blank" href="http://bruno-simon.com/hetic/p2019/">http://bruno-simon.com/hetic/p2019/</a></li>
@@ -51,10 +51,10 @@
                 <section>
                     <h3>Processus</h3>
                     <ul>
-                        <li>Rediriger toutes les requêtes sur <span class="highlight">index.php</span> quelque soit le chemin sauf s'il s'agit d'un fichier</li>
                         <li>Organiser les fichiers dans des dossiers <span class="highlight">views</span> pour les pages et <span class="highlight">partials</span> pour les morceaux (header, footer)</li>
-                        <li>Analyser le chemin dans <span class="highlight">index.php</span> pour ensuite faire des <span class="highlight">includes</span> des bons contenus</li>
-                        <li>Renvoyer une page <span class="highlight">404</span> si le chemin ne correspond à aucun contenu</li>
+                        <li>Rediriger toutes les requêtes sur <span class="highlight">index.php</span> quelque soit le chemin sauf s'il s'agit d'un fichier</li>
+                        <li>Dans <span class="highlight">index.php</span>, analyser le chemin pour ensuite faire des <span class="highlight">includes</span> des bons contenus</li>
+                        <li>Si le chemin ne correspond à aucun contenu, renvoyer une page <span class="highlight">404</span></li>
                     </ul>
                 </section>
 
@@ -116,7 +116,7 @@ RewriteCond %{SCRIPT_FILENAME} !-f
                     <pre><code contenteditable>
 RewriteRule ^(.*)$ ./index.php?q=$1
                     </code></pre>
-                    <p>Rajoute une règle de réécriture basée sur un regex :<br><span class="highlight">^(.*)$</span> devient <span class="highlight">./index.php?q=$1</span></p>
+                    <p>Rajoute une règle de réécriture basée sur une regex :<br><span class="highlight">^(.*)$</span> devient <span class="highlight">./index.php?q=$1</span></p>
                     <p>Apache fera toujours pointer sur <span class="highlight">index.php</span> et rajoutera en <span class="highlight">GET</span>, dans la variable <span class="highlight">q</span>, le chemin demandé</p>
                 </section>
 

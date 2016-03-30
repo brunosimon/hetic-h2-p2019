@@ -1,5 +1,9 @@
 <?php
 
+// Session
+session_start();
+
+// Password
 define('SALT','7§dèe§mbpk;/pd71');
 
 // Connexion variables
