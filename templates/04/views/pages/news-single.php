@@ -1,0 +1,3 @@
+<section>
+	News Single
+</section>
