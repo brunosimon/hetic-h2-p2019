@@ -44,19 +44,22 @@ Optionnels
 - [x] HTML/PHP formulaire
 - [x] PHP/SQL Base de données MySQL
 - [x] PHP/SQL Mots de passes
-- [ ] PHP cookies/sessions
-- [ ] PHP en vrac
-- [ ] PHP regex
-- [ ] PHP routing
-- [ ] PHP/SQL Avancé
-- [ ] PHP APIs
+- [x] PHP cookies/sessions
+- [x] PHP en vrac
+- [x] PHP regex
+- [x] PHP routing
+- [x] PHP APIs
 
 ### Trimestre 3
 
-- [ ] VHOST
+- [ ] PHP/SQL Avancé
 - [ ] PHP orienté objet
 - [ ] PHP frameworks
 - [ ] Silex/Slim/Cake (?)
+
+Optionnels
+
+- [ ] VHOST
 
 
 # LIENS

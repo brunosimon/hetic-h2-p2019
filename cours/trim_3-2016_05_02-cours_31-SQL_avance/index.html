@@ -85,6 +85,7 @@ DELETE FROM
                 <section>
                     <p>Dans PhpMyAdmin, créez une base de données et éxecutez la requête SQL suivante</p>
                     <pre><code contenteditable class="sql">
+
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -121,21 +122,21 @@ INSERT INTO `games` (`id`, `id_user`, `score`, `won`) VALUES
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `login` varchar(50) NOT NULL,
+  `age` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
-INSERT INTO `users` (`id`, `login`) VALUES
-(1, 'toto'),
-(2, 'tata'),
-(3, 'tutu'),
-(4, 'titi'),
-(5, 'tete');
-
+INSERT INTO `users` (`id`, `login`, `age`) VALUES
+(1, 'Toto', 25),
+(2, 'Tata', 17),
+(3, 'Tutu', 15),
+(4, 'John', 32),
+(5, 'Timmy', 25);
                     </code></pre>
                 </section>
 
                 <section>
-                    <p>Cette requêtes va créer et remplir une table <span class="highlight">users</span> et une table <span class="highlight">games</span></p>
+                    <p>Cette requêtes va créer et remplir une table <span class="hl">users</span> et une table <span class="hl">games</span></p>
                     <p>
                         <img src="src/img/table-users.png" width="300" alt="">
                         <img src="src/img/table-games.png" width="400" alt="">
@@ -148,7 +149,7 @@ INSERT INTO `users` (`id`, `login`) VALUES
                 </section>
 
                 <section>
-                    <p>Pour rajouter une condition à notre requête, on utilise le terme <span class="highlight">WHERE</span> suivi de notre condition</p>
+                    <p>Pour rajouter une condition à notre requête, on utilise le terme <span class="hl">WHERE</span> suivi de notre condition</p>
                     <pre><code contenteditable class="sql">
 SELECT
     *
@@ -160,8 +161,8 @@ WHERE
                 </section>
 
                 <section>
-                    <p><span class="highlight">AND</span> et <span class="highlight">OR</span> permettent de combiner plusieurs conditions</p>
-                    <p>Les <span class="highlight">AND</span> s'effectuent avant les <span class="highlight">OR</span></p>
+                    <p><span class="hl">AND</span> et <span class="hl">OR</span> permettent de combiner plusieurs conditions</p>
+                    <p>Les <span class="hl">AND</span> s'effectuent avant les <span class="hl">OR</span></p>
                     <pre><code contenteditable class="sql">
 SELECT
     *
@@ -187,37 +188,59 @@ WHERE
                 <section>
                     <p>Les conditions supportent plusieurs opérateurs</p>   
                     <ul>
-                        <li><span class="highlight">=</span> : Égal à</li>
-                        <li><span class="highlight">></span> : Supérieur à</li>
-                        <li><span class="highlight"><</span> : Inférieur à</li>
-                        <li><span class="highlight">>=</span> : Supérieur ou égal à</li>
-                        <li><span class="highlight"><=</span> : Inférieur ou égal à</li>
-                        <li><span class="highlight">!=</span> ou <span class="highlight"><></span> : Inférieur ou égal à</li>
+                        <li><span class="hl">=</span> : Égal à</li>
+                        <li><span class="hl">></span> : Supérieur à</li>
+                        <li><span class="hl"><</span> : Inférieur à</li>
+                        <li><span class="hl">>=</span> : Supérieur ou égal à</li>
+                        <li><span class="hl"><=</span> : Inférieur ou égal à</li>
+                        <li><span class="hl">!=</span> ou <span class="hl"><></span> : Différent de</li>
                     </ul>
+                </section>
+
+                <section>
+                    <pre><code contenteditable class="sql">
+SELECT
+    *
+FROM
+    users
+WHERE
+    age > 21
+                    </code></pre>
                 </section>
 
                 <section>
                     <p>Les conditions supportent plusieurs opérateurs</p>   
                     <ul>
-                        <li><span class="highlight">IN (...)</span> : Compris dans</li>
-                        <li><span class="highlight">NOT IN (...)</span> : En dehors de</li>
-                        <li><span class="highlight">BETWEEN ... AND ...</span> : Compris entre</li>
-                        <li><span class="highlight">NOT BETWEEN ... AND ...</span> : En dehors de</li>
-                        <li><span class="highlight">LIKE</span> : Ressemblant à (pour les chaînes de caractères)</li>
-                        <li><span class="highlight">NOT LIKE</span> : Ne ressemblant à (pour les chaînes de caractères)</li>
+                        <li><span class="hl">IN (...)</span> : Compris dans</li>
+                        <li><span class="hl">NOT IN (...)</span> : En dehors de</li>
+                        <li><span class="hl">BETWEEN ... AND ...</span> : Compris entre</li>
+                        <li><span class="hl">NOT BETWEEN ... AND ...</span> : En dehors de</li>
+                        <li><span class="hl">LIKE</span> : Ressemblant à (pour les chaînes de caractères)</li>
+                        <li><span class="hl">NOT LIKE</span> : Ne ressemblant à (pour les chaînes de caractères)</li>
                     </ul>
                 </section>
 
                 <section>
+                    <pre><code contenteditable class="sql">
+SELECT
+    *
+FROM
+    users
+WHERE
+    age BETWEEN 16 AND 25
+                    </code></pre>
+                </section>
+
+                <section>
                     <h2>Exercice</h2>
-                    <p>Trouvez les requêtes SQL permettant de récupérer les 'games' pour les conditions suivantes :</p>
+                    <p>Trouvez les requêtes SQL permettant de récupérer les <span class="u">games</span> pour les conditions suivantes :</p>
                     <ul>
-                        <li>Score est inférieur à 1000</li>
-                        <li>Utilisateurs ayant les ID 1, 2 et 4</li>
-                        <li>Utilisateurs n'ayant pas l'ID 1</li>
-                        <li>Utilisateurs ayant un score entre 5000 et 6000</li>
-                        <li>Utilisateurs ayant un score supérieur à 6000 ou inférieur à 5000</li>
-                        <li>Utilisateurs ayant l'ID 1 et un score supérieur à 6000</li>
+                        <li>Games dont le score est inférieur à 1000</li>
+                        <li>Games dont l'utilisateur a pour ID 1, 2 ou 3</li>
+                        <li>Games dont l'utilisateur a un ID différent de 1 ou 3</li>
+                        <li>Games ayant un score entre 5000 et 6000</li>
+                        <li>Games ayant un score supérieur à 6000 ou inférieur à 5000</li>
+                        <li>Games dont l'utilisateur a pour ID 1 et un score supérieur à 6000</li>
                     </ul>
                 </section>
 
@@ -229,6 +252,7 @@ WHERE
                 <section>
                     <p>SQL permet de récupérer des données directement calculées grâce à certaines fonctions</p>
                     <p>Une nouvelle colonne ayant le nom de la fonction va être créée</p>
+                    <p>MySQL le fait bien plus vite que PHP</p>
                     <pre><code contenteditable class="sql">
 SELECT
     SUM(score)
@@ -242,11 +266,11 @@ FROM
 
                 <section>
                     <ul>
-                        <li><span class="highlight">SUM()</span> : Somme</li>
-                        <li><span class="highlight">AVG()</span> : Moyenne</li>
-                        <li><span class="highlight">MIN()</span> : Minimum</li>
-                        <li><span class="highlight">MAX()</span> : Maximum</li>
-                        <li><span class="highlight">COUNT()</span> : Nombre de résultats</li>
+                        <li><span class="hl">SUM()</span> : Somme</li>
+                        <li><span class="hl">AVG()</span> : Moyenne</li>
+                        <li><span class="hl">MIN()</span> : Minimum</li>
+                        <li><span class="hl">MAX()</span> : Maximum</li>
+                        <li><span class="hl">COUNT()</span> : Nombre de résultats</li>
                     </ul>
                 </section>
 
@@ -258,12 +282,12 @@ SELECT
 FROM
     games
                     </code></pre>
-                    <p>Le <span class="highlight">AS</span> est optionnel</p>
+                    <p>Le <span class="hl">AS</span> est optionnel</p>
                 </section>
 
                 <section>
                     <h2>Exercice</h2>
-                    <p>Trouvez les requêtes SQL permettant de récupérer les 'games' suivantes :</p>
+                    <p>Trouvez les requêtes SQL permettant de récupérer les <span class="u">games</span> suivantes :</p>
                     <ul>
                         <li>Score minimum du joueur ayant l'ID 2</li>
                         <li>Nombre de parties gagnées du joueur ayant l'ID 2</li>
@@ -278,7 +302,7 @@ FROM
                 </section>
 
                 <section>
-                    <p>SQL permet d'ordonner les résultats avec <span class="highlight">ORDER BY</span> suivi de la colonne définissant l'ordre</p>
+                    <p>SQL permet d'ordonner les résultats avec <span class="hl">ORDER BY</span> suivi de la colonne définissant l'ordre</p>
                     <pre><code contenteditable class="sql">
 SELECT
     *
@@ -290,7 +314,7 @@ ORDER BY
                 </section>
 
                 <section>
-                    <p>Pour ordonner dans l'ordre inverse, il suffit de préciser <span class="highlight">DESC</span> après la colonne</p>
+                    <p>Pour ordonner dans l'ordre inverse, il suffit de préciser <span class="hl">DESC</span> après la colonne</p>
                     <pre><code contenteditable class="sql">
 SELECT
     *
@@ -302,7 +326,7 @@ ORDER BY
                 </section>
 
                 <section>
-                    <p>Pour ordonner dans le désordre, il suffit de préciser <span class="highlight">RAND()</span> à la place de la colonne</p>
+                    <p>Pour ordonner dans le désordre, il suffit de préciser <span class="hl">RAND()</span> à la place de la colonne</p>
                     <pre><code contenteditable class="sql">
 SELECT
     *
@@ -315,7 +339,7 @@ ORDER BY
 
                 <section>
                     <h2>Exercice</h2>
-                    <p>Trouvez les requêtes SQL permettant de récupérer les 'games' suivantes :</p>
+                    <p>Trouvez les requêtes SQL permettant de récupérer les <span class="u">games</span> suivantes :</p>
                     <ul>
                         <li>Toutes les parties du joueur ayant l'ID 2 de la meilleure à la moins bonne</li>
                         <li>Toutes les parties du joueur ayant l'ID 2 de la moins bonne à la meilleure</li>
@@ -329,7 +353,7 @@ ORDER BY
                 </section>
 
                 <section>
-                    <p><span class="highlight">LIMIT</span> permet de limiter le nombre de résultats</p>
+                    <p><span class="hl">LIMIT</span> permet de limiter le nombre de résultats</p>
                     <pre><code contenteditable class="sql">
 SELECT
     *
@@ -341,7 +365,7 @@ LIMIT
                 </section>
     
                 <section>
-                    <p><span class="highlight">LIMIT</span> permet aussi de commencer à partir d'une certaine ligne</p>
+                    <p><span class="hl">LIMIT</span> permet aussi de commencer à partir d'une certaine ligne (utile pour une pagination)</p>
                     <pre><code contenteditable class="sql">
 SELECT
     *
@@ -354,7 +378,7 @@ LIMIT
 
                 <section>
                     <h2>Exercice</h2>
-                    <p>Trouvez les requêtes SQL permettant de récupérer les 'games' suivantes :</p>
+                    <p>Trouvez les requêtes SQL permettant de récupérer les <span class="u">games</span> suivantes :</p>
                     <ul>
                         <li>Trois meilleures parties du joueur ayant l'ID 2 de la meilleure à la moins bonne</li>
                         <li>Trois pires parties du joueur ayant l'ID 2 de la moins bonne à la meilleure</li>
@@ -367,7 +391,7 @@ LIMIT
                 </section>
 
                 <section>
-                    <p><span class="highlight">Group by</span> permet de regrouper les résultats par valeur d'une colonne</p>
+                    <p><span class="hl">Group by</span> permet de regrouper les résultats par valeur d'une colonne</p>
                     <pre><code contenteditable class="sql">
 SELECT
     *
@@ -379,7 +403,7 @@ GROUP BY
                 </section>
 
                 <section>
-                    <p>Seul, il ne sert pas à grand chose. Mais combinez avec les opérations précédentes, <span class="highlight">GROUP BY</span> permet de faire des choses intéressantes</p>
+                    <p>Seul, il ne sert pas à grand chose. Mais combinez avec les opérations précédentes, <span class="hl">GROUP BY</span> permet de faire des choses intéressantes</p>
                     <pre><code contenteditable class="sql">
 SELECT
     id, id_user, AVG(score) AS average_score
@@ -427,11 +451,11 @@ WHERE
                     <p>Les jointures permettent de lier des tables entre elles au sein d'une même requête SQL</p>
                     <p>Dans notre exemple, si on souhaite récupérer toutes les parties et y ajouter le nom du joueur correspondant, il faudrait faire plusieurs requêtes et un traitement PHP</p>
                     <p>Grâce aux jointures, on peut le faire en une requête</p>
-                    <p>Il existe différents type de jointures. Nous allons commencer par <span class="highlight">JOIN LEFT</span></p>
+                    <p>Il existe différents type de jointures. Nous allons commencer par <span class="hl">JOIN LEFT</span></p>
                 </section>
 
                 <section>
-                    <p>La jointure consiste à faire une première requête <span class="highlight">SELECT</span> sur une table intiale</p>
+                    <p>La jointure consiste à faire une première requête <span class="hl">SELECT</span> sur une table intiale</p>
                     <pre><code contenteditable data-trim class="sql">
 SELECT 
     *
@@ -451,7 +475,7 @@ ON
                 </section>
 
                 <section>
-                    <p>On demande à Mysql de récupérer toutes les lignes de la table <span class="highlight">games</span> et de les lier aux lignes de la table <span class="highlight">users</span> avec comme critère <span class="highlight">users.id = games.id_user</span></p>
+                    <p>On demande à MySQL de récupérer toutes les lignes de la table <span class="hl">games</span> et de les lier aux lignes de la table <span class="hl">users</span> avec comme critère que <span class="hl">id</span> de la table users soit égal à <span class="hl">id_user</span> de la table games</p>
                     <pre><code contenteditable data-trim class="sql">
 SELECT 
     *
@@ -465,7 +489,7 @@ ON
                 </section>
 
                 <section>
-                    <p>Les noms de tables peuvent parfois être long à écrire. Il est possible d'utiliser des <span class="highlight">alias</span> sur celles-ci.</p>
+                    <p>Les noms de tables peuvent parfois être long à écrire. Il est possible d'utiliser des <span class="hl">alias</span> sur celles-ci.</p>
                     <pre><code contenteditable data-trim class="sql">
 SELECT 
     *
@@ -476,11 +500,11 @@ LEFT JOIN
 ON
     u.id = g.id_user
                     </code></pre>
-                    <p>Le <span class="highlight">AS</span> est optionnel</p>
+                    <p>Le <span class="hl">AS</span> est optionnel</p>
                 </section>
 
                 <section>
-                    <p>Il est évidemment possible de préciser quelles colonnes renvoyer à la place de <span class="highlight">*</span> en spécifiant bien la table</p>
+                    <p>Il est évidemment possible de préciser quelles colonnes renvoyer à la place de <span class="hl">*</span> en spécifiant bien la table</p>
                     <pre><code contenteditable data-trim class="sql">
 SELECT 
     g.id, g.score, g.won, u.login
@@ -495,12 +519,12 @@ ON
 
                 <section>
                     <p>Si MySQL ne trouve pas de correspondance, il renvoie tout de même l'élément initial et met les autres valeurs à NULL</p>
-                    <p>Le principe de <span class="highlight">LEFT JOIN</span> est donc de partir de la table initiale pour chercher les correspondances dans la table jointe</p>
+                    <p>Le principe de <span class="hl">LEFT JOIN</span> est donc de partir de la table initiale pour chercher les correspondances dans la table jointe</p>
                 </section>
 
                 <section>
-                    <p><span class="highlight">RIGHT JOIN</span> permet de faire l'inverse : partir de la table jointe pour chercher les correspondances dans la table initiale</p>
-                    <p><span class="highlight">INNER JOIN</span> fonctionne comme LEFT JOIN, mais ne renvoie pas l'élément si aucune correspondance n'a été trouvé</p>
+                    <p><span class="hl">RIGHT JOIN</span> permet de faire l'inverse : partir de la table jointe pour chercher les correspondances dans la table initiale</p>
+                    <p><span class="hl">INNER JOIN</span> fonctionne comme LEFT JOIN, mais ne renvoie pas l'élément si aucune correspondance n'a été trouvé</p>
                 </section>
 
                 <section>
@@ -522,7 +546,7 @@ ON
                 </section>
 
                 <section>
-                    <p>Il existe encore d'autres jointures, mais <span class="highlight">LEFT JOIN</span> suffit dans la majorité des cas</p>
+                    <p>Il existe encore d'autres jointures, mais <span class="hl">LEFT JOIN</span> suffit dans la majorité des cas</p>
                 </section>
             </div>
         </div>
