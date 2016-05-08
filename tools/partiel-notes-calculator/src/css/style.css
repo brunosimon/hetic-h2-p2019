@@ -1,0 +1,30 @@
+body {
+	background:#eee;
+	font-family:Helvetica,Arial;
+	font-size:14px;
+	padding:60px;
+}
+
+.total {
+	display:inline-block;
+	padding:0 20px;
+	width:80px;
+	height:60px;
+	line-height:60px;
+	text-align:center;
+	background:#fff;
+}
+.count {
+	padding:0 20px;
+	height:60px;
+	line-height:60px;
+	background:#fff;
+	display:inline-block;
+}
+.calcul {
+	padding:0 20px;
+	height:60px;
+	line-height:60px;
+	background:#fff;
+	display:inline-block;
+}

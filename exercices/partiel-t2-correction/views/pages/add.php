@@ -30,6 +30,16 @@
 		<input type="text" placeholder="Tomates" id="name" name="name">
 	</div>
 
+	<!-- CATEGORY -->
+	<div>
+		<label for="id_category">Catégorie</label>
+		<select name="id_category" id="id_category">
+			<?php foreach($categories as $_category): ?>
+				<option value="<?= $_category->id ?>"><?= $_category->name ?></option>
+			<?php endforeach; ?>
+		</select>
+	</div>
+
 	<!-- PRICE -->
 	<div>
 		<label for="price">Prix</label>

@@ -14,6 +14,7 @@
 			<th>#</th>
 			<th>Dépenseur</th>
 			<th>Name</th>
+			<th>Catégorie</th>
 			<th>Value</th>
 			<th>Actions</th>
 		</tr>
@@ -24,6 +25,7 @@
 				<td><?= $_expense->id ?></td>
 				<td><img width="30" height="30" src="https://api.adorable.io/avatars/30/<?= $_expense->expenser ?>"> <?= $_expense->expenser ?></td>
 				<td><?= $_expense->name ?></td>
+				<td><?= $_expense->category_name ?></td>
 				<td><?= number_format($_expense->price,2) ?> €</td>
 				<td><a href="<?= URL.'?action=delete&id='.$_expense->id ?>" class="button alert small">Suppr.</a></td>
 			</tr>
