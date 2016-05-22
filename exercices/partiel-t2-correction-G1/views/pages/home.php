@@ -7,6 +7,7 @@
 				<th>#</th>
 				<th>Dépenser</th>
 				<th>Nom</th>
+				<th>Catégorie</th>
 				<th>Montant</th>
 				<th>Actions</th>
 			</tr>
@@ -20,6 +21,7 @@
 						<?= $_expense->expenser ?>
 					</td>
 					<td><?= $_expense->name ?></td>
+					<td><?= $_expense->category_name ?></td>
 					<td><?= number_format($_expense->amount,2) ?> €</td>
 					<td>
 						<a

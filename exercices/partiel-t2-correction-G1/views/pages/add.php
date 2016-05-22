@@ -31,6 +31,16 @@
 			<input type="text" id="name" name="name" placeholder="Tomate">
 		</div>
 
+		<!-- CATEGORY -->
+		<div>
+			<label for="id_category">Catégorie</label>
+			<select name="id_category" id="id_category">
+				<?php foreach($categories as $_category): ?>
+					<option value="<?= $_category->id ?>"><?= $_category->name ?></option>
+				<?php endforeach; ?>
+			</select>
+		</div>
+
 		<!-- AMOUNT -->
 		<div>
 			<label for="amount">Montant</label>

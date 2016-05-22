@@ -1,19 +1,17 @@
 <?php 
 
+	require_once 'models/expenses.class.php';
+	$expensesModel = new ExpensesModel();
+
 	$title = 'Mon site';
 	$class = 'home';
 
 	// Delete action
 	if(!empty($_GET['action']) && $_GET['action'] == 'delete')
-	{
-		// Get params
-		$id = (int)$_GET['id'];
+		$expensesModel->delete($_GET['id']);
 
-		// Delete from DB
-		$prepare = $pdo->prepare('DELETE FROM expenses WHERE id = :id');
-		$prepare->bindValue('id',$id);
-		$prepare->execute();
-	}
+	$expenses = $expensesModel->getAll();
+
+
 	
-	$query    = $pdo->query('SELECT * FROM expenses');
-	$expenses = $query->fetchAll();
+	

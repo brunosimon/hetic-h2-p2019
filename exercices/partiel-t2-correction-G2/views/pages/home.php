@@ -8,6 +8,7 @@
 				<th>#</th>
 				<th>Dépenseur</th>
 				<th>Nom</th>
+				<th>Catégorie</th>
 				<th>Montant</th>
 				<th>Actions</th>
 			</tr>
@@ -21,6 +22,7 @@
 						<?= $_expense->expenser ?>
 					</td>
 					<td><?= $_expense->name ?></td>
+					<td><?= $_expense->category_name ?></td>
 					<td><?= number_format($_expense->amount,2) ?> €</td>
 					<td>
 						<a class="button alert small" href="<?= URL.'?action=delete&id='.$_expense->id ?>">Suppr.</a>
