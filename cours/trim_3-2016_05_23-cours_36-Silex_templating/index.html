@@ -444,7 +444,8 @@ $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
                 </section>
 
                 <section>
-                    <p>Nous allons mettre en place les différentes pages du site avec les URLs ainsi qu'un peu de CSS</p>
+                    <p>Nous allons développer un pokedex</p>
+                    <p>Nous n'allons avoir que quelques pages et nous allons utiliser un framework front</p>
                 </section>
 
                 <section>
@@ -453,11 +454,9 @@ $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
                             Créez les routes suivantes
                             <ul>
                                 <li>home : /</li>
-                                <li>page : /page/{number}</li>
-                                <li>article : /article/{article}</li>
-                                <li>category : /category/{category}</li>
+                                <li>pokemons : /pokemons</li>
+                                <li>pokemon : /pokemon/{id}</li>
                                 <li>about : /about</li>
-                                <li>contact : /contact</li>
                             </ul>
                         </li>
                     </ul>
@@ -475,12 +474,10 @@ $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
                         <li>
                             Créez les différents templates
                             <ul>
-                                <li>home : /page.twig</li>
-                                <li>page : /page.twig</li>
-                                <li>article : /article.twig</li>
-                                <li>category : /page.twig</li>
-                                <li>about : /about.twig</li>
-                                <li>contact : /contact.twig</li>
+                                <li>home : /pages/home.twig</li>
+                                <li>pokemons : /pages/pokemons.twig</li>
+                                <li>pokemon : /pages/pokemon.twig</li>
+                                <li>about : /pages/about.twig</li>
                             </ul>
                         </li>
                     </ul>
@@ -501,14 +498,22 @@ $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 
                 <section>
                     <ul>
-                        <li>Rajoutez du CSS avec, par exemple, <a href="http://getbootstrap.com/getting-started/#download" target="_blank">Boostrap</a></li>
-                        <li>Sans oublier de précéder les chemins des ressources par <span class="highlight">{{app.request.basepath}}</span> pour éviter les problèmes de chemin relatif</li>
+                        <li>
+                            Rajouter <a href="http://materializecss.com/" target="_blank">Materialize</a>
+                            <ul>
+                                <li>Rajoutez le <span class="hl">&lt;link&gt;</span></li>
+                                <li>Rajoutez le <span class="hl">&lt;script&gt;</span></li>
+                                <li>Retirez le <span class="hl">reset.css</span></li>
+                                <li>Videz le <span class="hl">style.css</span></li>
+                            </ul>
+                        </li>
                     </ul>
                 </section>
 
                 <section>
                     <ul>
-                        <li>Rajoutez un peu de contenu avec des liens vers les différentes pages du site</li>
+                        <li>Récupérer la ressource <span class="u">pokedex.zip</span> et ajouter le dossier <span class="u">pokemons</span> dans web/src/medias</li>
+                        <li>Rajouter quelques contenus statiques</li>
                     </ul>
                 </section>
             </div>
@@ -517,6 +522,5 @@ $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
         <script src="../src/reveal.js/lib/js/head.min.js"></script>
         <script src="../src/reveal.js/js/reveal.js"></script>
         <script src="../src/custom/script.js"></script>
-        <script src="src/js/script.js"></script>
     </body>
 </html>

@@ -54,49 +54,8 @@
                 <section>
                     <ul>
                         <li>Créez une nouvelle base de données via <span class="highlight">PhpMyAdmin</span></li>
-                        <li>Executez la requête suivante</li>
+                        <li>Importer la BDD fournie dans les ressources du cours précédent</li>
                     </ul>
-                    <pre><code contenteditable data-trim class="sql">
-
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-CREATE TABLE `articles` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_category` int(11) NOT NULL,
-  `slug` varchar(254) NOT NULL,
-  `title` varchar(254) NOT NULL,
-  `excerpt` text NOT NULL,
-  `text` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
-
-INSERT INTO `articles` (`id`, `id_category`, `slug`, `title`, `excerpt`, `text`) VALUES
-(1, 1, 'title-1', 'Title 1', 'excerpt', 'text'),
-(2, 5, 'title-2', 'Title 2', 'excerpt', 'text'),
-(3, 4, 'title-3', 'Title 3', 'excerpt', 'text'),
-(4, 5, 'title-4', 'Title 4', 'excerpt', 'text'),
-(5, 2, 'title-5', 'Title 5', 'excerpt', 'text'),
-(6, 2, 'title-6', 'Title 6', 'excerpt', 'text'),
-(7, 1, 'title-7', 'Title 7', 'excerpt', 'text'),
-(8, 2, 'title-8', 'Title 8', 'excerpt', 'text'),
-(9, 3, 'title-9', 'Title 9', 'excerpt', 'text'),
-(10, 4, 'title-10', 'Title 10', 'excerpt', 'text');
-
-CREATE TABLE `categories` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `slug` varchar(254) NOT NULL,
-  `title` varchar(254) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
-
-INSERT INTO `categories` (`id`, `slug`, `title`) VALUES
-(1, 'films', 'Films'),
-(2, 'jeux', 'Jeux'),
-(3, 'litterature', 'Littérature'),
-(4, 'mode', 'Mode'),
-(5, 'sante', 'Santé');
-                    </code></pre>
                 </section>
 
                 <section>
@@ -112,7 +71,7 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
     'db.options' => array (
         'driver'    => 'pdo_mysql',
         'host'      => 'localhost',
-        'dbname'    => 'hetic-p2018-blog',
+        'dbname'    => 'hetic_p2019_silex_pokedex',
         'user'      => 'root',
         'password'  => 'root',
         'charset'   => 'utf8'
@@ -139,7 +98,7 @@ $app['db']->setFetchMode(PDO::FETCH_OBJ);
                 </section>
 
                 <section>
-                    <p>Afin de bien organiser notre code en charge de gérer les articles, nous allons créer un <span class="fragment">model</span></p>
+                    <p>Afin de bien organiser notre code en charge de gérer les données, nous allons créer un <span class="fragment">model</span></p>
                 </section>
 
                 <section>
@@ -149,13 +108,13 @@ $app['db']->setFetchMode(PDO::FETCH_OBJ);
                 <section>
                     <ul>
                         <li>À côté du dossier <span class="highlight">view/</span>, créez un dossier <span class="highlight">models/</span></li>
-                        <li>À l'intérieur créez un fichier <span class="highlight">articles.class.php</span></li>
+                        <li>À l'intérieur créez un fichier <span class="highlight">pokemons.class.php</span></li>
                         <li>
                             Rajoutez-y le code suivant
                             <pre><code contenteditable data-trim class="php">
 &lt;?php
 
-class Articles_Model
+class PokemonsModel
 {
     public $db;
 
@@ -172,22 +131,23 @@ class Articles_Model
                 <section>
                     <p>Dans index.php</p>
                     <ul>
-                        <li>Sous l'autoload, faites un <span class="highlight">require_once</span> du fichier <span class="highlight">articles.class.php</span></li>
                         <li>
-                            Après l'ajout des services, instanciez le model des articles sans oublier de lui passer <span class="highlight">$app['db']</span> en paramètre
+                            Sous l'autoload, faites un <span class="highlight">require_once</span> du fichier <span class="highlight">pokemons.class.php</span>
                             <pre><code contenteditable data-trim class="php">
-$articles_model = new Articles_Model($app['db']);
+require_once __DIR__.'/../models/pokemons.class.php';
+                            </code></pre>
+                        </li>
+                        <li>
+                            Après l'ajout des services, instanciez le model des pokemons sans oublier de lui passer <span class="highlight">$app['db']</span> en paramètre
+                            <pre><code contenteditable data-trim class="php">
+$pokemons_model = new PokemonsModel($app['db']);
                             </code></pre>
                         </li>
                     </ul>
                 </section>
 
                 <section>
-                    <p>Dans articles.class.php</p>
-                    <ul>
-                        <li>Créez une méthode <span class="highlight">getAll()</span> qui renvoie la liste des articles</li>
-                        <li>Utilisez cette méthode dans n'importe quelle vue pour faire apparaitre les articles sur le site</li>
-                    </ul>
+                    <p>Dans pokemons.class.php, Créez une méthode <span class="highlight">getAll()</span> qui renvoie tous les pokemons et utilisez-la dans la route pour l'envoyer à la vue</p>
                 </section>
 
             </div>
@@ -196,6 +156,5 @@ $articles_model = new Articles_Model($app['db']);
         <script src="../src/reveal.js/lib/js/head.min.js"></script>
         <script src="../src/reveal.js/js/reveal.js"></script>
         <script src="../src/custom/script.js"></script>
-        <script src="src/js/script.js"></script>
     </body>
 </html>
