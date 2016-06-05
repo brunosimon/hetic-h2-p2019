@@ -2,4 +2,45 @@
 
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus vitae deserunt unde quas distinctio veritatis reprehenderit laboriosam, qui consectetur itaque ullam quidem, ab quaerat ipsa eos exercitationem corrupti non nisi.</p>
 
+{{ form_start(contact_form) }}
+
+	<div class="row">
+		<div class="input-field col s12">
+		    {{ form_label(contact_form.name) }}
+		    {{ form_widget(contact_form.name,{attr:{placeholder:'John'}}) }}
+		    <div class="red-text text-darken-3">
+		    	{{ form_errors(contact_form.name) }}
+		    </div>
+		</div>
+		
+		<div class="input-field col s12">
+		    {{ form_label(contact_form.email) }}
+		    {{ form_widget(contact_form.email,{attr:{placeholder:'john.snow@gmail.com'}}) }}
+		    <div class="red-text text-darken-3">
+		    	{{ form_errors(contact_form.email) }}
+		    </div>
+		</div>
+		
+		<div class="input-field col s12">
+		    {{ form_widget(contact_form.subject,{attr:{class:'browser-default'}}) }}
+	    	<div class="red-text text-darken-3">
+	    		{{ form_errors(contact_form.subject) }}
+	    	</div>
+		</div>
+		
+		<div class="input-field col s12">
+		    {{ form_label(contact_form.message) }}
+		    {{ form_widget(contact_form.message,{attr:{placeholder:'u know nothing',class:'materialize-textarea'}}) }}
+		    <div class="red-text text-darken-3">
+		    	{{ form_errors(contact_form.message) }}
+		    </div>
+		</div>
+		
+		<div class="input-field col s12">
+		    {{ form_widget(contact_form.submit,{attr:{class:'btn'}}) }}
+		</div>
+	</div>
+
+{{ form_end(contact_form) }}
+
 {{include('partials/footer.twig')}}

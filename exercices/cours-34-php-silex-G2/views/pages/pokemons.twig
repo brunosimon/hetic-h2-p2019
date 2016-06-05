@@ -1,0 +1,22 @@
+{{ include('partials/header.twig') }}
+	
+	<div class="row">
+
+		{% for _pokemon in pokemons %}
+			<div class="col s4">
+				<div class="card">
+					<div class="card-content">
+						{% if _pokemon.front_picture is not empty %}
+							<img src="{{app.request.basepath ~ '/src/medias' ~ _pokemon.front_picture }}" alt="">
+						{% endif %}
+					</div>
+					<div class="card-action">
+						<a href="{{ url('pokemon',{id:_pokemon.id}) }}">{{_pokemon.name}}</a>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+
+	</div>
+
+{{ include('partials/footer.twig') }}

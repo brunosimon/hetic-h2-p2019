@@ -50,45 +50,33 @@
 
                 <section>
                     <pre><code contenteditable data-trim class="php">
-$app->before(function() use ($app) {
+$app->before(function() use ($app)
+{
     // Code exécuté avant la route
 });
 
-$app->after(function() use ($app) {
+$app->after(function() use ($app)
+{
     // Code exécuté après la route
 });
 
-$app->finish(function() use ($app) {
+$app->finish(function() use ($app)
+{
     // Code exécuté après que la page ait été renvoyée au visiteur
 });
                     </code></pre>
                 </section>
 
                 <section>
-                    <p>Il est possible de gérer l'ordre d'éxecution de ces middlewares en deuxième paramètre</p>
-                    <pre><code contenteditable data-trim class="php">
-$app->before(function() use ($app) {
-    echo '1';
-},1);
-
-$app->before(function() use ($app) {
-    echo '2';
-},3);
-
-$app->before(function() use ($app) {
-    echo '3';
-},2);
-                    </code></pre>
-                </section>
-
-                <section>
                     <p>Il est possible d'associer des middleswares uniquement à certaines routes</p>
                     <pre><code contenteditable data-trim class="php">
-$before = function() use ($app) {
+$before = function() use ($app)
+{
     // ...
 };
 
-$app->get('/', function() {
+$app->get('/', function()
+{
     // ...
 })
 ->before($before);
@@ -104,11 +92,12 @@ $app->get('/', function() {
                         <li>Silex permet de rajouter des variables globales à Twig</li>
                         <li>Ces variables seront utilisables dans n'importe quelle vue</li>
                         <li>On utilise souvent cette feature dans un <span class="highlight">before</span></li>
+                        <li>Les variables de vue du controller écraseront ces variables</li>
                     </ul>
                     <pre><code contenteditable data-trim class="php">
 
 $app->before() use ($app) {
-    $app['twig']->addGlobal('title','My supa site');
+    $app['twig']->addGlobal('title','Hetic Pokedex');
 });
 
                     </code></pre>
@@ -129,7 +118,7 @@ $app->before() use ($app) {
                 <section>
                     <ul>
                         <li>Lors du développement, un site existe en général dans 3 environnement (parfois plus) : <span class="highlight">local</span> / <span class="highlight">preprod</span> / <span class="highlight">prod</span></li>
-                        <li>Cela devient problématique lorsqu'on à des variables qui dépendent de l'environnement (<span class="fragment">BDD, </span><span class="fragment">chemins, </span><span class="fragment">debug, ...</span>)</li>
+                        <li>Cela devient problématique lorsqu'on à des variables qui dépendent de l'environnement (BDD, chemins, debug, ...)</li>
                         <li>Si on écrase le fichier, on perd la config</li>
                         <li>Voici une façon simple de gérer cela</li>
                     </ul>
@@ -236,14 +225,14 @@ $app->error(function (\Exception $e, $code) use ($app)
         'title' => 'Error'
     );
 
-    return $app['twig']->render('error.twig',$data);
+    return $app['twig']->render('pages/error.twig',$data);
 });
 
                     </code></pre>
                 </section>
 
                 <section>
-                    <p>Dans une nouvelle vue <span class="highlight">views/error.twig</span></p>
+                    <p>Dans une nouvelle vue <span class="highlight">views/pages/error.twig</span></p>
                     <pre><code contenteditable data-trim class="php">
 
 {{include('partials/header.twig')}}
@@ -322,8 +311,9 @@ $app->get('/', function() use ($app,$articles_model) {
                     </ul>
                     <pre><code contenteditable data-trim class="php">
 
-$app->get('/test', function() use ($app) {
-    $url = $app['url_generator']->generate('article',array('article'=>10));
+$app->get('/test', function() use ($app)
+{
+    $url = $app['url_generator']->generate('pokemon',array('id'=>88));
     return $app->redirect($url);
 });
                     </code></pre>

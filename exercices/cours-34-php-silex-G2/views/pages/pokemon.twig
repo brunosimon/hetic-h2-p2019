@@ -1,0 +1,21 @@
+{{ include('partials/header.twig') }}
+	
+	<div class="row">
+
+		<div class="col s4">
+			<h4>Bulbizarre</h4>
+			<img src="{{app.request.basepath}}/src/medias/pokemons/front/1.png" alt="">
+			<img src="{{app.request.basepath}}/src/medias/pokemons/back/1.png" alt="">
+		</div>
+
+		<div class="col s8">
+			<ul class="collection left-align">
+				<li class="collection-item">Height : 7</li>
+				<li class="collection-item">Weight : 67</li>
+				<li class="collection-item">Types : Poison, Plant</li>
+			</ul>
+		</div>
+		
+	</div>
+
+{{ include('partials/footer.twig') }}

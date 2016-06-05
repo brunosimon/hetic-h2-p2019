@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Mon Twig</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+	<link rel="stylesheet" href="{{app.request.basepath}}/src/css/style.css">
+</head>
+<body>
+
+	<div class="container center-align">
+
+		<header>
+			<h1>Pokedex</h1>
+			<nav>
+				<ul>
+					<li><a href="{{ url('home') }}">Home</a></li>
+					<li><a href="{{ url('about') }}">About</a></li>
+					<li><a href="{{ url('pokemons') }}">Pokemons</a></li>
+				</ul>
+			</nav>
+		</header>
